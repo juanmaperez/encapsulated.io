@@ -33,7 +33,25 @@ time, mark, audio, video {
 
 body {
     line-height:1;
+
 }
+
+
+body {
+    --bgColor: #fbf3f2;
+    --primaryColor: #032539;
+    --secondaryColor: #1c768f;   
+    --tertiaryColor: #fa991c;
+}
+  
+  body.dark {
+    --bgColor: #032539;
+    --primaryColor: #fbf3f2;
+    --secondaryColor: #1c768f;   
+    --tertiaryColor: #fa991c;
+  }
+
+
 
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section { 
