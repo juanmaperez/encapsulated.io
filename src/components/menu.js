@@ -6,7 +6,7 @@ const MenuView = styled.div`
 
   #nav-icon {
     margin: 5px;
-    width: 40px;
+    width: 35px;
     height: 20px;
     position: relative;
     -webkit-transform: rotate(0deg);

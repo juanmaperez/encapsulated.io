@@ -2,15 +2,13 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from 'styled-components';
-
+ 
 import Image from './image';
 import Menu from './menu';
 
 import "./../styles/global.css"
 
 import logo from './../images/logo_pill.png';
-
-console.log(logo)
 
 const HeaderView = styled.header`
   padding: 0px;

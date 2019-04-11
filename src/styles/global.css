@@ -3,6 +3,7 @@
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+    font-family: 'Questrial', sans-serif;
 }
 
 html, body, main, footer, header {
