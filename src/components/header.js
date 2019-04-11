@@ -14,6 +14,10 @@ const HeaderView = styled.header`
   padding: 0px;
   color: #000;
   max-width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
   
   .header-wrapper {
     display: flex;
