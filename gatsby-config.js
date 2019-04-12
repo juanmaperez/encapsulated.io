@@ -1,12 +1,19 @@
 module.exports = {
   siteMetadata: {
     title: `encapsulated`,
-    description: `Concise thoughts about javascript, react, angular, gatsbyjs, nodejs by Juanma Perez, Front end developer`,
+    description: `Little pills about javascript, react, angular, gatsbyjs, nodejs by Juanma Perez, Front end developer`,
     author: `Juanma Perez`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     'gatsby-transformer-remark',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/pages/posts`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

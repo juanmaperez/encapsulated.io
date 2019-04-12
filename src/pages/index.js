@@ -7,7 +7,10 @@ import Presentation from './../components/index/presentation';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Encapsulated" keywords={[`Juanma Perez`, `javascript`, `developer`, ``]} />
+    <SEO title="Encapsulated" 
+         description="Personal Website by Juanma Perez, Front End developer at Colossus Bets, London" 
+         keywords={[`Juanma Perez`, `javascript`, `developer`, ``]} 
+    />
     
     <Presentation/>
    
