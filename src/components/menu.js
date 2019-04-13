@@ -24,7 +24,7 @@ const MenuView = styled.div`
       position: absolute;
       height: 2px;
       width: 100%;
-      background: #0e3746;
+      background: var(--primaryColor);
       border-radius: 9px;
       opacity: 1;
       left: 0;

@@ -9,6 +9,7 @@ import Menu from './menu';
 import "./../styles/global.css"
 
 import logo from './../images/logo_pill.png';
+import ThemeSwitch from "./theme-switcher";
 
 const HeaderView = styled.header`
   padding: 0px;
@@ -46,14 +47,14 @@ const HeaderView = styled.header`
         font-size: 26px;
         line-height: 1.1;
         font-weight: 800;
-        color: #0e3746;
+        color: var(--primaryColor);
         display: inline-block;
         font-family: 'Questrial', sans-serif;
   
         .title-link {
-          color: #0e3746;
+          color: var(--primaryColor);
           letter-spacing: 1.4px;
-          -webkit-text-stroke: 0.3px #0e3746;
+          -webkit-text-stroke: 0.3px var(--primaryColor);
           text-decoration: none;
         }
       }
@@ -77,6 +78,7 @@ const Header = ({ siteTitle }) => (
           </Link>
         </h1>
       </div>
+      <ThemeSwitch />
       <Menu />
     </div>
   </HeaderView>

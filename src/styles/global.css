@@ -43,6 +43,9 @@ body {
     --primaryColor: #032539;
     --secondaryColor: #1c768f;   
     --tertiaryColor: #fa991c;
+    color: var(--primaryColor);
+    background: var(--bgColor);
+    transition: all 300ms linear;
 }
   
   body.dark {
@@ -52,7 +55,9 @@ body {
     --tertiaryColor: #fa991c;
   }
 
-
+a {
+    color: var(--secondaryColor);
+}
 
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section { 
