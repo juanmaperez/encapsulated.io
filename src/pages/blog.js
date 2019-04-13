@@ -1,12 +1,12 @@
 import React from "react"
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import PostItem from './../components/post-item'
 
 const BlogView = styled.div`
   margin: 80px auto;
-  border: 1px solid red;
   width: 100%;
   min-height: 10px;
 `
@@ -18,18 +18,9 @@ const BlogPage = ({ data }) => {
       <SEO title="Encapsulated Blog"  />
       <BlogView>
         {posts.map(({node: post})=>{
-          const {frontmatter} = post;
+          const { frontmatter } = post;
           return (
-            <div>
-              <h2>
-                <Link to={frontmatter.path}>
-                  {frontmatter.title}
-                </Link>
-              </h2>
-
-              <span>{frontmatter.date}</span>
-              <p>{ frontmatter.excerpt }</p>
-            </div>
+            <PostItem key={frontmatter.path} frontmatter={frontmatter}/>
           )
         })}
       </BlogView>
@@ -50,6 +41,20 @@ export const query = graphql`
             path
             tags
             excerpt
+            thumbnail {
+              childImageSharp {
+                  fluid(maxWidth: 1000) {
+                      src
+                  }
+              }
+            }
+            icon {
+              childImageSharp {
+                  fluid(maxWidth: 1000) {
+                      src
+                  }
+              }
+            }
           }
         }
       }

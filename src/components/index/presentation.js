@@ -20,23 +20,30 @@ const PresentationView = styled.div`
       font-size: 22vw;
       text-align: center;
       -webkit-text-stroke: 5px var(--primaryColor);
+      @media(max-width: 768px){ -webkit-text-stroke: 3px var(--primaryColor)}
+      @media(max-width: 480px){ -webkit-text-stroke: 1px var(--primaryColor)}
     }
     .developer {
       color: var(--primaryColor);
-      font-size: 20vw;
+      font-size: 21vw;
       display: block;
       font-weight: bolder;
       text-align: center;
       -webkit-text-stroke: 5px var(--primaryColor);
+      @media(max-width: 768px){ -webkit-text-stroke: 3px var(--primaryColor)}
+      @media(max-width: 480px){ -webkit-text-stroke: 1px var(--primaryColor)}
     }
     .year {
-      color: var(--tertiaryColor);
+      color: var(--secondaryColor);
       font-size: 1.5vw;
       display: block;
       font-weight: bolder;
       text-align: center;
       font-style: italic;
       margin-top: 50px;
+      @media(max-width: 480px){
+        font-size: 6vw;
+      }
     }
     .face {
       position: absolute;
@@ -62,7 +69,7 @@ const PresentationView = styled.div`
       width: 18px;
       height: 28px;
       border-radius: 11px 11px 15px 15px;
-      border: 1px solid var(--secondaryColor);
+      border: 1px solid var(--primaryColor);
   
       span.scroll {
         display: block;
@@ -70,7 +77,7 @@ const PresentationView = styled.div`
         width: 1px;
         height: 3px;
         border-radius: 4px;
-        background: var(--secondaryColor);
+        background: var(--primaryColor);
         border: 1px solid transparent;
         -webkit-animation-duration: 2s;
         animation-duration: 2s;

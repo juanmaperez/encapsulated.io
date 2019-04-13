@@ -6,22 +6,24 @@ import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 
 const ThemeSwitcherView = styled.div`
   margin-top: 5px;
+  margin-right: 5px;
   border: 1px solid var(--primaryColor);
   width: 40px;
   height: 20px;
   border-radius: 20px/20px;
   position: relative;  
-  .dark-icon { 
-    position: 
-    absolute; 
-    left: 2px; 
-    top: 2px; 
+  .dark-icon {
+    font-size: 12px; 
+    position: absolute; 
+    left: 5px; 
+    top: 4px; 
     color: var(--primaryColor);
   }
   .light-icon { 
+    font-size: 12px;
     position: absolute; 
-    right: 2px; 
-    top: 2px;
+    right: 5px; 
+    top: 4px;
     color: var(--primaryColor); 
   }
   .ball-button { 
@@ -55,9 +57,9 @@ class ThemeSwitch extends Component {
 
   componentDidMount(){
     if (this.store) {
-      this.setState({
-        theme: this.store.getItem('theme') || 'light'
-      });
+      const theme = this.store.getItem('theme') || 'light'
+      this.setState({ theme });
+      this.setTheme(theme);
     }
   }
 

@@ -50,12 +50,14 @@ const HeaderView = styled.header`
         color: var(--primaryColor);
         display: inline-block;
         font-family: 'Questrial', sans-serif;
+        mix-blend-mode: difference;
   
         .title-link {
           color: var(--primaryColor);
           letter-spacing: 1.4px;
           -webkit-text-stroke: 0.3px var(--primaryColor);
           text-decoration: none;
+          mix-blend-mode: difference;
         }
       }
     }
@@ -78,8 +80,10 @@ const Header = ({ siteTitle }) => (
           </Link>
         </h1>
       </div>
-      <ThemeSwitch />
-      <Menu />
+      <div>
+        <ThemeSwitch />
+        <Menu />
+      </div>
     </div>
   </HeaderView>
 )
