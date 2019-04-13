@@ -43,14 +43,14 @@ export const query = graphql`
             excerpt
             thumbnail {
               childImageSharp {
-                  fluid(maxWidth: 1000) {
+                  fluid(maxWidth: 500) {
                       src
                   }
               }
             }
             icon {
               childImageSharp {
-                  fluid(maxWidth: 1000) {
+                  fluid(maxWidth: 50) {
                       src
                   }
               }

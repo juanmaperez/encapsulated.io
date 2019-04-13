@@ -17,7 +17,7 @@ const PresentationView = styled.div`
     .creative {
       color: var(--primaryColor);
       display: block;
-      font-size: 22vw;
+      font-size: 21vw;
       text-align: center;
       -webkit-text-stroke: 5px var(--primaryColor);
       @media(max-width: 768px){ -webkit-text-stroke: 3px var(--primaryColor)}
@@ -43,6 +43,7 @@ const PresentationView = styled.div`
       margin-top: 50px;
       @media(max-width: 480px){
         font-size: 6vw;
+        margin-top: 30px;
       }
     }
     .face {

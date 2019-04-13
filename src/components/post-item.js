@@ -3,16 +3,14 @@ import { Link } from 'gatsby'
 import styled from 'styled-components';
 
 const PostItemView = styled.div`
-margin: 0px auto;
-padding: 25px;
+margin: 40px auto;
 box-sizing: border-box;
-width: 60%;
-@media(max-width:878px){
-  width:75%;
-}
+width: 35%;
+@media(max-width:1590px){ width: 40% }
+@media(max-width:1100px){ width:55% }
+@media(max-width:878px){ width:65% }
 @media(max-width:510px){
   width:95%;
-  padding:25px 0px;
 }
 .post {
   background: var(--bgColor);
@@ -38,7 +36,8 @@ width: 60%;
     flex: 1;
     position: relative;
     overflow: hidden;
-    height: 260px;
+    height: 320px;
+    @media(max-width: 520px){ height: 260px}
     .image {
       transition: all 300ms linear;
       position: relative;
@@ -52,7 +51,7 @@ width: 60%;
   }
   .post-container { 
     position: relative;
-    padding: 20px 20px 25px;
+    padding: 20px 20px 40px;
     flex: 1;
     .post-icon {
       width: 25px;
@@ -85,7 +84,9 @@ width: 60%;
       line-height: 1.2;
       letter-spacing: 1.2px;
       color: var(--secondaryColor);
-      -webkit-text-stroke: 0.2px var(--secondaryColor); 
+      -webkit-text-stroke: 0.2px var(--secondaryColor);
+      @media(max-width:510px){ font-size: 28px }
+ 
       a {
         text-decoration: none;
       }
