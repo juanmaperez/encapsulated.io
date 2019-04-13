@@ -102,7 +102,6 @@ width: 60%;
 
 const PostItem = (props) => {
   const { frontmatter } = props;
-  console.log('image',frontmatter.icon.childImageSharp.fluid.src)
   return (
   <PostItemView image={ frontmatter.thumbnail.childImageSharp.fluid.src } icon={ frontmatter.icon.childImageSharp.fluid.src }>
     <div className="post-wrapper">
