@@ -6,10 +6,10 @@ import Image from './../image';
 import face from './../../images/jp_brush_normal.png'
 
 const PresentationView = styled.div`
-    height: ${ props => props.height}px;
+    height: ${ props => (props.height - 60)}px;
     width: 100%;
-    position: absolute;
-    top: 0;
+    overflow: hidden;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,6 +41,8 @@ const PresentationView = styled.div`
       text-align: center;
       font-style: italic;
       margin-top: 50px;
+      @media(max-width: 1080px){ font-size: 4vw }
+      @media(max-width: 768px){ font-size: 6vw }
       @media(max-width: 480px){
         font-size: 6vw;
         margin-top: 30px;
@@ -62,7 +64,7 @@ const PresentationView = styled.div`
     }
 
     .mouse {
-      position: fixed;
+      position: absolute;
       bottom: 20px;
       left: 50%;
       margin-left: -9px;
@@ -100,6 +102,7 @@ class Presentation extends Component {
     this.setState({
       complete: true
     })
+    this.props.markAsCompleted();
   }
 
   componentDidMount(){
@@ -113,10 +116,13 @@ class Presentation extends Component {
     .fromTo(face, 3, {opacity: 0}, { opacity: 1, ease: Power1.easeOut})
     .fromTo(face, 1, {opacity: 1}, { opacity: 0, ease: Power1.easeOut}, '+=1')
     .add('name')
-    .from(creative, 2, {x: -1500, opacity: 0, ease: Power1.easeOut}, 'name')
-    .from(developer, 2, {x: 1500 , opacity: 0, ease: Power1.easeOut}, 'name')
-    .from(year, 2, { opacity: 0, delay: 1.5, ease: Power1.easeOut, onComplete: this.animationComplete})
-
+    .from(creative, 2, {x: -150, opacity: 0, ease: Power1.easeOut}, 'name')
+    .from(developer, 2, {x: 150 , opacity: 0, ease: Power1.easeOut}, 'name')
+    .from(year, 2, { 
+      opacity: 0, 
+      delay: 1.5, 
+      ease: Power1.easeOut, 
+      onComplete: this.animationComplete})
   }
   
   render(){

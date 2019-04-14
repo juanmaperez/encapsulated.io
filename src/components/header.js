@@ -6,20 +6,19 @@ import styled from 'styled-components';
 import Image from './image';
 import Menu from './menu';
 
-import "./../styles/global.css"
-
 import logo from './../images/logo_pill.png';
 import ThemeSwitch from "./theme-switcher";
 
 const HeaderView = styled.header`
   padding: 0px;
   color: #000;
-  max-width: 100%;
+  width: 100%;
   position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  
+  top: 0px;
+  left: 0px;
+  z-index: 1000;
+  box-sizing: border-box;
+
   .header-wrapper {
     display: flex;
     flex-direction: row;
