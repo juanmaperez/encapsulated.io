@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import PostItem from './../components/post-item'
 
 const BlogView = styled.div`
-  margin: 80px auto;
+  margin: 150px auto 80px;
   width: 100%;
   min-height: 10px;
 `

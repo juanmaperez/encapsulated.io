@@ -2,11 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 import SEO from './../components/seo';
 import Layout from './../components/layout'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 
 const BlogPostView = styled.div`
   padding-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+
   .post-header {
     width: 100%;
     background: url(${props => props.image });
@@ -15,6 +21,62 @@ const BlogPostView = styled.div`
     background-repeat: no-repeat;
     margin-bottom: 60px;
   }
+
+  .prev {
+    box-sizing:border-box;
+    position: fixed;
+    left: 0px;
+    top: 50%;
+    width: 200px;
+    transform: translateX(-200px);
+    transition: transform 300ms linear;
+    min-height: 25px;
+    padding: 10px 5px;
+    a { 
+      color:var(--secondaryColor);
+      margin-top: 5px;
+      display: block;
+    }
+    &:hover {
+      transform: translateX(0px);
+    }
+    svg {
+      border-radius: 50%;
+      padding: 4px;
+      border: 1px solid var(--secondaryColor);
+      position: absolute;
+      right: -25px;
+      color:var(--secondaryColor);
+    }
+  }
+  .next {
+    padding: 10px 5px;
+    box-sizing:border-box;
+    position: fixed;
+    right: 0px;
+    top: 50%;
+    width: 200px;
+    transform: translateX(200px);
+    transition: transform 300ms linear;
+    min-height: 25px;
+    a { 
+      color:var(--secondaryColor);
+      margin-top: 5px;
+      display: block;
+    }
+    &:hover {
+      transform: translateX(0px);
+    }
+    svg {
+      border-radius: 50%;
+      padding: 4px;
+      border: 1px solid var(--secondaryColor);
+      position: absolute;
+      left: -25px;
+      color:var(--secondaryColor);
+    }
+  }
+
   .post-container {
     box-sizing: border-box;
     width: 40%;
@@ -69,9 +131,10 @@ const BlogPostView = styled.div`
   }
 `
 
-const BlogPostTemplate = ({data, location }) => {
+const BlogPostTemplate = ({data, location, pathContext }) => {
   const { markdownRemark: post } = data;
   const { frontmatter, html } = post;
+  const { next, prev } = pathContext;
 
   return(
     <Layout>
@@ -79,6 +142,21 @@ const BlogPostTemplate = ({data, location }) => {
       <BlogPostView image={ frontmatter.thumbnail.childImageSharp.fluid.src } icon={ frontmatter.icon.childImageSharp.fluid.src }>
         <div className="post-header">
         </div>
+        
+        { prev && <div className="prev">
+            <FontAwesomeIcon icon={ faArrowLeft }/>
+            <Link to={prev.frontmatter.path}>
+              {prev.frontmatter.title}
+            </Link>
+          </div>
+        }
+        { next && <div className="next">
+            <FontAwesomeIcon icon={ faArrowRight }/>
+            <Link to={next.frontmatter.path}>
+              {next.frontmatter.title}
+            </Link>
+          </div>
+        }
         <div className="post-container">
           <h2 className="post-title">
            {frontmatter.title}
@@ -88,7 +166,6 @@ const BlogPostTemplate = ({data, location }) => {
           </div>
 
           <div className="post-content" dangerouslySetInnerHTML={{__html: html}} />
-
         </div>
       </BlogPostView>
     </Layout>

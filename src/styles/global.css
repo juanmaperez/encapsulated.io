@@ -69,6 +69,7 @@ body.dark .logo img, body.dark .face img {
 
 a {
     color: var(--secondaryColor);
+    text-decoration: none;
 }
 
 article,aside,details,figcaption,figure,
