@@ -3,6 +3,7 @@ path: '/blog/first-post'
 date: '2018-05-23T12:34:00+00:00'
 title: "DC UNIVERSE - Rebirth"
 thumbnail: ./marvel.jpg
+type: post
 icon: ./../../../images/icons/javascript.png
 category: 'javascript'
 tags: ['The Flash', "Batman", "Superman", "Wally West", "Wonder Woman", "DC"]

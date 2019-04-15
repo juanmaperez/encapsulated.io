@@ -1,13 +1,12 @@
 ---
-path: '/blog/second-post'
-date: '2018-05-23T12:34:00+00:00'
-title: "Marvel UNIVERSE - Dead"
-thumbnail: ./dc-comic.jpg
-type: post
-icon: ./../../../images/icons/vuejs.png
-category: 'vuejs'
-tags: ['The Flash', "Batman", "Superman", "Wally West", "Wonder Woman", "DC"]
+path: '/work/oysho'
+date: '2017-10-03T12:34:00+00:00'
+title: "Oysho"
+thumbnail: ./oysho.png
+type: project
+tags: ['Web Development', "Design"]
 excerpt: "It all begins here. Do not skip to the last page. Do not let a friend or message board ruin this comic for you. The future (and past) of the DC Universe starts here. Don’t say I didn’t warn you!"
+
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam metus orci, malesuada rutrum ligula in, feugiat ultricies mi. Pellentesque vel libero ut metus auctor vehicula quis sit amet neque. In hac habitasse platea dictumst. Aenean rutrum nunc elit, sit amet feugiat nisi pharetra id. Cras auctor nibh felis, eu accumsan turpis aliquet in. Vivamus interdum id erat a bibendum. In orci dui, congue eget fermentum sed, pellentesque eu mauris. Cras porta eros ligula, in ultrices augue ullamcorper vitae. Vestibulum efficitur, diam ac pulvinar blandit, tortor leo scelerisque nibh, in ornare mauris mi et ligula. Maecenas iaculis arcu ligula, ac mollis nisl lobortis eu. In hac habitasse platea dictumst. Morbi suscipit mi ac laoreet blandit. Aliquam auctor eros vel tincidunt scelerisque. Sed nulla mauris, aliquet nec arcu a, aliquet convallis ligula. Integer auctor nibh nec risus mattis fringilla.

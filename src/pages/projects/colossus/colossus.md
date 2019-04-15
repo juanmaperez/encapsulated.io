@@ -1,12 +1,10 @@
 ---
-path: '/blog/second-post'
-date: '2018-05-23T12:34:00+00:00'
-title: "Marvel UNIVERSE - Dead"
-thumbnail: ./dc-comic.jpg
-type: post
-icon: ./../../../images/icons/vuejs.png
-category: 'vuejs'
-tags: ['The Flash', "Batman", "Superman", "Wally West", "Wonder Woman", "DC"]
+path: '/work/colossus'
+date: '2017-12-23T12:34:00+00:00'
+title: "Colossus Bets"
+thumbnail: ./colossus.png
+type: project
+tags: ['Web Development', "Design"]
 excerpt: "It all begins here. Do not skip to the last page. Do not let a friend or message board ruin this comic for you. The future (and past) of the DC Universe starts here. Don’t say I didn’t warn you!"
 ---
 

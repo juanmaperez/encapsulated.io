@@ -30,7 +30,8 @@ const path = require ('path');
 
 exports.createPages = ({ actions, graphql}) => {
   const { createPage } = actions;
-  const blogPostTemplate = path.resolve('src/templates/blog-post.js');
+  const BlogPostTemplate = path.resolve('src/templates/blog-post.js');
+  const WorkTemplate = path.resolve('src/templates/work.js');
 
   return graphql(
     `{
@@ -45,6 +46,7 @@ exports.createPages = ({ actions, graphql}) => {
               title
               excerpt
               tags
+              type
               category
               thumbnail {
                 childImageSharp {
@@ -69,15 +71,37 @@ exports.createPages = ({ actions, graphql}) => {
     if (result.errors) {
       return Promise.reject (result.errors);
     }
-    const posts = result.data.allMarkdownRemark.edges;
 
+    const edges = result.data.allMarkdownRemark.edges;
+    let posts = [];
+    let works = [];
+
+    edges.forEach(edge => {
+      if(edge.node.frontmatter.type === 'project'){
+        works.push(edge)
+      } else {
+        posts.push(edge)
+      }
+    })
+    
     posts.forEach(({node}, index ) => {
       createPage({
         path: node.frontmatter.path,
-        component: blogPostTemplate,
+        component: BlogPostTemplate,
         context: {
           prev: index === 0 ? null : posts[index - 1 ].node,
           next: index === (posts.length - 1) ? null : posts[index + 1].node
+        } 
+      })
+    })
+
+    works.forEach(({node}, index)=> {
+      createPage({
+        path: node.frontmatter.path,
+        component: WorkTemplate,
+        context: {
+          prev: index === 0 ? null : works[index - 1 ].node,
+          next: index === (works.length - 1) ? null : works[index + 1].node
         } 
       })
     })

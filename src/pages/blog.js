@@ -55,6 +55,7 @@ export const query = graphql`
     allMarkdownRemark (
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
+      filter: {frontmatter: {type: {eq: "post"}}}
     ) {
       totalCount
       edges {
@@ -65,6 +66,7 @@ export const query = graphql`
             date(formatString: "MMMM DD, YYYY")
             path
             tags
+            type
             excerpt
             category
             thumbnail {
