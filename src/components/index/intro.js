@@ -16,19 +16,16 @@ const IntroView = styled.div`
     font-size: 8vw;
     color: var(--primaryColor);
     line-height: 1.2;
-    padding: 20px;
+    padding: 20px 80px;
     box-sizing: border-box;
     font-weight: bolder;
     -webkit-text-stroke: 1px var(--primaryColor);
     p {
       margin-bottom: 100px;
+ 
       strong {
-        color: transparent;
-        -webkit-text-stroke: 1px var(--secondaryColor);
-      }
-      span {
         color: var(--tertiaryColor);
-        -webkit-text-stroke: 1px var(--tertiaryColor);
+        -webkit-text-stroke: 0.0002em var(--tertiaryColor);
       }
     }
   }

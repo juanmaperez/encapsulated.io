@@ -131,14 +131,14 @@ const BlogPostView = styled.div`
   }
 `
 
-const BlogPostTemplate = ({data, location, pathContext }) => {
+const BlogPostTemplate = ({data, location, pageContext }) => {
   const { markdownRemark: post } = data;
   const { frontmatter, html } = post;
-  const { next, prev } = pathContext;
+  const { next, prev } = pageContext;
 
   return(
     <Layout>
-      <SEO title={frontmatter.title} description={ frontmatter.description } />
+      <SEO title={frontmatter.title} description={ frontmatter.excerpt } />
       <BlogPostView image={ frontmatter.thumbnail.childImageSharp.fluid.src } icon={ frontmatter.icon.childImageSharp.fluid.src }>
         <div className="post-header">
         </div>

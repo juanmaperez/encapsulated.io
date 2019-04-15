@@ -111,7 +111,7 @@ const PostItem = (props) => {
           <div className="image"></div>
         </div>
         <div className="post-container">
-          <div className="post-icon"></div>
+          <Link to={`/blog/category/${frontmatter.category}`}><div className="post-icon"></div></Link>
           <div className="post-date">
             {frontmatter.date}
           </div>

@@ -1,20 +1,24 @@
 import React from "react"
-import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostItem from './../components/post-item'
 
-const BlogView = styled.div`
+const CategoryView = styled.div`
   margin: 150px auto 80px;
   width: 100%;
   min-height: 10px;
-  .list-header {
+  .category-header {
     margin: 100px auto;
     box-sizing: border-box;
     width: 35%;
-
-    .list-title {
+    p {
+      text-align: center;
+      font-size: 50px;
+      color: var(--primaryColor);
+      -webkit-text-stroke: 1.5px var(--primaryColor);
+    }
+    .category-title {
       text-align: center;
       margin-top: -10px;
       font-size: 85px;
@@ -30,31 +34,38 @@ const BlogView = styled.div`
   }
 `
 
-const BlogPage = ({ data }) => {
-  const { edges: posts } = data.allMarkdownRemark  
-  return (
-    <Layout>
-      <SEO title="Encapsulated Blog"  />
-      <BlogView>
-        <div className="list-header">
-          <h2 className="list-title">Little pills of code</h2>
-        </div>
-        {posts.map(({node: post})=>{
-          const { frontmatter } = post;
-          return (
-            <PostItem key={frontmatter.path} frontmatter={frontmatter}/>
-          )
-        })}
-      </BlogView>
-    </Layout>
-  )
+const CategoryTemplate = ({ pageContext, data }) => {
+  const { category } = pageContext;
+  const { edges: posts } = data.allMarkdownRemark
+
+  if(posts) {
+    return (
+      <Layout>
+        <SEO title={`${ category } pills`} description={`Little pills about ${category}`} />
+        <CategoryView>
+          <div className="category-header">
+            <p>Little pills about</p>
+            <h2 className="category-title">{category}</h2>
+          </div>
+          {posts.map(({node: post})=>{
+            const { frontmatter } = post;
+            return (
+              <PostItem key={frontmatter.path} frontmatter={frontmatter}/>
+            )
+          })}
+        </CategoryView>
+      </Layout>
+    )
+  }
+
 }
 
-export const query = graphql`
-  query BlogQuery {
-    allMarkdownRemark (
+export const CategoryQuery = graphql`
+  query($category: String!) {
+    allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { category: { in: [$category] } } }
     ) {
       totalCount
       edges {
@@ -88,4 +99,5 @@ export const query = graphql`
   }
 `
 
-export default BlogPage
+
+export default CategoryTemplate
