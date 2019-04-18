@@ -1,27 +1,62 @@
-import React from 'react';
+import React, {Component} from 'react';
 import styled from 'styled-components';
 import SEO from './../components/seo';
 import Layout from './../components/layout';
 import { graphql } from 'gatsby';
+import WorkListItem from './../components/work-list-item'
 
-const WorkView = styled.div``
+const WorkView = styled.div`
+  height: ${props => props.height}px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+`
 
-const WorkPage = ({data}) => {
-  const { edges: works } = data.allMarkdownRemark  
+class WorkPage extends Component {
+  
+  state = { 
+    height: 0,
+    width: 0
+  }
 
-  return(
-    <Layout>
-      <SEO title="Works" description="Web development by Juanma Perez for different clients. Portfolio" keywords={[`development`, `web design`, `websites`]}/>
-        <WorkView> 
-        {works.map(({node: work})=>{
-          const { frontmatter } = work;
-          return (
-           <h1>{frontmatter.title}</h1>
-          )
-        })}
-        </WorkView>
-    </Layout>
-  )
+  constructor(props){
+    super(props);
+  }
+
+  componentDidMount(){
+    this.resize();
+    window.addEventListener('resize', this.resize.bind(this))
+  }
+
+  resize = () => {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    this.setState({height, width})
+  }
+  
+  componentWillUnmount(){
+    window.removeEventListener('resize', this.resize.bind(this))
+  }
+
+  render(){
+    const { edges: works } = this.props.data.allMarkdownRemark  
+    const { height, width } = this.state
+
+    return(
+      <Layout>
+        <SEO title="Works" description="Web development by Juanma Perez for different clients. Portfolio" keywords={[`development`, `web design`, `websites`]}/>
+          <WorkView height={height} > 
+          {works.map(({node: work})=>{
+            const { frontmatter } = work;
+            return (
+              <WorkListItem key={frontmatter.title} height={ height } frontmatter={ frontmatter } />
+            )
+          })}
+          </WorkView>
+      </Layout>
+    )
+  }
 }
 
 export const query = graphql`

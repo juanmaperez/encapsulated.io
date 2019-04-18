@@ -125,7 +125,19 @@ const BlogPostView = styled.div`
       letter-spacing: 1px;
       color: var(--primaryColor);
       p {
-        margin-bottom: 30px;
+        margin-bottom: 45px;
+      }
+      h2 {
+        color: var(--secondaryColor);
+        margin: 10px 0px 5px;
+        font-size: 28px;
+      }
+      a {
+        color: var(--tertiaryColor);
+        text-decoration: none;
+      }
+      ul {
+        margin: 40px 0px 60px;
       }
     }
   }

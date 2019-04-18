@@ -56,7 +56,12 @@ const WorkView = styled.div`
       font-size: 28px;
     }
     p {
-      margin-bottom: 60px;
+      margin-bottom: 45px;
+    }
+
+    a {
+      color: var(--tertiaryColor);
+      text-decoration: none;
     }
     ul {
       margin: 40px 0px 60px;
@@ -71,6 +76,7 @@ const WorkTemplate = ({data, location, pageContext }) => {
   // const { next, prev } = pageContext;
   return (
     <Layout>
+      <SEO title={ frontmatter.title } description={frontmatter.excerpt} keywords={frontmatter.tags}/>
       <WorkView>
         <div className="title-wrapper">
           <h1> { frontmatter.title } </h1>
