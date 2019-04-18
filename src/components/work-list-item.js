@@ -37,7 +37,7 @@ const WorkListItemView = styled.div`
         width: 40%;
         .title {
           font-size: 150px;
-          background: ${props => props.index > colors.length -1 ? colors[0] : colors[(props.index + 1)]};
+          color: ${props => props.index > colors.length -1 ? colors[0] : colors[(props.index + 1)]};
         }
         .discover {
           margin-top: 15px;
@@ -46,16 +46,18 @@ const WorkListItemView = styled.div`
           width:150px;
           padding: 15px 10px;
           background: ${props => colors[props.index]};
+          border: 2px solid ${props => props.index > colors.length -1 ? colors[0] : colors[(props.index + 1)]};
           border-radius: 20%/50%;
+          a {
+            color: ${props => props.index > colors.length -1 ? colors[0] : colors[(props.index + 1)]} !important;
+          }
           &:hover {
             background: ${props => props.index > colors.length -1 ? colors[0] : colors[(props.index + 1)]};
             a {
-              background: ${props => colors[props.index]};
+              color: ${props => colors[props.index]};
             }
           }
-          a {
-            background: ${props => props.index > colors.length -1 ? colors[0] : colors[(props.index + 1)]};
-          }
+        
         }
       }
       .image-wrapper {
