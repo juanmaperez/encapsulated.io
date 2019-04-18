@@ -50,6 +50,7 @@ const HeaderView = styled.header`
         display: inline-block;
         font-family: 'Questrial', sans-serif;
         mix-blend-mode: difference;
+        
   
         .title-link {
           color: var(--primaryColor);

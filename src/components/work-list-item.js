@@ -37,7 +37,14 @@ const WorkListItemView = styled.div`
         width: 40%;
         .title {
           font-size: 150px;
-          color: ${props => props.index > colors.length -1 ? colors[0] : colors[(props.index + 1)]};
+          color: ${props => props.index >= colors.length -1 ? colors[0] : colors[(props.index + 1)]} !important;
+        }
+        p {
+          padding: 0px 10px;
+          font-size: 20px;
+          margin: 20px 0px;
+          font-weight: bold;
+          line-height: 1.6;
         }
         .discover {
           margin-top: 15px;
@@ -46,13 +53,13 @@ const WorkListItemView = styled.div`
           width:150px;
           padding: 15px 10px;
           background: ${props => colors[props.index]};
-          border: 2px solid ${props => props.index > colors.length -1 ? colors[0] : colors[(props.index + 1)]};
+          border: 2px solid ${props => props.index >= colors.length -1 ? colors[0] : colors[(props.index + 1)]};
           border-radius: 20%/50%;
           a {
-            color: ${props => props.index > colors.length -1 ? colors[0] : colors[(props.index + 1)]} !important;
+            color: ${props => props.index >= (colors.length - 1) ? colors[0] : colors[(props.index + 1)]} !important;
           }
           &:hover {
-            background: ${props => props.index > colors.length -1 ? colors[0] : colors[(props.index + 1)]};
+            background: ${props => props.index >= colors.length -1 ? colors[0] : colors[(props.index + 1)]};
             a {
               color: ${props => colors[props.index]};
             }
@@ -89,6 +96,7 @@ const WorkListItem = ({height, frontmatter, index}) => (
         <div className="container-fixed">
           <div className="title-wrapper">
             <h1 className="title">{ frontmatter.title }</h1>
+            <p>{ frontmatter.excerpt }</p>
             <div className="discover"><Link to={frontmatter.path}>Discover</Link></div>
           </div>
           <div className="image-wrapper">
