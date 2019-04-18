@@ -20,6 +20,7 @@ const BlogPostView = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     margin-bottom: 60px;
+    background-position: center center;
   }
 
   .prev {

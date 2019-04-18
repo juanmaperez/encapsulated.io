@@ -3,14 +3,17 @@ import { Link } from 'gatsby'
 import styled from 'styled-components';
 
 const PostItemView = styled.div`
-margin: 40px auto;
+margin: ${props => props && props.view === 'list' ? '40px auto 60px' : '40px 0px 60px' };
+padding:${props => props && props.view === 'list' ? '0px' : '0px 20px' };
 box-sizing: border-box;
-width: 35%;
-@media(max-width:1590px){ width: 40% }
-@media(max-width:1100px){ width:55% }
-@media(max-width:878px){ width:65% }
+width: ${props => props && props.view === 'list' ? '35%' : '33%' };
+@media(max-width:1590px){ width: ${props => props && props.view === 'list' ? '40%' : '33%'};  }
+@media(max-width:1100px){ width:${props => props && props.view === 'list' ? '55%' : '33%'}; }
+@media(max-width:878px){ ${props => props && props.view === 'list' ? '65%' : '33%'}; }
 @media(max-width:510px){
-  width:95%;
+  width:98%;
+  margin: 40px auto 60px;
+  padding: 10px;
 }
 .post {
   background: var(--bgColor);
@@ -24,7 +27,7 @@ width: 35%;
   box-shadow: 0 0 0 1px rgba(var(--primaryColorRGB), 0.05), 0 2px 4px rgba(var(--primaryColorRGB), 0.08);      
   &:hover {
     0px 3px 5px 5px rgba(var(--primaryColorRGB),0.1), 0 2px 4px rgba(var(--primaryColorRGB),0.08);
-    transform: translateY(-2px);
+    transform: translateY(-5px);
     .image-container {
       .image {
         transform: scale(1.1);
@@ -70,41 +73,43 @@ width: 35%;
     }
     .post-date {
       display: block;
-      margin: 25px 0px 0px;
+      margin: 25px 0px 5px;
       font-size: 15px;
       letter-spacing: 1px;
       margin-bottom: 0px;
       color:  var(--primaryColor);
-      opacity: .7;
+      font-weight: bolder;
     } 
     .post-title {
       margin: 2px 0px 10px;
       padding: 0px;
-      font-size: 32px;
+      font-size: 50px;
       line-height: 1.2;
       letter-spacing: 1.2px;
-      color: var(--secondaryColor);
-      -webkit-text-stroke: 0.2px var(--secondaryColor);
-      @media(max-width:510px){ font-size: 28px }
+      color: var(--tertiaryColor);
+      -webkit-text-stroke: 1px var(--tertiaryColor);
+      @media(max-width:510px){ font-size: 34px }
  
       a {
         text-decoration: none;
+        color: var(--tertiaryColor) !important;
       }
     }
     .post-excerpt {
       display: block;
-      font-size: 15px;
+      font-size: 20px;
       margin-bottom: 0px;
       line-height:1.5;
       color:  var(--primaryColor);
+      font-weight: normal;
     } 
   }
 }`
 
 const PostItem = (props) => {
-  const { frontmatter } = props;
+  const { frontmatter, view } = props;
   return (
-  <PostItemView image={ frontmatter.thumbnail.childImageSharp.fluid.src } icon={ frontmatter.icon.childImageSharp.fluid.src }>
+  <PostItemView view={view} image={ frontmatter.thumbnail.childImageSharp.fluid.src } icon={ frontmatter.icon.childImageSharp.fluid.src }>
     <div className="post-wrapper">
       <div className="post">
         <div className="image-container">
