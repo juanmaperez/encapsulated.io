@@ -1,8 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const london ="https://www.google.com/maps/place/London/@51.5287718,-0.2416815,11z/data=!3m1!4b1!4m5!3m4!1s0x47d8a00baf21de75:0x52963a5addd52a99!8m2!3d51.5073509!4d-0.1277583"
+
+
 const IntroView = styled.div`
-  padding-top:400px;
+  padding-top:200px;
   min-height: 600px;
   background: var(--bgColor);
   width: 100%;
@@ -23,9 +26,10 @@ const IntroView = styled.div`
     p {
       margin-bottom: 100px;
  
-      strong {
+      strong, a {
         color: var(--tertiaryColor);
         -webkit-text-stroke: 0.0002em var(--tertiaryColor);
+        &:hover {text-decoration: underline}
       }
     }
   }
@@ -70,10 +74,10 @@ const IntroView = styled.div`
 const Intro = () => (
   <IntroView>
     <div className="intro-text">
-      <p>I'm <span>Juanma Pérez </span>, a javascript <strong>Front End Developer</strong> from Seville.</p> 
-      <p>I grew up professionally in Barcelona until I moved to <strong>London</strong> in 2018.</p>
-      <p>Nowadays, I work at <strong>ColossusBets</strong>.</p> 
-      <p>I also love music, books, films and sports.</p>
+      <p>I'm <span>Juanma Pérez </span>, a javascript <a target="_blank" href="https://www.linkedin.com/in/juanmaperezvargas/">Front End Developer</a> from Seville.</p> 
+      <p>I grew up professionally in Barcelona until I moved to <a target="_blank" href={london}>London</a> in 2018.</p>
+      <p>Nowadays, I work at <a target="_blank" href="https://colossusbets.com/">ColossusBets</a>.</p> 
+      <p>I also love music, books, films sports and <a target="_blank" href="https://www.instagram.com/worldoftypographies/">typography</a>.</p>
     </div>
   </IntroView>
 )

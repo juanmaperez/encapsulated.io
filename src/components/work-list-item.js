@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby'; 
 import Image from './image'
 
-const colors = ['var(--bgColor)', '#a3cccc', 'var(--secondaryColor)', 'var(--tertiaryColor)']
+const colors = ['var(--bgColor)', 'var(--secondaryColor)', '#a3cccc', 'var(--tertiaryColor)']
 
 const WorkListItemView = styled.div`
   height: ${props => props.height}px;
@@ -60,7 +60,10 @@ const WorkListItemView = styled.div`
           opacity: .8;
 
           a {
-            color: ${props => props.index >= (colors.length - 1) ? colors[0] : colors[(props.index + 1)]} !important;
+            display: block;
+            width:100%:
+            height: 100%;
+            color: ${props => props.index >= (colors.length - 1) ? colors[0] : colors[(props.index + 1)]} ;
           }
           &:hover {
             background: ${props => props.index >= colors.length -1 ? colors[0] : colors[(props.index + 1)]};

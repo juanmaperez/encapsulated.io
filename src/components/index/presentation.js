@@ -6,7 +6,7 @@ import Image from './../image';
 import face from './../../images/jp_brush_normal.png'
 
 const PresentationView = styled.div`
-    height: ${ props => (props.height - 60)}px;
+    height: ${ props => props.height}px;
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -17,7 +17,7 @@ const PresentationView = styled.div`
     .creative {
       color: var(--primaryColor);
       display: block;
-      font-size: 21vw;
+      font-size: 16vw;
       text-align: center;
       -webkit-text-stroke: 5px var(--primaryColor);
       @media(max-width: 768px){ -webkit-text-stroke: 3px var(--primaryColor)}
@@ -25,7 +25,7 @@ const PresentationView = styled.div`
     }
     .developer {
       color: var(--primaryColor);
-      font-size: 21vw;
+      font-size: 16vw;
       display: block;
       font-weight: bolder;
       text-align: center;
