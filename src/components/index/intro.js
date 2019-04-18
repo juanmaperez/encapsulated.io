@@ -74,10 +74,10 @@ const IntroView = styled.div`
 const Intro = () => (
   <IntroView>
     <div className="intro-text">
-      <p>I'm <span>Juanma Pérez </span>, a javascript <a target="_blank" href="https://www.linkedin.com/in/juanmaperezvargas/">Front End Developer</a> from Seville.</p> 
-      <p>I grew up professionally in Barcelona until I moved to <a target="_blank" href={london}>London</a> in 2018.</p>
-      <p>Nowadays, I work at <a target="_blank" href="https://colossusbets.com/">ColossusBets</a>.</p> 
-      <p>I also love music, books, films sports and <a target="_blank" href="https://www.instagram.com/worldoftypographies/">typography</a>.</p>
+      <p>I'm <span>Juanma Pérez </span>, a javascript <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/juanmaperezvargas/">Front End Developer</a> from Seville.</p> 
+      <p>I grew up professionally in Barcelona until I moved to <a target="_blank" rel="noopener noreferrer" href={london}>London</a> in 2018.</p>
+      <p>Nowadays, I work at <a target="_blank" rel="noopener noreferrer" href="https://colossusbets.com/">ColossusBets</a>.</p> 
+      <p>I also love music, books, films sports and <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/worldoftypographies/">typography</a>.</p>
     </div>
   </IntroView>
 )
