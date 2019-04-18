@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 import SEO from './../components/seo';
 import Layout from './../components/layout'
@@ -16,7 +16,7 @@ const BlogPostView = styled.div`
   .post-header {
     width: 100%;
     background: url(${props => props.image });
-    height: 900px;
+    height: ${props => props.height}px;
     background-size: cover;
     background-repeat: no-repeat;
     margin-bottom: 60px;
@@ -117,6 +117,14 @@ const BlogPostView = styled.div`
       font-size: 62px;
       color: var(--secondaryColor);
       -webkit-text-stroke: 1px var(--secondaryColor);
+      @media(max-width:768px){
+        font-size: 52px;
+        margin: 10px 0px 50px;
+      }
+      @media(max-width:510px){
+        font-size: 42px;
+        margin: 0px 0px 30px;
+      }
     }
 
     .post-content {
@@ -144,45 +152,68 @@ const BlogPostView = styled.div`
   }
 `
 
-const BlogPostTemplate = ({data, location, pageContext }) => {
-  const { markdownRemark: post } = data;
-  const { frontmatter, html } = post;
-  const { next, prev } = pageContext;
+class BlogPostTemplate extends Component {
+ 
+  state = { height: 0, width: 0 }
 
-  return(
-    <Layout>
-      <SEO title={frontmatter.title} description={ frontmatter.excerpt } />
-      <BlogPostView image={ frontmatter.thumbnail.childImageSharp.fluid.src } icon={ frontmatter.icon.childImageSharp.fluid.src }>
-        <div className="post-header">
-        </div>
-        
-        { prev && <div className="prev">
-            <FontAwesomeIcon icon={ faArrowLeft }/>
-            <Link to={prev.frontmatter.path}>
-              {prev.frontmatter.title}
-            </Link>
-          </div>
-        }
-        { next && <div className="next">
-            <FontAwesomeIcon icon={ faArrowRight }/>
-            <Link to={next.frontmatter.path}>
-              {next.frontmatter.title}
-            </Link>
-          </div>
-        }
-        <div className="post-container">
-          <h2 className="post-title">
-           {frontmatter.title}
-          </h2>
-          <div className="post-date">
-            <span className="post-icon"></span>{frontmatter.date}
-          </div>
+  resize = () => {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    this.setState({height, width})
+  }
+  
+  componentWillUnmount(){
+    window.removeEventListener('resize', this.resize.bind(this))
+  }
 
-          <div className="post-content" dangerouslySetInnerHTML={{__html: html}} />
-        </div>
-      </BlogPostView>
-    </Layout>
-  )
+  componentDidMount(){
+    this.resize();
+  }
+  
+  render (){
+    const { markdownRemark: post } = this.props.data;
+    const { frontmatter, html } = post;
+    const { next, prev } = this.props.pageContext;
+
+    const { height } = this.state;
+
+    return(
+      <Layout>
+        <SEO title={frontmatter.title} description={ frontmatter.excerpt } />
+        <BlogPostView height={height} image={ frontmatter.thumbnail.childImageSharp.fluid.src } icon={ frontmatter.icon.childImageSharp.fluid.src }>
+          <div className="post-header">
+          </div>
+          
+          { prev && <div className="prev">
+              <FontAwesomeIcon icon={ faArrowLeft }/>
+              <Link to={prev.frontmatter.path}>
+                {prev.frontmatter.title}
+              </Link>
+            </div>
+          }
+          { next && <div className="next">
+              <FontAwesomeIcon icon={ faArrowRight }/>
+              <Link to={next.frontmatter.path}>
+                {next.frontmatter.title}
+              </Link>
+            </div>
+          }
+          <div className="post-container">
+            <h2 className="post-title">
+             {frontmatter.title}
+            </h2>
+            <div className="post-date">
+              <span className="post-icon"></span>{frontmatter.date}
+            </div>
+  
+            <div className="post-content" dangerouslySetInnerHTML={{__html: html}} />
+          </div>
+        </BlogPostView>
+      </Layout>
+    )
+
+  }
+
 }
 
 export const PostQuery = graphql`

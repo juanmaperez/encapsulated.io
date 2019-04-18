@@ -116,7 +116,6 @@ class Presentation extends Component {
   }
 
   componentDidMount(){
-    
     this.resize();
     window.addEventListener('resize', this.resize.bind(this))
 

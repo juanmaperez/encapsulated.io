@@ -59,6 +59,10 @@ const HeaderView = styled.header`
           text-decoration: none;
           mix-blend-mode: difference;
         }
+
+        @media(max-width: 510px){
+          display:none;
+        }
       }
     }
 
