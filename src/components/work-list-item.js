@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby'; 
 import Image from './image'
 
-const colors = ['var(--bgColor)', 'var(--primaryColor)', 'var(--secondaryColor)', 'var(--tertiaryColor)']
+const colors = ['var(--bgColor)', '#a3cccc', 'var(--secondaryColor)', 'var(--tertiaryColor)']
 
 const WorkListItemView = styled.div`
   height: ${props => props.height}px;
@@ -45,6 +45,8 @@ const WorkListItemView = styled.div`
           margin: 20px 0px;
           font-weight: bold;
           line-height: 1.6;
+          color: ${props => props.index >= colors.length -1 ? colors[0] : colors[(props.index + 1)]} !important;
+          opacity: .8;
         }
         .discover {
           margin-top: 15px;
@@ -55,6 +57,8 @@ const WorkListItemView = styled.div`
           background: ${props => colors[props.index]};
           border: 2px solid ${props => props.index >= colors.length -1 ? colors[0] : colors[(props.index + 1)]};
           border-radius: 20%/50%;
+          opacity: .8;
+
           a {
             color: ${props => props.index >= (colors.length - 1) ? colors[0] : colors[(props.index + 1)]} !important;
           }
