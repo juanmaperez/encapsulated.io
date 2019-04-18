@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import SEO from './../components/seo';
 import Layout from './../components/layout'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Image from './../components/image';
 
 const WorkView = styled.div`

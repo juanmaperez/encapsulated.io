@@ -20,10 +20,6 @@ class WorkPage extends Component {
     width: 0
   }
 
-  constructor(props){
-    super(props);
-  }
-
   componentDidMount(){
     this.resize();
     window.addEventListener('resize', this.resize.bind(this))
@@ -41,7 +37,7 @@ class WorkPage extends Component {
 
   render(){
     const { edges: works } = this.props.data.allMarkdownRemark  
-    const { height, width } = this.state
+    const { height } = this.state
     return(
       <Layout>
         <SEO title="Works" description="Web development by Juanma Perez for different clients. Portfolio" keywords={[`development`, `web design`, `websites`]}/>
