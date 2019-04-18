@@ -42,15 +42,14 @@ class WorkPage extends Component {
   render(){
     const { edges: works } = this.props.data.allMarkdownRemark  
     const { height, width } = this.state
-
     return(
       <Layout>
         <SEO title="Works" description="Web development by Juanma Perez for different clients. Portfolio" keywords={[`development`, `web design`, `websites`]}/>
           <WorkView height={height} > 
-          {works.map(({node: work})=>{
+          {works.map(({node: work}, index)=>{
             const { frontmatter } = work;
             return (
-              <WorkListItem key={frontmatter.title} height={ height } frontmatter={ frontmatter } />
+              <WorkListItem key={frontmatter.title} index={index} height={ height } frontmatter={ frontmatter } />
             )
           })}
           </WorkView>
