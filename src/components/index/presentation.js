@@ -96,7 +96,11 @@ const PresentationView = styled.div`
 
 class Presentation extends Component {
 
-  state = { complete: false, height: 0, width: 0 }
+  state = {
+    complete: false,
+    height: 0,
+    width: 0
+  }
 
   animationComplete = () => {
     this.setState({
@@ -105,20 +109,9 @@ class Presentation extends Component {
     this.props.markAsCompleted();
   }
 
-  resize = () => {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-    this.setState({height, width})
-  }
-  
-  componentWillUnmount(){
-    window.removeEventListener('resize', this.resize.bind(this))
-  }
-
   componentDidMount(){
-    this.resize();
-    window.addEventListener('resize', this.resize.bind(this))
-
+    console.log('aaaaaa', this.props)
+    this.setState({ height: this.props.height })
     const creative = document.querySelector('.creative'),
           developer = document.querySelector('.developer'),
           face = document.querySelector('.face'),
@@ -139,8 +132,9 @@ class Presentation extends Component {
   }
   
   render(){
-    const height = window.innerHeight;
-    const { complete } = this.state;
+    const { height, complete } = this.state;
+    console.log('present', this.state)
+
     return (
       <PresentationView height={ height } >
         <h1 className="creative">Creative</h1>

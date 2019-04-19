@@ -15,6 +15,7 @@ const WorkView = styled.div`
   @media(max-width:510px){
     width:95%;
     padding:25px 0px;
+    margin: 100px auto 50px;
   }
 
   .title-wrapper {
@@ -22,10 +23,12 @@ const WorkView = styled.div`
     h1 {
       text-align: center;
       font-size: 160px;
-      color: transparent;
-      -webkit-text-stroke: 3px var(--primaryColor);
+      color: var(--tertiaryColor);
+      -webkit-text-stroke: 3px var(--tertiaryColor);
       margin-bottom: 0px;
       font-weight: normal;
+      @media(max-width: 768px){ font-size: 90px}
+      @media(max-width: 480px){ font-size: 60px}
     }
     .tags {
       width: 100%;
@@ -46,14 +49,18 @@ const WorkView = styled.div`
 
   .work-content {
     margin-top: 150px;
-    line-height: 1.6;
-    font-size: 22px;
+    line-height: 1.5;
+    font-size: 20px;
     letter-spacing: 1px;
     color: var(--primaryColor);
+    @media(max-width: 480px){
+      margin-top: 50px;
+    }
     h2 {
       color: var(--secondaryColor);
-      margin: 10px 0px 5px;
+      margin: 10px 0px 10px;
       font-size: 28px;
+      line-height: 1.2;
     }
     p {
       margin-bottom: 45px;
