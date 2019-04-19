@@ -26,15 +26,16 @@ const BlogView = styled.div`
    
 
     .image-wrapper {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      overflow: hidden;
       margin-right: 20px;
-      box-shadow: 0 0 0 1px rgba(var(--primaryColorRGB), 0.05), 0 2px 4px rgba(var(--primaryColorRGB), 0.08);      
 
       img {
+        display:block;
+        max-width: 120px;
+        max-height: 120px;
+        border-radius: 50%;
         width: 100%;
+        overflow: hidden;
+        box-shadow: 0 0 0 1px rgba(var(--primaryColorRGB), 0.05), 0 2px 4px rgba(var(--primaryColorRGB), 0.08);      
       }
     }
 
@@ -103,7 +104,7 @@ const BlogView = styled.div`
     }
   }
 
-  @media(min-width: 769px){
+  @media(min-width: 768px){
     .post-list {
       transition: all 1s linear;
       &.grid {

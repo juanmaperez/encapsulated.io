@@ -9,7 +9,7 @@ box-sizing: border-box;
 width: ${props => props && props.view === 'list' ? '35%' : '33%' };
 @media(max-width:1590px){ width: ${props => props && props.view === 'list' ? '40%' : '33%'};  }
 @media(max-width:1100px){ width:${props => props && props.view === 'list' ? '55%' : '33%'}; }
-@media(max-width:878px){ ${props => props && props.view === 'list' ? '65%' : '33%'}; }
+@media(max-width:878px){ width: ${props => props && props.view === 'list' ? '65%' : '50%'}; }
 @media(max-width:510px){
   width:98%;
   margin: 40px auto 60px;

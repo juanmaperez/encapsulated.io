@@ -28,7 +28,7 @@ const WorkListItemView = styled.div`
       bottom: 0;
       right: 0;
       display: flex;
-      flex-direction: row;
+      flex-direction: row-reverse;
       justify-content: space-around;
       align-items: center;
       
@@ -95,19 +95,63 @@ const WorkListItemView = styled.div`
     }
   }
 
+  @media(max-width:768px){
+    .image-wrapper {
+      margin-top: 150px;
+    }
+  }
+  @media(max-width: 480px){
+    height: auto;
+    .work-wrapper {
+      position:relative;
+      top: auto;
+      left: auto;
+      .container-fixed {
+        height: 100%;
+        position:relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 60px;
+        .image-wrapper {
+          margin-top: 80px;
+          width: 90%;
+          margin-bottom: 20px;
+        }
+        .title-wrapper {
+          width: 95%;
+          padding: 0px 10px;
+
+          .title {
+            font-size: 70px;
+            color: ${props => props.index >= colors.length -1 ? colors[0] : colors[(props.index + 1)]} !important;
+          }
+          p {
+            font-size: 20px;
+            margin-bottom: 20px;
+          }
+
+        }
+
+      }
+    }
+  }
+
+
 `
 
 const WorkListItem = ({height, frontmatter, index}) => (
     <WorkListItemView height={ height } index={index}>
       <div className="work-wrapper">
         <div className="container-fixed">
+          <div className="image-wrapper">
+            <Image title={ frontmatter.title } imageUrl={ frontmatter.thumbnail.childImageSharp.fluid.src } />
+          </div>
           <div className="title-wrapper">
             <h1 className="title">{ frontmatter.title }</h1>
             <p>{ frontmatter.excerpt }</p>
             <div className="discover"><Link to={frontmatter.path}>Discover</Link></div>
-          </div>
-          <div className="image-wrapper">
-            <Image title={ frontmatter.title } imageUrl={ frontmatter.thumbnail.childImageSharp.fluid.src } />
           </div>
         </div>
       </div>
