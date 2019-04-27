@@ -94,7 +94,7 @@ const PresentationView = styled.div`
     }
 `
 
-class Presentation extends Component {
+class PresentationBlock extends Component {
 
   state = {
     complete: false,
@@ -110,7 +110,6 @@ class Presentation extends Component {
   }
 
   componentDidMount(){
-    console.log('aaaaaa', this.props)
     this.setState({ height: this.props.height })
     const creative = document.querySelector('.creative'),
           developer = document.querySelector('.developer'),
@@ -133,7 +132,6 @@ class Presentation extends Component {
   
   render(){
     const { height, complete } = this.state;
-    console.log('present', this.state)
 
     return (
       <PresentationView height={ height } >
@@ -149,4 +147,4 @@ class Presentation extends Component {
   }
 }
 
-export default Presentation;
+export default PresentationBlock;

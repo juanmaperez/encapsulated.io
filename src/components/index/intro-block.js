@@ -71,7 +71,7 @@ const IntroView = styled.div`
   }
 `
 
-const Intro = () => (
+const IntroBlock = () => (
   <IntroView>
     <div className="intro-text">
       <p>I'm <span>Juanma Pérez </span>, a javascript <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/juanmaperezvargas/">Front End Developer</a> from Seville.</p> 
@@ -82,4 +82,4 @@ const Intro = () => (
   </IntroView>
 )
 
-export default Intro;
+export default IntroBlock;

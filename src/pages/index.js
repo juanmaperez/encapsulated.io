@@ -4,9 +4,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql } from 'gatsby'
 
-import Presentation from './../components/index/presentation';
-import Intro from './../components/index/intro';
-import WorksBlock from './../components/index/works';
+import PresentationBlock from './../components/index/presentation-block';
+import IntroBlock from './../components/index/intro-block';
+import WorksBlock from './../components/index/works-block';
 
 
 class IndexPage extends Component {
@@ -34,7 +34,6 @@ class IndexPage extends Component {
 
   render = () => {
     const { completed, height } = this.state;
-    console.log('asdf', height)
     const { data } = this.props;
     return(
       <Layout>
@@ -42,8 +41,8 @@ class IndexPage extends Component {
             description="Personal Website by Juanma Perez, Front End developer at Colossus Bets, London" 
             keywords={[`Juanma Perez`, `javascript`, `developer`]} 
         />
-        { height > 0 && <Presentation height={height} markAsCompleted={ this.animationCompleted.bind(this) }/> }
-        { completed && <Intro/> }
+        { height > 0 && <PresentationBlock height={height} markAsCompleted={ this.animationCompleted.bind(this) }/> }
+        { completed && <IntroBlock/> }
         { completed && <WorksBlock height={height} data={data} /> }
 
       </Layout>
