@@ -20,7 +20,7 @@ const WorksBlockView = styled.div`
     box-sizing: border-box;
     padding: 0px 20px;
     display: block;
-    font-size: 32px;
+    font-size: 20px;
     color: var(--primaryColor);
   }
 `

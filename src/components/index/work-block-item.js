@@ -8,7 +8,7 @@ const colors = ['var(--secondaryColor)', '#a3cccc', 'var(--tertiaryColor)']
 
 const WorkBlockItemView = styled.div`
   width: 33%;
-  padding: 150px 20px 50px;
+  padding: 150px 20px 30px;
   background: var(--bgColor);
   box-sizing: border-box;
   min-height: ${props => props.height}px;
