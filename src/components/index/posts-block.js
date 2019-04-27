@@ -34,6 +34,11 @@ const PostsBlockView = styled.div`
         letter-spacing: 1px;
         color: var(--primaryColor);
       }
+      &:hover {
+        span {
+          text-decoration: underline;
+        }
+      }
     }
   }
   .all {
