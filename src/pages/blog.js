@@ -20,7 +20,7 @@ const BlogView = styled.div`
   .list-header {
     margin: 100px auto 0px;
     box-sizing: border-box;
-    width: 35%;
+    width: 30%;
     display:flex;
     padding: 20px;
    
@@ -47,13 +47,16 @@ const BlogView = styled.div`
       .list-title {
         text-align: left;
         font-size: 30px;
-        margin: 0px 0px 10px;
+        margin: 0px 0px 0px;
         color: var(--secondaryColor);
         -webkit-text-stroke: 0.2px var(--secondaryColor);
        
       }
       p {
-        font-size: 20px;
+        font-size: 18px;
+        color: #a3cccc;
+        font-style: italic;
+
       }
       @media(max-width: 510px) {
         .list-title {
@@ -66,8 +69,8 @@ const BlogView = styled.div`
       }
     }
   
-    @media(max-width:1590px){ width: 40% }
-    @media(max-width:1100px){ width:55% }
+    @media(max-width:1590px){ width: 30% }
+    @media(max-width:1100px){ width:30% }
     @media(max-width:878px){ width:65% }
     @media(max-width:510px){
       margin: 0px auto 50px;
@@ -87,14 +90,16 @@ const BlogView = styled.div`
     button {
       color: var(--primaryColor);
       display:block;
-      border-radius: 4px;
-      -webkit-appearance: none;
+      border: 0px;
+      -webkit-appearance: none !important;
       background:var(--bgColor); 
       color:var(--primaryColor); 
       margin: 5px;
       width: 50px;
       height: 50px;
+      border-radius: 50%;
       outline: none;
+      box-shadow: 0 0 0 1px rgba(var(--primaryColorRGB), 0.05), 0 2px 4px rgba(var(--primaryColorRGB), 0.08);      
       &.active {
         background: #a3cccc;
       }
@@ -168,8 +173,8 @@ class BlogPage extends Component {
               <Image imageUrl={juanma} title="juanma perez" />
             </div>
             <div className="info">
-              <h2 className="list-title">Personal blog by Juanma Pérez</h2>
-              <p>Little pills of code for all interested</p>
+              <h2 className="list-title">Personal blog</h2>
+              <p>by Juanma Pérez</p>
             </div>
           </div>
           <div className="buttons">

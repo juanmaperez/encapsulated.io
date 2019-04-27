@@ -73,7 +73,7 @@ width: ${props => props && props.view === 'list' ? '35%' : '33%' };
     }
     .post-date {
       display: block;
-      margin: 25px 0px 5px;
+      margin: 25px 0px 10px;
       font-size: 15px;
       letter-spacing: 1px;
       margin-bottom: 0px;
@@ -83,11 +83,11 @@ width: ${props => props && props.view === 'list' ? '35%' : '33%' };
     .post-title {
       margin: 2px 0px 10px;
       padding: 0px;
-      font-size: 50px;
-      line-height: 1.2;
-      letter-spacing: 1.2px;
+      font-size: 45px;
+      line-height: 1;
+      letter-spacing: 1px;
       color: var(--tertiaryColor);
-      -webkit-text-stroke: 1px var(--tertiaryColor);
+      -webkit-text-stroke: 0.5px var(--tertiaryColor);
       @media(max-width:510px){ font-size: 34px }
  
       a {
