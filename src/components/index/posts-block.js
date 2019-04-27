@@ -32,6 +32,7 @@ const PostsBlockView = styled.div`
         font-size: 65px;
         font-weight: bolder;
         letter-spacing: 1px;
+        color: var(--primaryColor);
       }
     }
   }
@@ -48,33 +49,35 @@ const PostsBlock = ({height}) => {
 
   return (
     <PostsBlockView height={height}>
-      <StaticQuery query={graphql`
-      query {
-        allMarkdownRemark (
-          limit: 3
-          sort: { fields: [frontmatter___date], order: DESC }
-          filter: { frontmatter: {type: {eq: "post"}}}
-        ) {
-          totalCount
-          edges {
-            node {
-              id
-              frontmatter {
-                path
-                title
-                category
-                icon {
-                  childImageSharp {
-                      fluid(maxWidth: 200) {
-                          src
+      <StaticQuery query={
+        graphql`
+          query {
+            allMarkdownRemark (
+              limit: 3
+              sort: { fields: [frontmatter___date], order: DESC }
+              filter: { frontmatter: {type: {eq: "post"}}}
+            ) {
+              totalCount
+              edges {
+                node {
+                  id
+                  frontmatter {
+                    path
+                    title
+                    category
+                    icon {
+                      childImageSharp {
+                          fluid(maxWidth: 200) {
+                              src
+                          }
                       }
+                    }
                   }
                 }
               }
             }
-          }
-        }
-      }`} 
+          }`
+      } 
       render={ data => {
         const { edges: posts } = data.allMarkdownRemark  
         return(
@@ -84,7 +87,10 @@ const PostsBlock = ({height}) => {
                 const { frontmatter } = post;
                 return (
                   <div className="post-item" key={index} index={index} height={ height } frontmatter={ frontmatter }>
-                    <Image imageUrl={frontmatter.icon.childImageSharp.fluid.src} title={frontmatter.category}/><span>{frontmatter.title}</span>
+                    <Link to={`${frontmatter.path}`}>
+                      <Image imageUrl={frontmatter.icon.childImageSharp.fluid.src} title={frontmatter.category}/>
+                      <span>{frontmatter.title}</span>
+                    </Link>
                   </div>
                 )
               })

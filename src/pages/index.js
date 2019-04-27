@@ -2,7 +2,6 @@ import React, { Component } from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { graphql } from 'gatsby'
 
 import PresentationBlock from './../components/index/presentation-block';
 import IntroBlock from './../components/index/intro-block';
@@ -34,7 +33,6 @@ class IndexPage extends Component {
 
   render = () => {
     const { completed, height } = this.state;
-    const { data } = this.props;
     return(
       <Layout>
         <SEO title="Encapsulated" 
@@ -43,39 +41,10 @@ class IndexPage extends Component {
         />
         { height > 0 && <PresentationBlock height={height} markAsCompleted={ this.animationCompleted.bind(this) }/> }
         { completed && <IntroBlock/> }
-        { completed && <WorksBlock height={height} data={data} /> }
+        { completed && <WorksBlock height={height} /> }
         { completed && <PostsBlock height={height} /> }
       </Layout>
     )}
 }  
-
-
-export const query = graphql`
-  query WorksIntroQuery {
-    allMarkdownRemark (
-      limit: 3
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: {type: {eq: "project"}}}
-    ) {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            path
-            type
-            thumbnail {
-              childImageSharp {
-                  fluid(maxWidth: 500) {
-                      src
-                  }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
 
 export default IndexPage
