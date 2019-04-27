@@ -7,7 +7,7 @@ import { graphql } from 'gatsby'
 import PresentationBlock from './../components/index/presentation-block';
 import IntroBlock from './../components/index/intro-block';
 import WorksBlock from './../components/index/works-block';
-
+import PostsBlock from './../components/index/posts-block';
 
 class IndexPage extends Component {
 
@@ -44,7 +44,7 @@ class IndexPage extends Component {
         { height > 0 && <PresentationBlock height={height} markAsCompleted={ this.animationCompleted.bind(this) }/> }
         { completed && <IntroBlock/> }
         { completed && <WorksBlock height={height} data={data} /> }
-
+        { completed && <PostsBlock height={height} /> }
       </Layout>
     )}
 }  
