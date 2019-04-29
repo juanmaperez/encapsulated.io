@@ -7,6 +7,7 @@ import PresentationBlock from './../components/index/presentation-block';
 import IntroBlock from './../components/index/intro-block';
 import WorksBlock from './../components/index/works-block';
 import PostsBlock from './../components/index/posts-block';
+import ContactBlock from './../components/index/contact-block';
 
 class IndexPage extends Component {
 
@@ -61,9 +62,10 @@ class IndexPage extends Component {
             keywords={[`Juanma Perez`, `javascript`, `developer`]} 
         />
         { height > 0 && <PresentationBlock height={height} completed={completed} markAsCompleted={ this.animationCompleted.bind(this) }/> }
-        { completed && <IntroBlock/> }
+        { completed && <IntroBlock height={height}/> }
         { completed && <WorksBlock height={height} /> }
         { completed && <PostsBlock height={height} /> }
+        { completed && <ContactBlock height={height} /> }
       </Layout>
     )}
 }  

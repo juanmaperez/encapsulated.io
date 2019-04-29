@@ -5,8 +5,8 @@ import Image from './../image';
 
 const PostsBlockView = styled.div`
   min-height: ${props => props.height}px;
-  margin: 250px 20px 50px;
-  padding: 0px 0px;
+  margin: 150px 0 50px;
+  padding: 100px 20px;
   box-sizing: border-box;
   .posts-block-list {
     width: 70%;
@@ -18,7 +18,7 @@ const PostsBlockView = styled.div`
     }
     .post-item {
       width: 100%;
-      margin-bottom: 30px;
+      margin-bottom: 70px;
       display:flex;
       flex-direction: row;
       justify-content:flex-start;
@@ -29,7 +29,7 @@ const PostsBlockView = styled.div`
         margin-right: 20px;
       }
       span {
-        font-size: 65px;
+        font-size: 80px;
         font-weight: bolder;
         letter-spacing: 1px;
         color: var(--primaryColor);

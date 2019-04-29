@@ -6,7 +6,7 @@ const london ="https://www.google.com/maps/place/London/@51.5287718,-0.2416815,1
 
 const IntroView = styled.div`
   padding-top:200px;
-  min-height: 600px;
+  min-height: ${props => props.height}px;
   background: var(--bgColor);
   width: 100%;
   display: flex;
@@ -62,7 +62,7 @@ const IntroView = styled.div`
       -webkit-text-stroke: 0px var(--primaryColor);
       font-size: 9vw;
       p {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         strong {
           color: var(--secondaryColor);
           -webkit-text-stroke: 0px var(--secondaryColor);
@@ -71,8 +71,8 @@ const IntroView = styled.div`
   }
 `
 
-const IntroBlock = () => (
-  <IntroView>
+const IntroBlock = ({height}) => (
+  <IntroView height={height}>
     <div className="intro-text">
       <p>I'm <span>Juanma Pérez </span>, a javascript <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/juanmaperezvargas/">Front End Developer</a> from Seville.</p> 
       <p>I grew up professionally in Barcelona until I moved to <a target="_blank" rel="noopener noreferrer" href={london}>London</a> in 2018.</p>

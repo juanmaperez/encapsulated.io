@@ -1,12 +1,12 @@
 ---
-path: '/blog/first-post'
+path: '/blog/third-post'
 date: '2018-05-23T12:34:00+00:00'
-title: "How javascript engine works"
-thumbnail: ./marvel.jpg
+title: "Angular is the sencond most used javascript framework"
+thumbnail: ./dc-comic.jpg
 type: post
-icon: ./../../../images/icons/javascript.png
-category: 'javascript'
-tags: ['The Flash', "Batman", "Superman", "Wally West", "Wonder Woman", "DC"]
+icon: ./../../../images/icons/angular.png
+category: 'angular'
+tags: ['Angular', "angularjs", "javascript"]
 excerpt: "It all begins here. Do not skip to the last page. Do not let a friend or message board ruin this comic for you. The future (and past) of the DC Universe starts here. Don’t say I didn’t warn you!"
 ---
 

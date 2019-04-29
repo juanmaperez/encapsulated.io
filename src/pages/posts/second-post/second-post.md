@@ -1,7 +1,7 @@
 ---
 path: '/blog/second-post'
 date: '2018-05-23T12:34:00+00:00'
-title: "Marvel UNIVERSE - Dead"
+title: "Vue JS explained with different approaches"
 thumbnail: ./dc-comic.jpg
 type: post
 icon: ./../../../images/icons/vuejs.png
