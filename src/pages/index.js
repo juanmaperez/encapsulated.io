@@ -19,8 +19,9 @@ class IndexPage extends Component {
 
   resize = () => {
     const width = window.innerWidth;
-    const height = window.innerHeight;
-    this.setState({height, width})
+    const height = window.innerHeight; 
+    const completed = (!! this.checkCookies())
+    this.setState({height, width, completed})
   }
   
   componentWillUnmount(){
@@ -29,6 +30,26 @@ class IndexPage extends Component {
 
   animationCompleted = () => {
     this.setState({ completed : true })
+    this.setCookie();
+  }
+
+  checkCookies = () => {
+    const cookie = document.cookie;
+    const allCookies = {}
+    cookie.split(';').forEach((cookie) => {
+      let el = cookie.split('=');
+      allCookies[el[0].trim().toString()] = el[1];
+    })
+    return (allCookies['animationCompleted']);
+  }
+
+  setCookie = () => {
+    const date = new Date();
+    const daysToExpire = 1;
+    const cookieName = 'animationCompleted';
+    const cookieValue = true;
+    date.setTime(date.getTime()+(daysToExpire*24*60*60*1000));
+    document.cookie = cookieName + "=" + cookieValue + "; expires=" + date.toGMTString();
   }
 
   render = () => {
@@ -39,7 +60,7 @@ class IndexPage extends Component {
             description="Personal Website by Juanma Perez, Front End developer at Colossus Bets, London" 
             keywords={[`Juanma Perez`, `javascript`, `developer`]} 
         />
-        { height > 0 && <PresentationBlock height={height} markAsCompleted={ this.animationCompleted.bind(this) }/> }
+        { height > 0 && <PresentationBlock height={height} completed={completed} markAsCompleted={ this.animationCompleted.bind(this) }/> }
         { completed && <IntroBlock/> }
         { completed && <WorksBlock height={height} /> }
         { completed && <PostsBlock height={height} /> }

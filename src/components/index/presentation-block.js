@@ -110,7 +110,13 @@ class PresentationBlock extends Component {
   }
 
   componentDidMount(){
-    this.setState({ height: this.props.height })
+    this.setState({ height: this.props.height, complete: this.props.completed })
+    if(!this.props.completed){
+      this.animation()
+    }
+  }
+
+  animation = () => {
     const creative = document.querySelector('.creative'),
           developer = document.querySelector('.developer'),
           face = document.querySelector('.face'),
