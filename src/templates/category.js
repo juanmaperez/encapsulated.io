@@ -1,9 +1,11 @@
-import React from "react"
+import React, { Component } from "react"
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostItem from './../components/post-item'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faList, faGripHorizontal } from '@fortawesome/free-solid-svg-icons'
 
 const CategoryView = styled.div`
   margin: 150px auto 80px;
@@ -33,13 +35,100 @@ const CategoryView = styled.div`
       width:95%;
     }
   }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    margin: 0px auto 40px !important;
+    button {
+      color: var(--primaryColor);
+      display:block;
+      border: 0px;
+      -webkit-appearance: none !important;
+      background:var(--bgColor); 
+      color:var(--primaryColor); 
+      margin: 5px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      outline: none;
+      box-shadow: 0 0 0 1px rgba(var(--primaryColorRGB), 0.05), 0 2px 4px rgba(var(--primaryColorRGB), 0.08);      
+      &.active {
+        background: #a3cccc;
+      }
+    }
+    @media(max-width:510px){
+      display:none;
+    }
+  }
+
+  .post-list {
+    display: block;
+
+    &.grid {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+  }
+  @media(min-width: 768px){
+    .post-list {
+      transition: all 1s linear;
+      &.grid {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        flex-direction: row;
+      }
+    }
+  }
+
 `
+class CategoryTemplate extends Component {
 
-const CategoryTemplate = ({ pageContext, data }) => {
-  const { category } = pageContext;
-  const { edges: posts } = data.allMarkdownRemark
+  state = {
+    view: 'list'
+  }
 
-  if(posts) {
+  constructor(props){
+    super(props)
+    this.store = typeof localStorage === 'undefined' ? null : localStorage;  
+  }
+
+  componentDidMount(){
+    if (this.store) {
+      const view = this.store.getItem('view') || 'list'
+      this.setState({ view });
+    }
+  }
+
+  setView = (view) => {
+    this.setState({ view })
+    this.storeView(view)
+  }
+
+  toggleToGrid = () => {    
+    this.setView('grid')
+  }
+
+  toggleToList = () => {    
+    this.setView('list')
+  }
+
+  storeView = (view) => {
+    if (this.store) {
+      this.store.setItem('view', view);
+    }
+  }
+
+  render() {
+    const { pageContext, data } = this.props;
+    const { category } = pageContext;
+    const { edges: posts } = data.allMarkdownRemark;
+    const { view } = this.state;
+
     return (
       <Layout>
         <SEO title={`${ category } pills`} description={`Little pills about ${category}`} />
@@ -48,19 +137,23 @@ const CategoryTemplate = ({ pageContext, data }) => {
             <p>Little pills about</p>
             <h2 className="category-title">{category}</h2>
           </div>
-          {posts.map(({node: post})=>{
-            const { frontmatter } = post;
-            return (
-              <PostItem key={frontmatter.path} frontmatter={frontmatter}/>
-            )
-          })}
+          <div className="buttons">
+              <button className={ view === 'list' ? 'active' : ''} onClick={ this.toggleToList }><FontAwesomeIcon icon={faList}/></button>
+              <button className={ view === 'grid' ? 'active' : ''}onClick={ this.toggleToGrid }><FontAwesomeIcon icon={faGripHorizontal}/></button>
+          </div>
+          <div className={`post-list ${view}`}>
+            {posts.map(({node: post})=>{
+              const { frontmatter } = post;
+              return (
+                <PostItem listPath={ this.props.location.pathname } key={frontmatter.path} frontmatter={frontmatter} view={view}/>
+              )
+            })}
+          </div>
         </CategoryView>
       </Layout>
     )
   }
-
 }
-
 export const CategoryQuery = graphql`
   query($category: String!) {
     allMarkdownRemark(
