@@ -48,6 +48,24 @@ const PostsBlockView = styled.div`
     color: var(--primaryColor);
   }
 
+  @media(max-width: 768px){
+    padding: 100px 20px 0px;
+    min-height: ${props => props.height/1.3}px;
+    .posts-block-list {
+      width: 85%;
+      margin: 100px auto 0px;
+
+      .post-item {
+        img {
+          width: 20px;
+         }
+        span {
+          font-size: 40px;
+        }
+      }
+    }
+  }
+
   @media(max-width: 510px){
     min-height: ${props => props.height/1.2}px;
     padding: 50px 20px;

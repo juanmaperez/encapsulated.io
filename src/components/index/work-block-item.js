@@ -16,7 +16,7 @@ const WorkBlockItemView = styled.div`
     width: 100%;
     display: ${props => props.index > 1 ? 'none' : 'block'};
     padding: 40px 10px;
-    min-height: ${props => props.height/1}px;
+    min-height: ${props => props.height/1.3}px;
   }
   @media(max-width: 510px){
     width: 100%;

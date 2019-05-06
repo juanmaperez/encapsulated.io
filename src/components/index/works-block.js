@@ -19,9 +19,13 @@ const WorksBlockView = styled.div`
     font-size: 20px;
     color: var(--primaryColor);
   }
-
+  @media(max-width: 768px){
+    padding-top: 30px;
+    min-height: ${props => props.height/1.3}px;
+  }
 
   @media(max-width: 510px){
+    padding-top: 0px;
     min-height: ${props => props.height/1.2}px;
     .works-block-list {
       margin: 30px 0px 0px;

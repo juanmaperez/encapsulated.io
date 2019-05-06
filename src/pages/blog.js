@@ -54,7 +54,8 @@ const BlogView = styled.div`
       }
       p {
         font-size: 18px;
-        color: #a3cccc;
+        color: var(--secondaryColor);
+        opacity: .6;
         font-style: italic;
 
       }
@@ -109,12 +110,19 @@ const BlogView = styled.div`
     }
   }
 
+
+  .post-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
   @media(min-width: 768px){
     .post-list {
       transition: all 1s linear;
       &.grid {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
         flex-direction: row;
       }
     }

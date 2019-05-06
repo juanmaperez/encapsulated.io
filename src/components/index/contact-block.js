@@ -34,7 +34,7 @@ const ContactBlockView = styled.div`
       box-sizing: border-box;
       .contact-resume {
         line-height: 1.4;
-        font-size: 20px;
+        font-size: 22px;
         letter-spacing: 1px;
         p {
           max-width: 90%;
@@ -55,7 +55,7 @@ const ContactBlockView = styled.div`
       padding: 20px;
       box-sizing: border-box;
       line-height: 1.4;
-      font-size: 20px;
+      font-size: 22px;
       letter-spacing: 1px;
       ul {
         padding: 30px 20px;
@@ -214,8 +214,10 @@ class ContactBlock extends Component {
               <p>You have a project or idea which must be developed in a <strong>online environment</strong>, tell me more about it.</p>
               <p>Let me know what are you thinking about and we can decide together what's the <strong>best approach</strong> for making it live.</p>
               <p>Get the best results and engage your target with an <strong>amazing website</strong> and the most accurate UX.</p>
-              <p>Contact by <strong className="contact-btn" onClick={this.getMyEmail}>email</strong> or <strong className="contact-btn" onClick={this.getMyPhone}>phone</strong></p>
-              <p></p>
+              <p><h3>Contact by:</h3>
+                <strong className="contact-btn" onClick={this.getMyEmail}>Get email</strong> <br/>
+                <strong className="contact-btn" onClick={this.getMyPhone}>Get phone</strong>
+              </p>
             </div>
           </div>
           <div className="social-box">
