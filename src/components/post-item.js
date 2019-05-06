@@ -125,7 +125,7 @@ const PostItem = (props) => {
   return (
   <PostItemView view={view} image={ frontmatter.thumbnail.childImageSharp.fluid.src } icon={ frontmatter.icon.childImageSharp.fluid.src }>
     <Controller>
-      <Scene classToggle={'fade-in'} triggerHook={1}>
+      <Scene classToggle={'fade-in'} triggerHook={0.75}>
         <div className="post-wrapper">
           <div className="post">
             <div className="image-container">

@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components'
 import { StaticQuery, graphql, Link } from 'gatsby';
 import WorkBlockItem from './work-block-item';
+import { Controller, Scene } from 'react-scrollmagic';
+
 
 const WorksBlockView = styled.div`
   min-height: ${props => props.height}px;
@@ -11,6 +13,11 @@ const WorksBlockView = styled.div`
     display: flex;
     flex-direction: row;
     overflow: hidden;
+    opacity: 0;
+    transition: opacity 600ms linear;
+    &.fade-in {
+      opacity: 1;
+    }
   }
   .all {
     box-sizing: border-box;
@@ -36,49 +43,54 @@ const WorksBlockView = styled.div`
 const WorksBlock = ({ height}) => {
   return (
     <WorksBlockView height={height}>
-      <div className="works-block-list">
-        <StaticQuery query={
-          graphql`
-            query {
-              allMarkdownRemark (
-                limit: 3
-                sort: { fields: [frontmatter___date], order: DESC }
-                filter: { frontmatter: {type: {eq: "project"}}}
-              ) {
-                totalCount
-                edges {
-                  node {
-                    id
-                    frontmatter {
-                      path
-                      type
-                      thumbnail {
-                        childImageSharp {
-                            fluid(maxWidth: 500) {
-                                src
+      <Controller>
+        <Scene classToggle={'fade-in'} triggerHook={0.65}>
+          <div className="works-block-list">
+            <StaticQuery query={
+              graphql`
+                query {
+                  allMarkdownRemark (
+                    limit: 3
+                    sort: { fields: [frontmatter___date], order: DESC }
+                    filter: { frontmatter: {type: {eq: "project"}}}
+                  ) {
+                    totalCount
+                    edges {
+                      node {
+                        id
+                        frontmatter {
+                          path
+                          type
+                          thumbnail {
+                            childImageSharp {
+                                fluid(maxWidth: 500) {
+                                    src
+                                }
                             }
+                          }
                         }
                       }
                     }
                   }
-                }
-              }
-            }`
-        } 
-        render={ data => {
-          const { edges: works } = data.allMarkdownRemark  
-          return(
-            works.map(({node: work}, index)=>{
-              const { frontmatter } = work;
-              return (
-                <WorkBlockItem key={index} index={index} height={ height } frontmatter={ frontmatter } />
-              )
-            }))
-        }}/>
-        { 
-        }
-      </div>
-      <Link className="all" to={`/work`}>View all works</Link>
+                }`
+            } 
+            render={ data => {
+              const { edges: works } = data.allMarkdownRemark  
+              return(
+                works.map(({node: work}, index)=>{
+                  const { frontmatter } = work;
+                  return (
+                    <WorkBlockItem key={index} index={index} height={ height } frontmatter={ frontmatter } />
+                  )
+                }))
+            }}/>
+            { 
+            }
+          </div>       
+        </Scene>
+      </Controller>
+      <Link className="all" to={`/work`}>View all works</Link>      
+ 
     </WorksBlockView>
   )
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Controller, Scene } from 'react-scrollmagic';
 
 const london ="https://www.google.com/maps/place/London/@51.5287718,-0.2416815,11z/data=!3m1!4b1!4m5!3m4!1s0x47d8a00baf21de75:0x52963a5addd52a99!8m2!3d51.5073509!4d-0.1277583"
 
@@ -25,6 +26,11 @@ const IntroView = styled.div`
     -webkit-text-stroke: 1px var(--primaryColor);
     p {
       margin-bottom: 100px;
+      opacity: 0;
+      transition: opacity 600ms linear;
+      &.fade-in {
+        opacity: 1;
+      }
  
       strong, a {
         color: var(--tertiaryColor);
@@ -74,10 +80,27 @@ const IntroView = styled.div`
 const IntroBlock = ({height}) => (
   <IntroView height={height}>
     <div className="intro-text">
-      <p>I'm <span>Juanma Pérez </span>, a javascript <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/juanmaperezvargas/">Front End Developer</a> from Seville.</p> 
-      <p>I grew up professionally in Barcelona until I moved to <a target="_blank" rel="noopener noreferrer" href={london}>London</a> in 2018.</p>
-      <p>Nowadays, I work at <a target="_blank" rel="noopener noreferrer" href="https://colossusbets.com/">ColossusBets</a>.</p> 
-      <p>I also love music, books, films sports and <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/worldoftypographies/">typography</a>.</p>
+      <Controller>
+        <Scene classToggle={'fade-in'} triggerHook={0.65}>
+          <p>I'm <span>Juanma Pérez </span>, a javascript <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/juanmaperezvargas/">Front End Developer</a> from Seville.</p>
+      
+        </Scene>
+      </Controller>
+      <Controller>
+        <Scene classToggle={'fade-in'} triggerHook={0.65}>
+          <p>I grew up professionally in Barcelona until I moved to <a target="_blank" rel="noopener noreferrer" href={london}>London</a> in 2018.</p>
+        </Scene>
+      </Controller>    
+      <Controller>
+        <Scene classToggle={'fade-in'} triggerHook={0.65}>
+          <p>Nowadays, I work at <a target="_blank" rel="noopener noreferrer" href="https://colossusbets.com/">ColossusBets</a>.</p> 
+        </Scene>
+      </Controller>    
+      <Controller>
+        <Scene classToggle={'fade-in'} triggerHook={0.65}>
+          <p>I also love music, books, films sports and <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/worldoftypographies/">typography</a>.</p>
+        </Scene>
+      </Controller>           
     </div>
   </IntroView>
 )

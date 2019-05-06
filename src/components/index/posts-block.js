@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components'
 import { StaticQuery, graphql, Link } from 'gatsby';
 import Image from './../image';
+import { Controller, Scene } from 'react-scrollmagic';
+
 
 const PostsBlockView = styled.div`
   min-height: ${props => props.height}px;
@@ -20,6 +22,9 @@ const PostsBlockView = styled.div`
       flex-direction: row;
       justify-content:flex-start;
       align-items: center;
+      opacity: 0;
+      transition: opacity 600ms linear;
+      &.fade-in { opacity: 1}
       img {
         width: 25px;
         height: auto;
@@ -129,12 +134,16 @@ const PostsBlock = ({height}) => {
             { posts.map(({node: post}, index)=>{
                 const { frontmatter } = post;
                 return (
-                  <div className="post-item" key={index} index={index} height={ height } frontmatter={ frontmatter }>
-                    <Link to={`${frontmatter.path}`}>
-                      <Image imageUrl={frontmatter.icon.childImageSharp.fluid.src} title={frontmatter.category}/>
-                      <span>{frontmatter.title}</span>
-                    </Link>
-                  </div>
+                  <Controller>
+                    <Scene classToggle={'fade-in'} triggerHook={0.85}>
+                      <div className="post-item" key={index} index={index} height={ height } frontmatter={ frontmatter }>
+                        <Link to={`${frontmatter.path}`}>
+                          <Image imageUrl={frontmatter.icon.childImageSharp.fluid.src} title={frontmatter.category}/>
+                          <span>{frontmatter.title}</span>
+                        </Link>
+                      </div>
+                    </Scene>
+                  </Controller>
                 )
               })
             }   

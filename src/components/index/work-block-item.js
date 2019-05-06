@@ -44,6 +44,7 @@ const WorkBlockItemView = styled.div`
 `
 
 const WorkBlockItem = ({height, frontmatter, index}) => (
+  
   <WorkBlockItemView index={index} height={ height} >
     <Link to={frontmatter.path}>
       <Image imageUrl={ frontmatter.thumbnail.childImageSharp.fluid.src }  title={frontmatter.title}/>
