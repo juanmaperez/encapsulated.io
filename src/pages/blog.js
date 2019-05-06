@@ -198,7 +198,7 @@ class BlogPage extends Component {
             {posts.map(({node: post})=>{
               const { frontmatter } = post;
               return (
-                <PostItem key={frontmatter.path} frontmatter={frontmatter} view={view}/>
+                <PostItem listPath={this.props.location.pathname} key={frontmatter.path} frontmatter={frontmatter} view={view}/>
               )
             })}
           </div>

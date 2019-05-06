@@ -113,7 +113,7 @@ width: ${props => props && props.view === 'list' ? '35%' : '33%' };
 `
 
 const PostItem = (props) => {
-  const { frontmatter, view } = props;
+  const { frontmatter, view, listPath } = props;
   return (
   <PostItemView view={view} image={ frontmatter.thumbnail.childImageSharp.fluid.src } icon={ frontmatter.icon.childImageSharp.fluid.src }>
     <div className="post-wrapper">
@@ -124,7 +124,7 @@ const PostItem = (props) => {
         <div className="post-container">
           <Link to={`/blog/category/${frontmatter.category}`}><div className="post-icon"></div></Link>
           <h2 className="post-title">
-            <Link to={frontmatter.path}> {frontmatter.title} </Link>
+            <Link to={frontmatter.path} state={{prevPath: listPath }}> {frontmatter.title} </Link>
           </h2>
           <div className="post-date">
             {frontmatter.date}

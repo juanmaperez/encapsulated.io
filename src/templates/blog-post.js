@@ -21,61 +21,7 @@ const BlogPostView = styled.div`
     background-repeat: no-repeat;
     margin-bottom: 60px;
     background-position: center center;
-  }
-
-  .prev {
-    box-sizing:border-box;
-    position: fixed;
-    left: 0px;
-    top: 50%;
-    width: 200px;
-    transform: translateX(-200px);
-    transition: transform 300ms linear;
-    min-height: 25px;
-    padding: 10px 5px;
-    a { 
-      color:var(--secondaryColor);
-      margin-top: 5px;
-      display: block;
-    }
-    &:hover {
-      transform: translateX(0px);
-    }
-    svg {
-      border-radius: 50%;
-      padding: 4px;
-      border: 1px solid var(--secondaryColor);
-      position: absolute;
-      right: -25px;
-      color:var(--secondaryColor);
-    }
-  }
-  .next {
-    padding: 10px 5px;
-    box-sizing:border-box;
-    position: fixed;
-    right: 0px;
-    top: 50%;
-    width: 200px;
-    transform: translateX(200px);
-    transition: transform 300ms linear;
-    min-height: 25px;
-    a { 
-      color:var(--secondaryColor);
-      margin-top: 5px;
-      display: block;
-    }
-    &:hover {
-      transform: translateX(0px);
-    }
-    svg {
-      border-radius: 50%;
-      padding: 4px;
-      border: 1px solid var(--secondaryColor);
-      position: absolute;
-      left: -25px;
-      color:var(--secondaryColor);
-    }
+    background-attachment: fixed;
   }
 
   .post-container {
@@ -89,6 +35,21 @@ const BlogPostView = styled.div`
       width:95%;
       padding:25px 0px;
     }
+    .step-buttons {
+      margin: 20px 0px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      div {
+        flex: 1;
+        display: flex;
+        &:hover { text-decoration: underline}
+        &.next { text-align: right;}
+        &.prev { text-align: left;}
+        svg { margin: 0px 10px; }
+      }
+    }
+
     .post-date {
       font-size: 18px;
       display: flex;
@@ -158,6 +119,7 @@ const BlogPostView = styled.div`
         margin: 40px 0px 60px;
       }
     }
+
   }
 `
 
@@ -183,7 +145,7 @@ class BlogPostTemplate extends Component {
     const { markdownRemark: post } = this.props.data;
     const { frontmatter, html } = post;
     const { next, prev } = this.props.pageContext;
-
+    const backPath = this.props.location.state.prevPath || '/blog';
     const { height } = this.state;
 
     return(
@@ -193,22 +155,9 @@ class BlogPostTemplate extends Component {
           <div className="post-header">
           </div>
           
-          { prev && <div className="prev">
-              <FontAwesomeIcon icon={ faArrowLeft }/>
-              <Link to={prev.frontmatter.path}>
-                {prev.frontmatter.title}
-              </Link>
-            </div>
-          }
-          { next && <div className="next">
-              <FontAwesomeIcon icon={ faArrowRight }/>
-              <Link to={next.frontmatter.path}>
-                {next.frontmatter.title}
-              </Link>
-            </div>
-          }
+    
           <div className="post-container">
-            <Link className="back" to={'/blog'}>
+            <Link className="back" to={ backPath }>
                 Back to the list
             </Link>
             <h2 className="post-title">
@@ -219,7 +168,27 @@ class BlogPostTemplate extends Component {
             </div>
   
             <div className="post-content" dangerouslySetInnerHTML={{__html: html}} />
+
+            <div className="step-buttons">
+              <div className="prev">
+                { prev && <div>
+                  <FontAwesomeIcon icon={ faArrowLeft }/>
+                  <Link to={prev.frontmatter.path}>
+                    {prev.frontmatter.title}
+                  </Link></div> }
+              </div>
+              
+              <div className="next">
+                { prev && <div>
+                  <Link to={next.frontmatter.path}>
+                    {next.frontmatter.title}
+                  </Link>
+                  <FontAwesomeIcon icon={ faArrowRight }/>
+                </div> }
+              </div>
+            </div>
           </div>
+  
         </BlogPostView>
       </Layout>
     )
