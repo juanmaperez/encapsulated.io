@@ -11,10 +11,6 @@ const WorksBlockView = styled.div`
     display: flex;
     flex-direction: row;
     overflow: hidden;
-
-    @media(max-width: 510px){
-      margin: 30px 0px 0px;
-    }
   }
   .all {
     box-sizing: border-box;
@@ -22,6 +18,14 @@ const WorksBlockView = styled.div`
     display: block;
     font-size: 20px;
     color: var(--primaryColor);
+  }
+
+
+  @media(max-width: 510px){
+    min-height: ${props => props.height/1.2}px;
+    .works-block-list {
+      margin: 30px 0px 0px;
+    }
   }
 `
 

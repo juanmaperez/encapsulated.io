@@ -56,7 +56,7 @@ const IntroView = styled.div`
   }
   @media(max-width: 480px) {
     padding-top:120px;
-    min-height: 400px;
+    min-height: ${props => props.height/1.2}px;
     .intro-text {
       padding:10px;
       -webkit-text-stroke: 0px var(--primaryColor);

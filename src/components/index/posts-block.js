@@ -5,7 +5,6 @@ import Image from './../image';
 
 const PostsBlockView = styled.div`
   min-height: ${props => props.height}px;
-  margin: 150px 0 50px;
   padding: 100px 20px;
   box-sizing: border-box;
   .posts-block-list {
@@ -13,9 +12,7 @@ const PostsBlockView = styled.div`
     margin: 20px auto 60px;
     overflow: hidden;
 
-    @media(max-width: 510px){
-      margin: 30px 0px 0px;
-    }
+  
     .post-item {
       width: 100%;
       margin-bottom: 70px;
@@ -40,6 +37,8 @@ const PostsBlockView = styled.div`
         }
       }
     }
+
+
   }
   .all {
     box-sizing: border-box;
@@ -47,6 +46,27 @@ const PostsBlockView = styled.div`
     display: block;
     font-size: 20px;
     color: var(--primaryColor);
+  }
+
+  @media(max-width: 510px){
+    min-height: ${props => props.height/1.2}px;
+    padding: 50px 20px;
+    .posts-block-list {
+      margin: 30px 0px 0px;
+      width: 100%;
+      .post-item {
+        padding: 20px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        img {
+          width: 25px;
+          margin-right: 10px;
+        }
+        span {
+          font-size: 30px;
+        }
+      }
+    }
   }
 `
 

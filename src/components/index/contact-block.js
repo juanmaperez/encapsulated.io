@@ -12,7 +12,7 @@ const ContactBlockView = styled.div`
     .contact-title {
       font-size: 8vw;
       margin: 50px 0px 0px;
-      line-height: 0.6;
+      line-height: 0.9;
       color: transparent;
       -webkit-text-stroke: 0.001em var(--primaryColor);
     }
@@ -41,27 +41,31 @@ const ContactBlockView = styled.div`
           margin-bottom: 20px;
           strong {
             color: var(--secondaryColor);
-            &.contact-btn { text-decoration: underline }
+            &.contact-btn { 
+              text-decoration: underline; 
+              cursor: pointer 
+            }
           }
         }
       }
     }
-  }
-  .social-box {
-    width: 50%;
-    padding: 20px;
-    box-sizing: border-box;
-    line-height: 1.4;
-    font-size: 20px;
-    letter-spacing: 1px;
-    ul {
-      padding: 30px 20px;
-      li {
-        margin-bottom: 10px;
+
+    .social-box {
+      width: 50%;
+      padding: 20px;
+      box-sizing: border-box;
+      line-height: 1.4;
+      font-size: 20px;
+      letter-spacing: 1px;
+      ul {
+        padding: 30px 20px;
+        li {
+          margin-bottom: 10px;
+        }
       }
     }
-    
   }
+
 
   .message {
     width: auto;
@@ -75,6 +79,43 @@ const ContactBlockView = styled.div`
     color: var(--bgColor);
     box-shadow: 0px 1px 1px 1px rgba(var(--secondaryColor),0.2), 0 2px 4px rgba(var(--secondaryColor),0.08); 
   }
+
+  @media(max-width: 768px){
+    padding: 30px 0px;
+
+    .title-box {
+      .contact-title {
+        font-size: 60px;
+        color: var(--primaryColor);
+      }
+      .contact-subtitle {
+        font-size: 60px;
+        color: var(--tertiaryColor);
+      }
+
+    }
+    
+    .content {
+      display: block;
+      .hi-box, .social-box {
+        width: 100%;
+      }
+    }
+  }
+
+  @media(max-width: 510px){
+    min-height: ${props => props.height/1.2}px;
+    .title-box {
+      .contact-title {
+        font-size: 50px;
+      }
+      .contact-subtitle {
+        font-size: 50px;
+      }
+    }
+  }
+
+
 `
 
 class ContactBlock extends Component {
