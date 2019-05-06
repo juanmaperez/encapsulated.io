@@ -155,7 +155,6 @@ class BlogPostTemplate extends Component {
           <div className="post-header">
           </div>
           
-    
           <div className="post-container">
             <Link className="back" to={ backPath }>
                 Back to the list
