@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby'
 import styled from 'styled-components';
+import { Controller, Scene } from 'react-scrollmagic';
 
 const PostItemView = styled.div`
 margin: ${props => props && props.view === 'list' ? '40px auto 20px' : '40px 0px 0px' };
@@ -17,6 +18,11 @@ width: ${props => props && props.view === 'list' ? '35%' : '33%' };
 }
 .post-wrapper {
   height: 100%;
+  opacity: 0;
+  transition: opacity 600ms linear;
+  &.fade-in {
+    opacity: 1;
+  }
   .post {
     height: 100%;
     background: var(--bgColor);
@@ -114,27 +120,33 @@ width: ${props => props && props.view === 'list' ? '35%' : '33%' };
 
 const PostItem = (props) => {
   const { frontmatter, view, listPath } = props;
+
+
   return (
   <PostItemView view={view} image={ frontmatter.thumbnail.childImageSharp.fluid.src } icon={ frontmatter.icon.childImageSharp.fluid.src }>
-    <div className="post-wrapper">
-      <div className="post">
-        <div className="image-container">
-          <div className="image"></div>
-        </div>
-        <div className="post-container">
-          <Link to={`/blog/category/${frontmatter.category}`}><div className="post-icon"></div></Link>
-          <h2 className="post-title">
-            <Link to={frontmatter.path} state={{prevPath: listPath }}> {frontmatter.title} </Link>
-          </h2>
-          <div className="post-date">
-            {frontmatter.date}
+    <Controller>
+      <Scene classToggle={'fade-in'} triggerHook={1}>
+        <div className="post-wrapper">
+          <div className="post">
+            <div className="image-container">
+              <div className="image"></div>
+            </div>
+            <div className="post-container">
+              <Link to={`/blog/category/${frontmatter.category}`}><div className="post-icon"></div></Link>
+              <h2 className="post-title">
+                <Link to={frontmatter.path} state={{prevPath: listPath }}> {frontmatter.title} </Link>
+              </h2>
+              <div className="post-date">
+                {frontmatter.date}
+              </div>
+              <div className="post-excerpt">
+                {frontmatter.excerpt}
+              </div>
+            </div>
           </div>
-           <div className="post-excerpt">
-            {frontmatter.excerpt}
-          </div>
         </div>
-      </div>
-    </div>
+      </Scene>
+    </Controller>
   </PostItemView>
 )};
 
