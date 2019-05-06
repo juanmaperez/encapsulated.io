@@ -112,8 +112,17 @@ const BlogPostView = styled.div`
         background-color: transparent; 
       }
     }
+    .back { 
+      opacity: .5;
+      box-sizing: border-box;
+      cursor: pointer;
+      color: var(--primaryColor);
+      width: 100%;
+      display:block; 
+      margin-bottom: 10px;
+    }
     .post-title {
-      margin: 20px 0px 60px;
+      margin: 30px 0px 60px;
       font-size: 62px;
       color: var(--secondaryColor);
       -webkit-text-stroke: 1px var(--secondaryColor);
@@ -199,6 +208,9 @@ class BlogPostTemplate extends Component {
             </div>
           }
           <div className="post-container">
+            <Link className="back" to={'/blog'}>
+                Back to the list
+            </Link>
             <h2 className="post-title">
              {frontmatter.title}
             </h2>

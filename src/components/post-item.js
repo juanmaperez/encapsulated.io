@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components';
 
 const PostItemView = styled.div`
-margin: ${props => props && props.view === 'list' ? '40px auto 60px' : '40px 0px 60px' };
+margin: ${props => props && props.view === 'list' ? '40px auto 20px' : '40px 0px 0px' };
 padding:${props => props && props.view === 'list' ? '0px' : '0px 20px' };
 box-sizing: border-box;
 width: ${props => props && props.view === 'list' ? '35%' : '33%' };
@@ -12,7 +12,7 @@ width: ${props => props && props.view === 'list' ? '35%' : '33%' };
 @media(max-width:878px){ width: ${props => props && props.view === 'list' ? '65%' : '50%'}; }
 @media(max-width:510px){
   width:98%;
-  margin: 40px auto 60px;
+  margin: 40px auto 0px;
   padding: 10px;
 }
 .post-wrapper {
