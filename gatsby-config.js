@@ -53,13 +53,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `encapsulated by Juanma Perez`,
+        name: `encapsulated`,
         short_name: `encapsulated`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#ffffff`,
         display: `minimal-ui`,
-        icon: `/static/logo_pill.png`, // This path is relative to the root of the site.
+        icon: `src/images/logo_pill.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-sass`
