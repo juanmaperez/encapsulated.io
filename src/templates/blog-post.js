@@ -102,9 +102,11 @@ const BlogPostView = styled.div`
       line-height: 1.6;
       font-size: 22px;
       letter-spacing: 1px;
-      color: var(--primaryColor);
-      p {
+      p, pre {
         margin-bottom: 45px;
+      }
+      p {      
+        color: var(--primaryColor);
       }
       h2 {
         color: var(--secondaryColor);
