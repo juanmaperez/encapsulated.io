@@ -147,7 +147,7 @@ class BlogPostTemplate extends Component {
     const { markdownRemark: post } = this.props.data;
     const { frontmatter, html } = post;
     const { next, prev } = this.props.pageContext;
-    const backPath = this.props.location.state.prevPath || '/blog';
+    const backPath = this.props.location.state ? this.props.location.state.prevPath || '/blog' : '/blog';
     const { height } = this.state;
 
     return(
