@@ -150,7 +150,7 @@ class BlogPostTemplate extends Component {
 
     return(
       <Layout>
-        <SEO title={frontmatter.title} description={ frontmatter.excerpt } />
+        <SEO title={frontmatter.title} description={ frontmatter.excerpt } keywords={ frontmatter.tags } />
         <BlogPostView height={height} image={ frontmatter.thumbnail.childImageSharp.fluid.src } icon={ frontmatter.icon.childImageSharp.fluid.src }>
           <div className="post-header">
           </div>
@@ -178,7 +178,7 @@ class BlogPostTemplate extends Component {
               </div>
               
               <div className="next">
-                { prev && <div>
+                { next && <div>
                   <Link to={next.frontmatter.path}>
                     {next.frontmatter.title}
                   </Link>
