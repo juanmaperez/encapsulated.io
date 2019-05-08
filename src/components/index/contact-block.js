@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import { Controller, Scene } from 'react-scrollmagic';
 
 const ContactBlockView = styled.div`
-  padding: 50px 20px;
+
   .contact-wrapper {
+    padding: 50px 20px;
     opacity:0;
     transition: opacity 600ms linear;
     &.fade-in { opacity: 1 }
@@ -52,7 +53,7 @@ const ContactBlockView = styled.div`
             strong {
               color: var(--secondaryColor);
               &.contact-btn { 
-                margin-top: 15px;
+                margin-top: 5px;
                 display:block;
                 text-decoration: underline; 
                 cursor: pointer 
@@ -125,8 +126,18 @@ const ContactBlockView = styled.div`
           font-size: 50px;
         }
       }
+      .content {
+        .hi-box {
+          .contact-resume {
+            h3 {
+              font-size:24px;
+            }
+          }
+        }
+      }
     }
   }
+
 `
 
 class ContactBlock extends Component {
