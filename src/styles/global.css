@@ -157,10 +157,10 @@ input, select {
  * and overflow that we removed from <pre>.
  */
 .gatsby-highlight {
-    background-color: #fdf6e3;
+    background-color: #e1e1e1;
     border-radius: 0.3em;
-    margin: 0.5em 0;
-    padding: 1em;
+    margin: 0.5em 0 45px;
+    padding: 10px 5px;
     overflow: auto;
   }
   
@@ -178,4 +178,5 @@ input, select {
     overflow: initial;
     float: left; /* 1 */
     min-width: 100%; /* 2 */
+    margin-bottom: 5px !important;
   }

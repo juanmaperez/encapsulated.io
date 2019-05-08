@@ -12,20 +12,13 @@ excerpt: "It all begins here. Do not skip to the last page. Do not let a friend 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam metus orci, malesuada rutrum ligula in, feugiat ultricies mi. Pellentesque vel libero ut metus auctor vehicula quis sit amet neque. In hac habitasse platea dictumst. Aenean rutrum nunc elit, sit amet feugiat nisi pharetra id. Cras auctor nibh felis, eu accumsan turpis aliquet in. Vivamus interdum id erat a bibendum. In orci dui, congue eget fermentum sed, pellentesque eu mauris. Cras porta eros ligula, in ultrices augue ullamcorper vitae. Vestibulum efficitur, diam ac pulvinar blandit, tortor leo scelerisque nibh, in ornare mauris mi et ligula. Maecenas iaculis arcu ligula, ac mollis nisl lobortis eu. In hac habitasse platea dictumst. Morbi suscipit mi ac laoreet blandit. Aliquam auctor eros vel tincidunt scelerisque. Sed nulla mauris, aliquet nec arcu a, aliquet convallis ligula. Integer auctor nibh nec risus mattis fringilla.
 
-```js{1}
+```js
 
-// In your gatsby-config.js
-plugins: [
-  {
-    resolve: `gatsby-transformer-remark`,
-    options: {
-      plugins: [
-        `gatsby-remark-prismjs`,
-      ]
-    }
+  let variable = 'string'
+  if(variable){
+    return false;
   }
-]
-
+  
 ```
 
 Ut quis feugiat ipsum, vel placerat urna. Donec lobortis at neque et sagittis. Phasellus hendrerit eros ac dapibus molestie. Duis ac maximus ante. Donec id est dictum, facilisis quam et, vestibulum diam. Curabitur accumsan ultricies quam et lobortis. Fusce ac accumsan ligula. Etiam rhoncus dolor nec orci consequat finibus. Vivamus sed mauris dapibus, laoreet neque eget, rhoncus velit. Nunc venenatis sapien aliquam nunc blandit, vel blandit mauris venenatis. Cras quis erat volutpat, venenatis mi vel, mollis mauris. Maecenas varius vitae diam vel facilisis. Integer tempor lacinia velit id lobortis. Maecenas vel varius diam. Donec et dui tempus, laoreet lorem in, molestie erat. Nulla mattis a neque eu pellentesque.
@@ -34,24 +27,12 @@ Nullam justo mauris, convallis quis odio quis, elementum egestas velit. Pellente
 
 Pellentesque pharetra orci in mollis interdum. Nullam auctor elit nec nisl mattis, quis luctus mi malesuada. Nulla ut nulla a leo ultricies blandit at ut tellus. Quisque eu velit vitae justo gravida consequat. Aliquam mollis eleifend urna, vel gravida ante tincidunt sed. Integer in vehicula lacus. Maecenas at ante dolor. Curabitur at pellentesque libero. Nam tempor nec sem non luctus. Donec ut elit eleifend, imperdiet lectus id, sagittis ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc mauris sem, rhoncus in tristique eget, condimentum cursus quam. Vestibulum tempor placerat elit a vestibulum. Suspendisse potenti.
 
-```javascript{1}
+```javascript
 
-var element;
-
-if(elemen){
-  element = true;
-}
-// In your gatsby-config.js
-plugins: [
-  {
-    resolve: `gatsby-transformer-remark`,
-    options: {
-      plugins: [
-        `gatsby-remark-prismjs`,
-      ]
-    }
+  let variable = 'string'
+  if(variable){
+    return false;
   }
-]
 
 ```
 

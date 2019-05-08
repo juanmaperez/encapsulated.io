@@ -10,19 +10,19 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark',
       options: {
-        plugings: [
+        plugins: [
           {
            resolve: `gatsby-remark-prismjs`,
             options: {
-              classPrefix: "language-"
-            },
+              inlineCodeMarker: '÷'
+            }
           },
           {
             resolve: `gatsby-remark-images`,
             options: {
                 maxWidth: 740,
                 linkImagesToOriginal: false
-            },
+            }
           }
         ]
       }

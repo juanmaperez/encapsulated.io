@@ -78,17 +78,23 @@ const PostsBlockView = styled.div`
       margin: 30px 0px 0px;
       width: 100%;
       .post-item {
-        padding: 20px;
-        margin-bottom: 10px;
+        padding: 0px;
+        margin-bottom: 30px;
         box-sizing: border-box;
         img {
-          width: 25px;
+          transform: translateY(5px);
+          width: 20px;
           margin-right: 10px;
         }
         span {
-          font-size: 30px;
+          font-size: 26px;
+          font-weight: normal;
         }
       }
+    }
+    .all {
+      padding: 0px;
+      margin-top: 30px;
     }
   }
 `

@@ -33,8 +33,19 @@ const WorkView = styled.div`
     .tags {
       width: 100%;
       text-align: center;
+      margin-top: 30px;
       span { 
+        font-size: 20px;
         margin: -50px 5px 0;
+        &:after {
+          content: '|';
+          margin-left: 10px;
+        }
+        &:last-of-type {
+          &:after {
+            content: '';
+          }
+        }
       }
     }
   }
@@ -55,6 +66,7 @@ const WorkView = styled.div`
     color: var(--primaryColor);
     @media(max-width: 480px){
       margin-top: 50px;
+      padding: 20px;
     }
     h2 {
       color: var(--secondaryColor);
