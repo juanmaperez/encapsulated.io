@@ -52,6 +52,7 @@ const ContactBlockView = styled.div`
             strong {
               color: var(--secondaryColor);
               &.contact-btn { 
+                margin-top: 20px;
                 text-decoration: underline; 
                 cursor: pointer 
               }
