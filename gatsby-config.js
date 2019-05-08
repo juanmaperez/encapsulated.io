@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/encapsulated.io`,
   siteMetadata: {
     title: `encapsulated`,
     description: `Little pills about javascript, react, angular, gatsbyjs, nodejs by Juanma Perez, Front end developer`,
