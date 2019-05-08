@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Controller, Scene } from 'react-scrollmagic';
 
 const ContactBlockView = styled.div`
-  padding: 50px 0px;
+  padding: 50px 20px;
   .contact-wrapper {
     opacity:0;
     transition: opacity 600ms linear;
@@ -220,16 +220,15 @@ class ContactBlock extends Component {
                     <div className="hi-box">
                       <div className="contact-resume">
                         <p>You have a project or idea which must be developed in a <strong>online environment</strong>, tell me more about it.</p>
-                        <p>Let me know what are you thinking about and we can decide together what's the <strong>best approach</strong> for making it live.</p>
-                        <p>Get the best results and engage your target with an <strong>amazing website</strong> and the most accurate UX.</p>
-                        <p><span>Contact by:</span><br/>
+                        <p><span>Contact me by:</span><br/>
                           <strong className="contact-btn" onClick={this.getMyEmail}>Get email</strong> <br/>
                           <strong className="contact-btn" onClick={this.getMyPhone}>Get phone</strong>
                         </p>
                       </div>
                     </div>
                     <div className="social-box">
-                      <p>If you rather something more social to talk with me, you can also find me on different social platforms throught the following links:</p>
+                      <h3>Available from June '19</h3>
+                      <p>If you rather something more social to talk with me, you can do it throught the following platforms:</p>
                       <ul>
                         <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/juanmaperez">Github</a></li>
                         <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/juanmaperezvargas/">Linkedin</a></li>
