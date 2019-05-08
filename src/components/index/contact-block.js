@@ -52,7 +52,8 @@ const ContactBlockView = styled.div`
             strong {
               color: var(--secondaryColor);
               &.contact-btn { 
-                margin-top: 20px;
+                margin-top: 15px;
+                display:block;
                 text-decoration: underline; 
                 cursor: pointer 
               }
@@ -228,7 +229,7 @@ class ContactBlock extends Component {
 
                         <p>You have a project or idea which must be developed in a <strong>online environment</strong>, tell me more about it.</p>
                         <p><span>Contact me by:</span><br/>
-                          <strong className="contact-btn" onClick={this.getMyEmail}>Get email</strong> <br/>
+                          <strong className="contact-btn" onClick={this.getMyEmail}>Get email</strong>
                           <strong className="contact-btn" onClick={this.getMyPhone}>Get phone</strong>
                         </p>
                       </div>
