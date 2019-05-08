@@ -9,7 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
-import "./prismjs/themes/prism-solarizedlight.css";
+import "git aprismjs/themes/prism-solarizedlight.css";
 import "./../styles/global.css"
 
 import Header from "./header";
