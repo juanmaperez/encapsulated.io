@@ -42,6 +42,10 @@ const ContactBlockView = styled.div`
           line-height: 1.4;
           font-size: 22px;
           letter-spacing: 1px;
+          h3 {
+            font-size:34px;
+            margin-bottom: 20px;
+          }
           p {
             max-width: 90%;
             margin-bottom: 20px;
@@ -219,6 +223,8 @@ class ContactBlock extends Component {
                   <div className="content">
                     <div className="hi-box">
                       <div className="contact-resume">
+                      <h3>Available from June '19</h3>
+
                         <p>You have a project or idea which must be developed in a <strong>online environment</strong>, tell me more about it.</p>
                         <p><span>Contact me by:</span><br/>
                           <strong className="contact-btn" onClick={this.getMyEmail}>Get email</strong> <br/>
@@ -227,7 +233,6 @@ class ContactBlock extends Component {
                       </div>
                     </div>
                     <div className="social-box">
-                      <h3>Available from June '19</h3>
                       <p>If you rather something more social to talk with me, you can do it throught the following platforms:</p>
                       <ul>
                         <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/juanmaperez">Github</a></li>
