@@ -134,7 +134,8 @@ class ContactBlock extends Component {
   state = { msg: null, type: '', phone: '+44 07447881161', email: 'juanmaperezvar' };
   timeOut = null;
 
-  getMyPhone = () => {
+  getMyPhone = (e) => {
+    e.preventDefault()
     const { phone } = this.state; 
     const result = this.copyTextToClipboard(phone, 'Phone');
     if (result) {
@@ -142,7 +143,8 @@ class ContactBlock extends Component {
     }
   }
 
-  getMyEmail = () => {
+  getMyEmail = (e) => {
+    e.preventDefault()
     const { email } = this.state;
     const fullEmail = `${email}@gmail.com`
     const result = this.copyTextToClipboard(fullEmail, 'Email');
