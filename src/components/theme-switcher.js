@@ -88,8 +88,8 @@ class ThemeSwitch extends Component {
     const { theme } = this.state;
     return(
       <ThemeSwitcherView onClick={ this.toggleButton }>
-         <FontAwesomeIcon className="light-icon" icon={ faSun } />
-         <FontAwesomeIcon className="dark-icon" icon={ faMoon } />
+         <FontAwesomeIcon style={ {fontSize: '12px'} } className="light-icon" icon={ faSun } />
+         <FontAwesomeIcon style={ {fontSize: '12px'} } className="dark-icon" icon={ faMoon } />
           <div className={`ball-button ${theme}`}></div>
       </ThemeSwitcherView>
     )
