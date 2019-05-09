@@ -22,6 +22,9 @@ const BlogPostView = styled.div`
     margin-bottom: 60px;
     background-position: center center;
     background-attachment: fixed;
+    @media(max-width:490px){
+      background-attachment: scroll;
+    }
   }
 
   .post-container {
