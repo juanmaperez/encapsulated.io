@@ -81,23 +81,23 @@ const IntroBlock = ({height}) => (
   <IntroView height={height}>
     <div className="intro-text">
       <Controller>
-        <Scene classToggle={'fade-in'} triggerHook={0.65}>
+        <Scene classToggle={'fade-in'} triggerHook={0.80}>
           <p>I'm <span>Juanma Pérez </span>, a javascript <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/juanmaperezvargas/">Front End Developer</a> from Seville.</p>
       
         </Scene>
       </Controller>
       <Controller>
-        <Scene classToggle={'fade-in'} triggerHook={0.65}>
+        <Scene classToggle={'fade-in'} triggerHook={0.80}>
           <p>I grew up professionally in Barcelona and I moved to <a target="_blank" rel="noopener noreferrer" href={london}>London</a> in 2018.</p>
         </Scene>
       </Controller>    
       <Controller>
-        <Scene classToggle={'fade-in'} triggerHook={0.65}>
+        <Scene classToggle={'fade-in'} triggerHook={0.80}>
           <p>Nowadays, I work at <a target="_blank" rel="noopener noreferrer" href="https://colossusbets.com/">ColossusBets</a> where I'm continuously improving my skills in web development and UX.</p> 
         </Scene>
       </Controller>    
       <Controller>
-        <Scene classToggle={'fade-in'} triggerHook={0.65}>
+        <Scene classToggle={'fade-in'} triggerHook={0.80}>
           <p>I also love music, books, films, sports, and <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/worldoftypographies/">typography</a>.</p>
         </Scene>
       </Controller>           
