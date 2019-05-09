@@ -79,20 +79,6 @@ const ContactBlockView = styled.div`
       }
     }
   
-  
-    .message {
-      width: auto;
-      padding: 15px 20px;
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      border-radius: 4px;
-      font-weight: bolder;
-      background: var(--secondaryColor);
-      color: var(--bgColor);
-      box-shadow: 0px 1px 1px 1px rgba(var(--secondaryColor),0.2), 0 2px 4px rgba(var(--secondaryColor),0.08); 
-    }
-  
     @media(max-width: 768px){
       padding: 30px 0px;
   
@@ -134,6 +120,20 @@ const ContactBlockView = styled.div`
       }
     }
   }
+
+  .message {
+    width: auto;
+    padding: 15px 20px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    border-radius: 4px;
+    font-weight: bolder;
+    background: var(--secondaryColor);
+    color: var(--bgColor);
+    box-shadow: 0px 1px 1px 1px rgba(var(--secondaryColor),0.2), 0 2px 4px rgba(var(--secondaryColor),0.08); 
+  }
+
 
 `
 
@@ -224,44 +224,43 @@ class ContactBlock extends Component {
     const { msg } = this.state;
 
     return (
-          <ContactBlockView height={height}>
-            <Controller>
-              <Scene classToggle={'fade-in'} triggerHook={0.65}>
-                <div className="contact-wrapper">
-                  <div className="title-box">
-                    <h2 className="contact-title">Get in touch,</h2>
-                    <h2 className="contact-subtitle">don't be shy</h2>
-                  </div>
-                  <div className="content">
-                    <div className="hi-box">
-                      <div className="contact-resume">
-                      <h3>Available from June '19</h3>
+      <ContactBlockView height={height}>
+        <Controller>
+          <Scene classToggle={'fade-in'} triggerHook={0.65}>
+            <div className="contact-wrapper">
+              <div className="title-box">
+                <h2 className="contact-title">Get in touch,</h2>
+                <h2 className="contact-subtitle">don't be shy</h2>
+              </div>
+              <div className="content">
+                <div className="hi-box">
+                  <div className="contact-resume">
+                  <h3>Available from June '19</h3>
 
-                        <p>You have a project or idea which must be developed in a <strong>online environment</strong>, tell me more about it.</p>
-                        <p><span>Contact me by:</span><br/>
-                          <strong className="contact-btn" onClick={this.getMyEmail}>Get email</strong>
-                          <strong className="contact-btn" onClick={this.getMyPhone}>Get phone</strong>
-                        </p>
-                      </div>
-                    </div>
-                    <div className="social-box">
-                      <p>If you rather something more social to talk with me, you can do it throught the following platforms:</p>
-                      <ul>
-                        <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/juanmaperez">Github</a></li>
-                        <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/juanmaperezvargas/">Linkedin</a></li>
-                        <li><a target="_blank" rel="noopener noreferrer" href="https://www.pinterest.co.uk/juanmaperezvar/">Pinterest</a></li>
-                        <li><a target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/users/7850072/juanmaperez">StackOverflow</a></li>
-                      </ul>
-                    </div>
+                    <p>You have a project or idea which must be developed in a <strong>online environment</strong>, tell me more about it.</p>
+                    <p><span>Contact me by:</span><br/>
+                      <strong className="contact-btn" onClick={this.getMyEmail}>Get email</strong>
+                      <strong className="contact-btn" onClick={this.getMyPhone}>Get phone</strong>
+                    </p>
                   </div>
-                </div>   
-              </Scene>
-            </Controller> 
-            { msg && <div className="message">
-              { msg }
-            </div>}
-          </ContactBlockView>
-
+                </div>
+                <div className="social-box">
+                  <p>If you rather something more social to talk with me, you can do it throught the following platforms:</p>
+                  <ul>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/juanmaperez">Github</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/juanmaperezvargas/">Linkedin</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://www.pinterest.co.uk/juanmaperezvar/">Pinterest</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/users/7850072/juanmaperez">StackOverflow</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>   
+          </Scene>
+        </Controller> 
+        { msg && <div className="message">
+          { msg }
+        </div>}
+      </ContactBlockView>
     )
   }
 }
