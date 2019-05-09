@@ -125,7 +125,7 @@ const ContactBlockView = styled.div`
     width: auto;
     padding: 15px 20px;
     position: fixed;
-    top: 20px;
+    bottom: 20px;
     left: 20px;
     border-radius: 4px;
     font-weight: bolder;
