@@ -20,14 +20,14 @@ const ContactBlockView = styled.div`
         font-size: 8vw;
         margin: 50px 0px 0px;
         line-height: 0.9;
-        color: transparent;
+        color: var(--primaryColor);
         -webkit-text-stroke: 0.001em var(--primaryColor);
       }
       .contact-subtitle {
         margin-top: 50px;
         font-size: 8vw;
         margin: 0px;
-        color: transparent;
+        color: var(--tertiaryColor);
         -webkit-text-stroke: 0.001em var(--tertiaryColor);
       }
     }
@@ -120,10 +120,7 @@ const ContactBlockView = styled.div`
       min-height: ${props => props.height/1.2}px;
       .title-box {
         .contact-title {
-          font-size: 50px;
-        }
-        .contact-subtitle {
-          font-size: 50px;
+          font-size: 45px;
         }
       }
       .content {
