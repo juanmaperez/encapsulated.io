@@ -67,6 +67,10 @@ function SEO({ description, lang, meta, keywords, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `viewport`,
+          content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0',
+        },
       ]
         .concat(
           keywords.length > 0
@@ -78,10 +82,6 @@ function SEO({ description, lang, meta, keywords, title }) {
         )
         .concat(meta)}
     >
-    <meta 
-     name='viewport' 
-     content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' 
-    />
     </Helmet>
   )
 }

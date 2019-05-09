@@ -57,6 +57,12 @@ const PresentationView = styled.div`
       margin-top: -200px;
       margin-left: -200px;
       opacity: 0;
+      @media(max-width:510px){
+        width: 300px;
+        height: 300px;
+        margin-top: -150px;
+        margin-left: -150px;
+      }
 
       img {
         width: 100%;
