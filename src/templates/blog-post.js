@@ -22,6 +22,9 @@ const BlogPostView = styled.div`
     margin-bottom: 60px;
     background-position: center center;
     background-attachment: fixed;
+    @media(max-width:490px){
+      background-attachment: scroll;
+    }
   }
 
   .post-container {
@@ -33,7 +36,7 @@ const BlogPostView = styled.div`
     @media(max-width:878px){ width:75% }
     @media(max-width:510px){
       width:95%;
-      padding:25px 0px;
+      padding:25px 10px;
     }
     .step-buttons {
       margin: 20px 0px;

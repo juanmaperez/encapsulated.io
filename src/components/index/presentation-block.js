@@ -57,6 +57,12 @@ const PresentationView = styled.div`
       margin-top: -200px;
       margin-left: -200px;
       opacity: 0;
+      @media(max-width:510px){
+        width: 300px;
+        height: 300px;
+        margin-top: -150px;
+        margin-left: -150px;
+      }
 
       img {
         width: 100%;
@@ -108,6 +114,20 @@ class PresentationBlock extends Component {
     })
     this.props.markAsCompleted();
   }
+
+  static getDerivedStateFromProps(nextProps, prevState){
+    if ( nextProps.height !== prevState.height ) {
+      return { height: nextProps.height };
+   }
+   else return null;
+ }
+
+ componentDidUpdate(prevProps, prevState) {
+  if (prevState.height !== this.state.height) {
+    const { height } = this.state;
+    this.setState({ height });
+  }
+}
 
   componentDidMount(){
     this.setState({ height: this.props.height, complete: this.props.completed })
