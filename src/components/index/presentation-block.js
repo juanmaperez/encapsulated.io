@@ -115,6 +115,20 @@ class PresentationBlock extends Component {
     this.props.markAsCompleted();
   }
 
+  static getDerivedStateFromProps(nextProps, prevState){
+    if ( nextProps.height !== prevState.height ) {
+      return { height: nextProps.height };
+   }
+   else return null;
+ }
+
+ componentDidUpdate(prevProps, prevState) {
+  if (prevState.height !== this.state.height) {
+    const { height } = this.state;
+    this.setState({ height });
+  }
+}
+
   componentDidMount(){
     this.setState({ height: this.props.height, complete: this.props.completed })
     if(!this.props.completed){
