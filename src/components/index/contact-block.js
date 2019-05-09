@@ -111,14 +111,14 @@ const ContactBlockView = styled.div`
       min-height: ${props => props.height/1.2}px;
       .title-box {
         .contact-title, .contact-subtitle {
-          font-size: 45px;
+          font-size: 42px;
         }
       }
       .content {
         .hi-box {
           .contact-resume {
-            h3 {gi
-              font-size:24px;
+            h3 {
+              font-size:23px;
             }
           }
         }
