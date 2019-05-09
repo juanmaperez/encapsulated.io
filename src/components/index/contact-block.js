@@ -20,7 +20,11 @@ const ContactBlockView = styled.div`
         font-size: 8vw;
         margin: 50px 0px 0px;
         line-height: 0.9;
+<<<<<<< HEAD
         color: var(--primaryColor);
+=======
+        color:  var(--primaryColor);
+>>>>>>> develop
         -webkit-text-stroke: 0.001em var(--primaryColor);
       }
       .contact-subtitle {
@@ -117,16 +121,17 @@ const ContactBlockView = styled.div`
     }
   
     @media(max-width: 510px){
+      padding: 30px 10px;
       min-height: ${props => props.height/1.2}px;
       .title-box {
-        .contact-title {
+        .contact-title, .contact-subtitle {
           font-size: 45px;
         }
       }
       .content {
         .hi-box {
           .contact-resume {
-            h3 {
+            h3 {gi
               font-size:24px;
             }
           }
