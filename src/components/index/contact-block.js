@@ -117,6 +117,7 @@ const ContactBlockView = styled.div`
     }
   
     @media(max-width: 510px){
+      padding: 30px 10px;
       min-height: ${props => props.height/1.2}px;
       .title-box {
         .contact-title, .contact-subtitle {
