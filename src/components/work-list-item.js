@@ -124,6 +124,7 @@ const WorkListItemView = styled.div`
           padding: 0px 10px;
 
           .title {
+            padding: 0px 10px;
             font-size: 70px;
             color: ${props => props.index >= colors.length -1 ? colors[0] : colors[(props.index + 1)]} !important;
           }

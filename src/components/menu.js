@@ -1,9 +1,39 @@
 import React, { Component } from 'react';
 // import Link from 'gatsby'
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 const MenuView = styled.div`
-
+  position: relative;
+  .menu-list {
+    opacity: 0;
+    display: none;
+    transition: all 400ms linear;
+    position: absolute;
+    bottom: -110px;
+    right: 5px;
+    &.open {
+      display:block;
+      opacity: 1;
+    }
+    ul {
+      list-style: none;
+      li {
+        margin-bottom: 10px;
+        text-align: right;
+        a { 
+          color: var(--primaryColor);
+          font-size: 22px;
+          &.active {
+            text-decoration: line-through;
+          }
+          &:hover {
+            text-decoration: line-through;
+          }
+        }
+      }
+    }
+  }
   #nav-icon {
     margin: 5px;
     width: 35px;
@@ -97,6 +127,13 @@ class Menu extends Component {
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
+        </div>
+        <div className={ open ? 'open menu-list': 'menu-list'}>
+          <ul>
+            <li><Link activeClassName="active" to={'/'}> Home </Link></li>
+            <li><Link activeClassName="active" to={'/work'}> Work </Link></li>
+            <li><Link activeClassName="active" to={'/blog'}> Blog </Link></li>
+          </ul>
         </div>
       </MenuView>
     )
