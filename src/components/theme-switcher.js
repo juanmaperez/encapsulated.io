@@ -53,8 +53,10 @@ class ThemeSwitch extends Component {
   constructor(props){
     super(props);
     this.store = typeof localStorage === 'undefined' ? null : localStorage;  
-    const theme = this.store.getItem('theme') || 'light'
-    this.setState({ theme });
+    if(this.store){
+      const theme = this.store.getItem('theme') || 'light'
+      this.setState({ theme });
+    }
   }
 
   componentDidMount(){
