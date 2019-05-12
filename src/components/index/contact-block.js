@@ -20,11 +20,7 @@ const ContactBlockView = styled.div`
         font-size: 8vw;
         margin: 50px 0px 0px;
         line-height: 0.9;
-<<<<<<< HEAD
         color: var(--primaryColor);
-=======
-        color:  var(--primaryColor);
->>>>>>> develop
         -webkit-text-stroke: 0.001em var(--primaryColor);
       }
       .contact-subtitle {
@@ -243,14 +239,14 @@ class ContactBlock extends Component {
                   <h3>Available from June '19</h3>
 
                     <p>You have a project or idea which must be developed in a <strong>online environment</strong>, tell me more about it.</p>
-                    <p><span>Contact me by:</span><br/>
-                      <strong className="contact-btn" onClick={this.getMyEmail}>Get email</strong>
-                      <strong className="contact-btn" onClick={this.getMyPhone}>Get phone</strong>
+                    <p><span>Contact me:</span><br/>
+                      <strong className="contact-btn" onClick={this.getMyEmail}>Get my email</strong>
+                      <strong className="contact-btn" onClick={this.getMyPhone}>Get my phone</strong>
                     </p>
                   </div>
                 </div>
                 <div className="social-box">
-                  <p>If you rather something more social to talk with me, you can do it throught the following platforms:</p>
+                  <p>If you prefer something more social to talk with me, you can do it on the following platforms:</p>
                   <ul>
                     <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/juanmaperez">Github</a></li>
                     <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/juanmaperezvargas/">Linkedin</a></li>
