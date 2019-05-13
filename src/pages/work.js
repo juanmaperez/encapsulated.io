@@ -40,7 +40,11 @@ class WorkPage extends Component {
     const { height } = this.state
     return(
       <Layout>
-        <SEO title="Works" description="Web development by Juanma Perez for different clients. Portfolio" keywords={[`development`, `web design`, `websites`]}/>
+        <SEO 
+          title="Works" 
+          description="Web development by Juanma Perez for different clients. Portfolio" 
+          keywords={[`web development`, `web design`, `websites`, `portfolio`]}
+          />
           <WorkView height={height} > 
           {works.map(({node: work}, index)=>{
             const { frontmatter } = work;

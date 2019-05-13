@@ -46,6 +46,7 @@ const ContactBlockView = styled.div`
           h3 {
             font-size:34px;
             margin-bottom: 20px;
+            line-height: 1;
           }
           p {
             max-width: 90%;

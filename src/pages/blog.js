@@ -178,7 +178,11 @@ class BlogPage extends Component {
     const { view } = this.state; 
     return (
       <Layout>
-        <SEO title="Encapsulated Blog"  />
+        <SEO 
+          title="Encapsulated Blog" 
+          description={'Juanma Perez personal blog about javascript and other technologies related to front end development'} 
+          keywords={['javascript', 'development', 'front end', 'react', 'angular', 'gatsbyjs']} 
+        />
         <BlogView>
           <div className="list-header">
             <div className="image-wrapper">

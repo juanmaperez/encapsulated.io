@@ -63,7 +63,7 @@ body {
     --tertiaryColorRGB:28,118,143;
   }
 
-body.dark .logo img, body.dark .face img {
+body.dark .logo img, body.dark .face img, body.dark .notfound img {
     filter: invert(100%)
 }
 

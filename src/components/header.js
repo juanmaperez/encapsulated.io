@@ -75,11 +75,15 @@ const Header = ({ siteTitle }) => (
     <div className="header-wrapper">
       <div>
         <div className="logo">
-          <Image className="logo" title="encapsulated logotype" imageUrl={logo}/>    
+          <Link className="title-link"
+              to={"/"}>
+          <Image className="logo" title="encapsulated logotype" imageUrl={logo}/> 
+          </Link>
+   
         </div>
         <h1 className="title">
           <Link className="title-link"
-            to="/">
+            to={"/"}>
             {siteTitle}
           </Link>
         </h1>
