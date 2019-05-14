@@ -1,6 +1,6 @@
 ---
 path: '/blog/how-javascript-engine-works'
-date: '2018-05-23T12:34:00+00:00'
+date: '2018-05-18T12:34:00+00:00'
 title: "How javascript engine works"
 thumbnail: ./js_engine.jpg
 type: post

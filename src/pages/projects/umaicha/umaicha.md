@@ -5,22 +5,16 @@ title: "Umaicha"
 thumbnail: ./umaicha.png
 type: project
 tags: ['Web Development', "Design"]
-excerpt: "It all begins here. Do not skip to the last page. Do not let a friend or message board ruin this comic for you. The future (and past) of the DC Universe starts here. Don’t say I didn’t warn you!"
+excerpt: "UmaiCha is a company from catalonia specialized in tea production. Their principal strategy is to sell tea drinks without sugar and made with japanese technics and raw material from this country."
 ---
 
- - Hi! I'm your first Markdown file in **StackEdit**.
- - If you want to learn about StackEdit, you can read me.
- - If you want to play with Markdown, you can edit me.
- - Once you have finished with me, you can create new files by opening
-   the **file explorer**
+UmaiCha is a company from catalonia specialized in tea production. Their principal strategy is to sell tea drinks without sugar and made with japanese technics and raw material from this country.
 
+Umaicha’s work has been based on authenticity and tradition and the result of their effort is a natural product from green tea leaves from the Kagoshima region on the island of Kyushu in southern Japan.
 
-## Nullam justo mauris, convallis quis odio quis 
-Elementum egestas velit. Pellentesque quis ultricies ante. Nulla finibus interdum tortor at semper. Nunc rutrum blandit mi sed bibendum. Morbi volutpat interdum purus ut fermentum. Pellentesque lobortis scelerisque lacus ac varius. Phasellus nec pharetra elit.
+Our work was inspired in their values and we tried to implement a website clean, without sweeteners using the corporative colors and typographies Oswald and Myriad Pro as was specified in the briefing.
 
-## Pellentesque pharetra orci in mollis interdum. 
-Nullam auctor elit nec nisl mattis, quis luctus mi malesuada. Nulla ut nulla a leo ultricies blandit at ut tellus. Quisque eu velit vitae justo gravida consequat. Aliquam mollis eleifend urna, vel gravida ante tincidunt sed. 
+This projects has an interesting menu to customize every detail about the layout and content like CTAs, forms, blog title and subtitle. The grid system of 12 columns has been stablished as 9×3 but you can change it to 8×4 if you would like to give more importance to the sidebar.
 
-##Phasellus vel mattis tellus, a rhoncus nisi. 
-Maecenas facilisis rhoncus laoreet. Vestibulum convallis erat auctor nulla auctor blandit. Nunc vitae lectus sit amet leo commodo congue a id turpis. Cras vehicula vitae mi nec tincidunt. Praesent ac nisl ultrices nibh pulvinar ornare non vitae ipsum. Mauris sagittis nisi sed aliquet efficitur. Sed lectus ante, vulputate ac posuere in, dignissim id ex. Phasellus rhoncus tempus est sed accumsan. Quisque a massa non nunc lacinia auctor. Aenean at dolor lorem. Aliquam arcu massa, commodo id laoreet eu, laoreet et mauris. Duis venenatis mauris magna, et vulputate quam porttitor a.
+In this example you can see how we have implement our responsive design for tables and other devices. There are a lot of whitespace surrounding every element, this allows that the website breath and bring on a better reading.
 
