@@ -60,7 +60,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#ffffff`,
         display: `minimal-ui`,
-        icon: `src/images/logo_pill.png`, // This path is relative to the root of the site.
+        icon: `src/images/icons/icon-manifest.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-sass`
