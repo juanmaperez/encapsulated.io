@@ -1,6 +1,6 @@
-<h3 style="text-align:center"> 💊 Encapsulated</h3> 
-<p style="text-align:center">![alt text](https://encapsulated.io/static/logo_pill-9042e18128ac9c15c1bdbf8bc5a69755.png)</p>
-<h3 style="text-align:center"> Juanma Perez Personal website and blog</h3> 
+# 💊 Encapsulated</h3> 
+![alt text](https://encapsulated.io/static/logo_pill-9042e18128ac9c15c1bdbf8bc5a69755.png)
+# Juanma Perez Personal website and blog
  
 
 
