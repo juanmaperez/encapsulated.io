@@ -133,6 +133,8 @@ class PresentationBlock extends Component {
     this.setState({ height: this.props.height, complete: this.props.completed })
     if(!this.props.completed){
       this.animation()
+    } else {
+      this.props.markAsCompleted();
     }
   }
 
