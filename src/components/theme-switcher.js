@@ -47,22 +47,27 @@ const ThemeSwitcherView = styled.div`
 ` 
 
 class ThemeSwitch extends Component {  
-
-  state = { theme: 'light'}
-
+  state = {}
   constructor(props){
     super(props);
     this.store = typeof localStorage === 'undefined' ? null : localStorage;  
     if(this.store){
       const theme = this.store.getItem('theme') || 'light'
-      this.setState({ theme });
+      this.state = { theme }; 
+      
+      const element = document.querySelector('body');
+      element.className = "";
+      element.classList.add(theme);
     }
   }
 
   componentDidMount(){
-    if (this.store) {
+    const oldTheme = this.state.theme;
+    if (this.store ) {
       const theme = this.store.getItem('theme') || 'light'
-      this.setState({ theme });
+      if ( theme !== oldTheme) {
+        this.setState({ theme });
+      }
       this.setTheme(theme);
     }
   }

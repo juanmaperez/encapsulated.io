@@ -217,9 +217,7 @@ In the case of set al values to the complete form, We can pass an object with th
 
 ## Patch value in a specific form field
 
-By another hand, we can only patch a value for an input or select.
-
-To do this, we use the patchValue function from form wrap.
+By another hand, we can only patch a value for an input or select. To do this, we use the patchValue function from form wrap.
 
 ```javascript
 

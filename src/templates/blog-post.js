@@ -47,7 +47,11 @@ const BlogPostView = styled.div`
         flex: 1;
         display: flex;
         &:hover { text-decoration: underline}
-        &.next { text-align: right;}
+        &.next { text-align: right;
+          div {
+            text-align: right;
+            display: flex;}
+        }
         &.prev { text-align: left;}
         svg { margin: 0px 10px; }
       }
@@ -119,8 +123,12 @@ const BlogPostView = styled.div`
       }
       h2 {
         color: var(--secondaryColor);
-        margin: 10px 0px 5px;
+        margin: 10px 0px 10px;
         font-size: 28px;
+      }
+      h3 {
+        margin: 10px 0px;
+        text-decoration:underline;
       }
       a {
         color: var(--tertiaryColor);
@@ -128,6 +136,7 @@ const BlogPostView = styled.div`
       }
       ul {
         margin: 40px 0px 60px;
+        padding-left: 20px;
       }
     }
 

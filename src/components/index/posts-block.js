@@ -140,7 +140,7 @@ const PostsBlock = ({height}) => {
             { posts.map(({node: post}, index)=>{
                 const { frontmatter } = post;
                 return (
-                  <Controller>
+                  <Controller key={index}>
                     <Scene classToggle={'fade-in'} triggerHook={0.85}>
                       <div className="post-item" key={index} index={index} height={ height } frontmatter={ frontmatter }>
                         <Link to={`${frontmatter.path}`}>
