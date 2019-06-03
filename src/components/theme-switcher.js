@@ -7,6 +7,7 @@ import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 const ThemeSwitcherView = styled.div`
   margin-top: 5px;
   margin-right: 5px;
+  background: var(--bgColor);
   border: 1px solid var(--primaryColor);
   width: 40px;
   height: 20px;
