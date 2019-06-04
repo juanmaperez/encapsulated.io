@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import Link from 'gatsby'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
@@ -34,6 +33,7 @@ const MenuView = styled.div`
       }
     }
   }
+  
   #nav-icon {
     margin: 5px;
     width: 35px;
@@ -78,6 +78,7 @@ const MenuView = styled.div`
           top: 18px;
           width: 0%;
           left: 50%;
+          opacity: 0;
         }
         
         &:nth-child(2) {
@@ -98,6 +99,7 @@ const MenuView = styled.div`
           top: 18px;
           width: 0%;
           left: 50%;
+          opacity:0;
         }
 
       }

@@ -44,7 +44,6 @@ width: ${props => props && props.view === 'list' ? '35%' : '33%' };
       }
     }
     .image-container {
-      box-shadow: 0 0 0 1px rgba(var(--primaryColorRGB), 0.05), 0 2px 4px rgba(var(--primaryColorRGB), 0.08);      
       flex: 1;
       position: relative;
       overflow: hidden;

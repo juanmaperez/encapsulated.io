@@ -125,6 +125,8 @@ const BlogView = styled.div`
     .post-list {
       transition: all 1s linear;
       &.grid {
+        margin: 0px auto;
+        max-width: 1496px;
         display: flex;
         justify-content: flex-start;
         flex-wrap: wrap;

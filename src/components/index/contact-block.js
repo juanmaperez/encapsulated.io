@@ -51,13 +51,18 @@ const ContactBlockView = styled.div`
           p {
             max-width: 90%;
             margin-bottom: 20px;
-            strong {
+            span {
+              display:block;
               color: var(--secondaryColor);
               &.contact-btn { 
                 margin-top: 5px;
                 display:block;
-                text-decoration: underline; 
-                cursor: pointer 
+                border: 2px solid;
+                padding: 6px;
+                text-align: center; 
+                cursor: pointer;
+                margin-bottom: 20px; 
+                max-width: 200px;
               }
             }
           }
@@ -107,15 +112,17 @@ const ContactBlockView = styled.div`
       padding: 30px 10px;
       min-height: ${props => props.height/1.2}px;
       .title-box {
+        margin-bottom: 0px;
         .contact-title, .contact-subtitle {
-          font-size: 42px;
+          font-size: 40px;
         }
       }
       .content {
         .hi-box {
           .contact-resume {
             h3 {
-              font-size:23px;
+              font-size:23px;            
+              line-height: 1.4;
             }
           }
         }
@@ -237,12 +244,13 @@ class ContactBlock extends Component {
               <div className="content">
                 <div className="hi-box">
                   <div className="contact-resume">
-                  <h3>Available from June '19</h3>
+                  <h3>Available from September '19</h3>
 
                     <p>You have a project or idea which must be developed in a <strong>online environment</strong>, tell me more about it.</p>
-                    <p><span>Contact me:</span><br/>
-                      <strong className="contact-btn" onClick={this.getMyEmail}>Get my email</strong>
-                      <strong className="contact-btn" onClick={this.getMyPhone}>Get my phone</strong>
+                    <p><strong>Contact me:</strong></p>
+                    <p>
+                      <span className="contact-btn" onClick={this.getMyEmail}>Get my email</span>
+                      <span className="contact-btn" onClick={this.getMyPhone}>Get my phone</span>
                     </p>
                   </div>
                 </div>
