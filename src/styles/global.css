@@ -63,7 +63,9 @@ body {
     --tertiaryColorRGB:28,118,143;
   }
 
-body.dark .logo img, body.dark .face img, body.dark .notfound img {
+body.dark .logo img, 
+body.dark .face img, 
+body.dark .notfound img {
     filter: invert(100%)
 }
 
@@ -179,4 +181,8 @@ input, select {
     float: left; /* 1 */
     min-width: 100%; /* 2 */
     margin-bottom: 5px !important;
+  }
+
+  ul, ol {
+    list-style: none;
   }

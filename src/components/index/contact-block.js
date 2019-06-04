@@ -77,9 +77,15 @@ const ContactBlockView = styled.div`
         font-size: 22px;
         letter-spacing: 1px;
         ul {
-          padding: 30px 20px;
+          padding: 30px 0px;
           li {
             margin-bottom: 10px;
+          }
+          li:before {
+            content: '💊';
+            list-style: none;
+            padding-right: 15px;
+            font-size: 14px;
           }
         }
       }

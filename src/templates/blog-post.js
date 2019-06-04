@@ -136,7 +136,13 @@ const BlogPostView = styled.div`
       }
       ul {
         margin: 40px 0px 60px;
-        padding-left: 20px;
+        padding-left: 0px;
+        li:before {
+          content: '💊';
+          list-style: none;
+          padding-right: 15px;
+          font-size: 14px;
+        }
       }
     }
 

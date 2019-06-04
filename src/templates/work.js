@@ -84,6 +84,11 @@ const WorkView = styled.div`
     }
     ul {
       margin: 40px 0px 60px;
+      li:before {
+        content: '💊';
+        padding-right: 15px;
+        font-size: 14px;
+      }
     }
   }
 
