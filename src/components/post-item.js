@@ -92,12 +92,12 @@ width: ${props => props && props.view === 'list' ? '35%' : '33%' };
       .post-title {
         margin: 20px 0px 10px;
         padding: 0px;
-        font-size: 45px;
+        font-size: 30px;
         line-height: 1;
         letter-spacing: 1px;
         color: var(--tertiaryColor);
         -webkit-text-stroke: 0.5px var(--tertiaryColor);
-        @media(max-width:510px){ font-size: 34px }
+        @media(max-width:510px){ font-size: 30px }
    
         a {
           text-decoration: none;
