@@ -4,8 +4,10 @@ module.exports = {
     title: `encapsulated`,
     description: `Little pills about javascript, react, angular, gatsbyjs, nodejs by Juanma Perez, Front end developer`,
     author: `Juanma Perez`,
+    siteUrl: `https://encapsulated.io`,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-google-analytics`,
