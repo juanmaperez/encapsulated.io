@@ -80,7 +80,7 @@ function SEO({ description, lang, meta, keywords, title }) {
           content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0',
         },
         { name: 'google-site-verification', 
-          content: 'google10458f8f30eada7d' 
+          content: 'qojztTOFTmy83nCRl5qy96O5vHACP_n7tWkhEcqSLFw' 
         }
 
       ]
