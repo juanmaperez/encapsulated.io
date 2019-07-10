@@ -79,6 +79,10 @@ function SEO({ description, lang, meta, keywords, title }) {
           name: `viewport`,
           content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0',
         },
+        { name: 'google-site-verification', 
+          content: 'google10458f8f30eada7d' 
+        }
+
       ]
         .concat(
           keywords.length > 0
