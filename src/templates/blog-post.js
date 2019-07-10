@@ -234,7 +234,7 @@ export const PostQuery = graphql`
         excerpt
         thumbnail {
           childImageSharp {
-              fluid(maxWidth: 1500) {
+              fluid(maxWidth: 2000) {
                   src
               }
           }

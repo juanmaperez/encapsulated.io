@@ -72,7 +72,7 @@ const PostsBlockView = styled.div`
   }
 
   @media(max-width: 510px){
-    min-height: ${props => props.height/1.2}px;
+    min-height: ${props => props.height/2}px;
     padding: 50px 20px;
     .posts-block-list {
       margin: 30px 0px 0px;

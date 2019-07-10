@@ -13,6 +13,12 @@ const ThemeSwitcherView = styled.div`
   height: 20px;
   border-radius: 20px/20px;
   position: relative;  
+  svg {
+    max-width:12px;
+    path {
+      max-width: 12px;
+    }
+  }
   .dark-icon {
     font-size: 12px; 
     position: absolute; 

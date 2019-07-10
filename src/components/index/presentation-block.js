@@ -138,6 +138,10 @@ class PresentationBlock extends Component {
     }
   }
 
+  componentWillUnmount(){
+    this.props.markAsCompleted();
+  }
+
   animation = () => {
     const creative = document.querySelector('.creative'),
           developer = document.querySelector('.developer'),

@@ -37,10 +37,6 @@ width: ${props => props && props.view === 'list' ? '35%' : '33%' };
     &:hover {
       0px 3px 5px 5px rgba(var(--primaryColorRGB),0.1), 0 2px 4px rgba(var(--primaryColorRGB),0.08);
       transform: translateY(-5px);
-      .image-container {
-        .image {
-          transform: scale(1.1);
-        }
       }
     }
     .image-container {
@@ -51,14 +47,16 @@ width: ${props => props && props.view === 'list' ? '35%' : '33%' };
       max-height: 320px;
       @media(max-width: 520px){ height: 260px}
       .image {
-        transition: all 300ms linear;
+        transition: all 600ms linear;
         position: relative;
         height: 100%;
         width: 100%;
         background: url(${props => props.image});
         background-size: cover;
         background-position: center center;
-       
+        &.aumented {
+          transform:scale(1.1) translateY(10px);
+        }
       }
     }
     .post-container { 
@@ -66,8 +64,8 @@ width: ${props => props && props.view === 'list' ? '35%' : '33%' };
       padding: 20px 20px 40px;
       flex: 1;
       .post-icon {
-        width: 25px;
-        height: 50px;
+        width: 22px;
+        height: 44px;
         background: url(${props=> props.icon});
         border-radius: 50%/25%;
         position: absolute;
@@ -128,7 +126,11 @@ const PostItem = (props) => {
         <div className="post-wrapper">
           <div className="post">
             <div className="image-container">
-              <div className="image"></div>
+              <Controller>
+                <Scene classToggle={'aumented'} duration={'50%'} triggerHook={1}>
+                  <div className="image aumented"></div>
+                </Scene>
+              </Controller>
             </div>
             <div className="post-container">
               <Link to={`/blog/category/${frontmatter.category}`}><div className="post-icon"></div></Link>
