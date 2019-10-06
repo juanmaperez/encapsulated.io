@@ -62,7 +62,7 @@ const BlogPostView = styled.div`
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
-      color: var(--tertiaryColor);
+      color: var(--secondaryColor);
       .post-icon {
         position: relative;
         top: -3px;
@@ -91,7 +91,7 @@ const BlogPostView = styled.div`
     }
     .post-title {
       margin: 30px 0px 60px;
-      font-size: 62px;
+      font-size: 60px;
       color: var(--secondaryColor);
       -webkit-text-stroke: 1px var(--secondaryColor);
       @media(max-width:768px){
@@ -106,8 +106,8 @@ const BlogPostView = styled.div`
 
     .post-content {
       margin-top: 10px;
-      line-height: 1.6;
-      font-size: 22px;
+      line-height: 1.5;
+      font-size: 19px;
       letter-spacing: 1px;
       pre {
         margin-bottom: 45px;
@@ -118,7 +118,7 @@ const BlogPostView = styled.div`
         padding: 5px;
       }
       p {
-        margin-bottom: 45px;      
+        margin-bottom: 30px;      
         color: var(--primaryColor);
       }
       h2 {
@@ -171,7 +171,7 @@ class BlogPostTemplate extends Component {
     const { markdownRemark: post } = this.props.data;
     const { frontmatter, html } = post;
     const { next, prev } = this.props.pageContext;
-    const backPath = this.props.location.state ? this.props.location.state.prevPath || '/blog' : '/blog';
+    const backPath = this.props.location.state ? this.props.location.state.prevPath || '/' : '/';
     const { height } = this.state;
 
     return(

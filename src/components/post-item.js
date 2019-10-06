@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 import styled from 'styled-components';
 import { Controller, Scene } from 'react-scrollmagic';
 
@@ -40,6 +40,7 @@ width: ${props => props && props.view === 'list' ? '35%' : '33%' };
       }
     }
     .image-container {
+      cursor: pointer;
       flex: 1;
       position: relative;
       overflow: hidden;
@@ -77,6 +78,7 @@ width: ${props => props && props.view === 'list' ? '35%' : '33%' };
         box-shadow: 0px 1px 1px 1px rgba(var(--primaryColorRGB),0.2), 0 2px 4px rgba(var(--primaryColorRGB),0.08); 
         overflow: hidden;    
         background-color: transparent; 
+        z-index: 10;
       }
       .post-date {
         display: block;
@@ -93,18 +95,18 @@ width: ${props => props && props.view === 'list' ? '35%' : '33%' };
         font-size: 30px;
         line-height: 1;
         letter-spacing: 1px;
-        color: var(--tertiaryColor);
-        -webkit-text-stroke: 0.5px var(--tertiaryColor);
+        color: var(--primaryColor);
+        -webkit-text-stroke: 0.5px var(--primaryColor);
         @media(max-width:510px){ font-size: 30px }
    
         a {
           text-decoration: none;
-          color: var(--tertiaryColor) !important;
+          color: var(--primaryColor) !important;
         }
       }
       .post-excerpt {
         display: block;
-        font-size: 20px;
+        font-size: 18px;
         margin-bottom: 0px;
         line-height:1.5;
         color:  var(--primaryColor);
@@ -123,17 +125,13 @@ const PostItem = (props) => {
   <PostItemView view={view} image={ frontmatter.thumbnail.childImageSharp.fluid.src } icon={ frontmatter.icon.childImageSharp.fluid.src }>
     <Controller>
       <Scene classToggle={'fade-in'} triggerHook={0.85}>
-        <div className="post-wrapper">
+        <div className="post-wrapper" >
           <div className="post">
-            <div className="image-container">
-              <Controller>
-                <Scene classToggle={'aumented'} duration={'50%'} triggerHook={1}>
-                  <div className="image aumented"></div>
-                </Scene>
-              </Controller>
+            <div className="image-container" onClick={() => navigate(frontmatter.path) }>
+              <div className="image aumented"></div>
             </div>
             <div className="post-container">
-              <Link to={`/blog/category/${frontmatter.category}`}><div className="post-icon"></div></Link>
+              <Link to={`/category/${frontmatter.category}`}><div className="post-icon"></div></Link>
               <h2 className="post-title">
                 <Link to={frontmatter.path} state={{prevPath: listPath }}> {frontmatter.title} </Link>
               </h2>

@@ -1,5 +1,5 @@
 ---
-path: '/blog/intro-to-big-notation'
+path: '/intro-to-big-notation'
 date: '2019-07-12T12:59:00+00:00'
 title: "Intro to big notation"
 thumbnail: ./big-o-notation-introduction.jpg

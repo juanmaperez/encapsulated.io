@@ -1,5 +1,5 @@
 ---
-path: '/blog/angular-forms-template-driven-approach'
+path: '/angular-forms-template-driven-approach'
 date: '2018-05-23T12:34:00+00:00'
 title: "Angular Forms: Template Driven approach"
 thumbnail: ./angular_forms_1.jpg

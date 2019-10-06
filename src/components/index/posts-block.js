@@ -154,7 +154,7 @@ const PostsBlock = ({height}) => {
               })
             }   
           </div>
-          <Link className="all" to={`/blog`}>View all posts</Link>
+          <Link className="all" to={`/`}>View all posts</Link>
           </>
         )
       }} />

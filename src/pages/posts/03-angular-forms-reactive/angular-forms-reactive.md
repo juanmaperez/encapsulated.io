@@ -1,5 +1,5 @@
 ---
-path: '/blog/angular-forms-reactive-approach'
+path: '/angular-forms-reactive-approach'
 date: '2018-05-21T12:34:00+00:00'
 title: "Angular Forms: Reactive approach"
 thumbnail: ./angular_forms_2.jpg

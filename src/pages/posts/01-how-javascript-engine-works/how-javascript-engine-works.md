@@ -1,5 +1,5 @@
 ---
-path: '/blog/how-javascript-engine-works'
+path: '/how-javascript-engine-works'
 date: '2018-05-18T12:34:00+00:00'
 title: "How javascript engine works"
 thumbnail: ./js_engine.jpg

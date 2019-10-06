@@ -28,6 +28,7 @@ const path = require ('path');
 //   });
 // }
 
+
 exports.createPages = ({ actions, graphql}) => {
   const { createPage } = actions;
   const BlogPostTemplate = path.resolve('src/templates/blog-post.js');
@@ -83,7 +84,27 @@ exports.createPages = ({ actions, graphql}) => {
         posts.push(edge)
       }
     })
+
+    // post list page
+
+    const postsPerPage = 12;
+    const numPages = Math.ceil(posts.length / postsPerPage)
+
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/` : `page/${ i + 1}`,
+        component: path.resolve('./src/templates/blog-list.js'),
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages,
+          currentPage: i + 1
+        }
+      })
+    })
     
+    // post pages
+
     posts.forEach(({node}, index ) => {
       createPage({
         path: node.frontmatter.path,
@@ -94,6 +115,8 @@ exports.createPages = ({ actions, graphql}) => {
         } 
       })
     })
+
+    // work Pages
 
     works.forEach(({node}, index)=> {
       createPage({
@@ -106,6 +129,8 @@ exports.createPages = ({ actions, graphql}) => {
       })
     })
 
+    // categories pages
+
     const categories = [];
     const categoryTemplate = path.resolve('src/templates/category.js');
 
@@ -117,7 +142,7 @@ exports.createPages = ({ actions, graphql}) => {
 
     categories.forEach(category => {
       createPage({
-        path: `/blog/category/${category}`,
+        path: `/category/${category}`,
         component: categoryTemplate,
         context: {
           category,

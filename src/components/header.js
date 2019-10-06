@@ -4,7 +4,6 @@ import React from "react"
 import styled from 'styled-components';
  
 import Image from './image';
-import Menu from './menu';
 
 import logo from './../images/logo_pill.png';
 import ThemeSwitch from "./theme-switcher";
@@ -90,7 +89,6 @@ const Header = ({ siteTitle }) => (
       </div>
       <div>
         <ThemeSwitch />
-        <Menu />
       </div>
     </div>
   </HeaderView>

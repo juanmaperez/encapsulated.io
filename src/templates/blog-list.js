@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,6 +8,7 @@ import Image from './../components/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faList, faGripHorizontal } from '@fortawesome/free-solid-svg-icons'
 import juanma from './../images/juanma_perez.jpg'
+
 
 
 const BlogView = styled.div`
@@ -121,6 +122,16 @@ const BlogView = styled.div`
       flex-direction: row;
     }
   }
+
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin: 10px auto;
+    @media(max-width: 480px) {
+      width: 95%; 
+    }
+  }
   @media(min-width: 768px){
     .post-list {
       transition: all 1s linear;
@@ -177,11 +188,16 @@ class BlogPage extends Component {
 
   render() {
     const { edges: posts } = this.props.data.allMarkdownRemark;
-    const { view } = this.state; 
+    const { view } = this.state;
+    const { currentPage, numPages } = this.props.pageContext 
+    const isFirst = currentPage === 1;
+    const isLast = currentPage ===  numPages;
+    const prevPage = currentPage -1 === 1 ? '/' : `/page/${(currentPage - 1 ).toString()}`
+    const nextPage = `/page/${(currentPage  + 1).toString()}`
     return (
       <Layout>
         <SEO 
-          title="Encapsulated Blog" 
+          title="Blog" 
           description={'Juanma Perez personal blog about javascript and other technologies related to front end development'} 
           keywords={['javascript', 'development', 'front end', 'react', 'angular', 'gatsbyjs']} 
         />
@@ -207,6 +223,22 @@ class BlogPage extends Component {
               )
             })}
           </div>
+          <div className="pagination">
+            <div>
+              {!isFirst && (
+                <Link to={prevPage} rel="prev">
+                  ← Previous Page
+                </Link>
+              )}
+            </div>
+            <div>
+              {!isLast && (
+                <Link to={nextPage} rel="next">
+                  Next Page →
+                </Link>
+              )}
+            </div>
+          </div>
         </BlogView>
       </Layout>
     )
@@ -215,9 +247,10 @@ class BlogPage extends Component {
 }
 
 export const query = graphql`
-  query BlogQuery {
+  query BlogQuery ($skip: Int!, $limit: Int!) {
     allMarkdownRemark (
-      limit: 2000
+      limit: $limit
+      skip: $skip
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {frontmatter: {type: {eq: "post"}}}
     ) {
