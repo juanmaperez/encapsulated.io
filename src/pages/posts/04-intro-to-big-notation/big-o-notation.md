@@ -2,7 +2,7 @@
 path: '/intro-to-big-notation'
 date: '2019-07-12T12:59:00+00:00'
 title: "Intro to big notation"
-thumbnail: ./big-o-notation-introduction.jpg
+thumbnail: ./big-o-notation-introduction.png
 type: post
 icon: ./../../../images/icons/javascript.png
 category: 'javascript'
@@ -16,7 +16,8 @@ All this approaches can work, but maybe one of them is the best one. Probably if
 
 We will focus on how fast a functions is and for getting that information we can use counting operations. Less operations means that our code is more efficient. 
 
-Here we have to examples for the same task that it's only add all numbers from 0 to n number. Being *n = 10* we will have something like this: _0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10_
+Here we have to examples for the same task that it's only add all numbers from 0 to n number. Being *n = 10* we will have something like this:
+_0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10_
 Both example makes the same task in different ways.
 
 ```js

@@ -91,12 +91,12 @@ const BlogPostView = styled.div`
     }
     .post-title {
       margin: 30px 0px 60px;
-      font-size: 60px;
+      font-size: 54px;
       color: var(--secondaryColor);
       -webkit-text-stroke: 1px var(--secondaryColor);
       @media(max-width:768px){
-        font-size: 52px;
-        margin: 10px 0px 50px;
+        font-size: 48px;
+        margin: 10px 0px 30px;
       }
       @media(max-width:510px){
         font-size: 42px;
@@ -135,8 +135,11 @@ const BlogPostView = styled.div`
         text-decoration: none;
       }
       ul {
-        margin: 40px 0px 60px;
+        margin: 40px 0px 30px;
         padding-left: 0px;
+        li {
+          margin-bottom: 10px;
+        }
         li:before {
           content: '💊';
           list-style: none;
