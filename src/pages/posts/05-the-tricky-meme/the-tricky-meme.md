@@ -1,5 +1,5 @@
 ---
-path: '/a-meme-for-coercion'
+path: '/a-tricky-meme-for-coercion'
 date: '2019-09-17T12:59:00+00:00'
 title: "A meme for coercion"
 thumbnail: ./tricky-meme.png
