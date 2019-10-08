@@ -2,7 +2,7 @@
 path: '/how-javascript-engine-works'
 date: '2018-05-18T12:34:00+00:00'
 title: "How javascript engine works"
-thumbnail: ./js_engine.jpg
+thumbnail: ./js_engine.png
 type: post
 icon: ./../../../images/icons/javascript.png
 category: 'javascript'
