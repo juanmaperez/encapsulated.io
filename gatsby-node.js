@@ -1,34 +1,5 @@
 const path = require ('path');
 
-// exports.createCategoryPages = (createPage, posts) => {
-//   const CategoryTemplate = path.resolve (`src/templates/category.js`);
-  
-//   const postsByCategory = {};
-
-//   posts.forEach(({node}) => {
-//     if(node.frontmatter.category){
-//       if (!postsByCategory[node.frontmatter.category]) {
-//         postsByCategory[node.frontmatter.category] = [];
-//       }
-//       postsByTags[tag].push(node);
-//     }
-//   })
-
-//   const categories = Object.keys (postsByCategory);
-//   categories.forEach (category => {
-//     const posts = postsByCategies[category];
-//     createPage ({
-//       path: `/category/${category}`,
-//       component: CategoryTemplate,
-//       context: {
-//         posts,
-//         category,
-//       },
-//     });
-//   });
-// }
-
-
 exports.createPages = ({ actions, graphql}) => {
   const { createPage } = actions;
   const BlogPostTemplate = path.resolve('src/templates/blog-post.js');
@@ -36,13 +7,13 @@ exports.createPages = ({ actions, graphql}) => {
 
   return graphql(
     `{
-      allMarkdownRemark {
+      allMarkdownRemark (sort: { order: DESC, fields: [frontmatter___date]}) {
         edges {
           node {
             html
             id
             frontmatter {
-              date(formatString: "MMMM, DD, YYYY")
+              date(formatString: "DD MMMM, YYYY")
               path
               title
               excerpt
@@ -74,16 +45,9 @@ exports.createPages = ({ actions, graphql}) => {
     }
 
     const edges = result.data.allMarkdownRemark.edges;
-    let posts = [];
-    let works = [];
 
-    edges.forEach(edge => {
-      if(edge.node.frontmatter.type === 'project'){
-        works.push(edge)
-      } else {
-        posts.push(edge)
-      }
-    })
+    const works = edges.filter(({node}) => node.frontmatter.type === 'project')
+    const posts = edges.filter(({node}) => node.frontmatter.type === 'post')
 
     // post list page
 
@@ -104,6 +68,7 @@ exports.createPages = ({ actions, graphql}) => {
     })
     
     // post pages
+    posts.forEach(({node})=> console.log(node.frontmatter.title))
 
     posts.forEach(({node}, index ) => {
       createPage({

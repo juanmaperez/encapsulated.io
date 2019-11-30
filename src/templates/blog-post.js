@@ -50,7 +50,9 @@ const BlogPostView = styled.div`
         &.next { text-align: right;
           div {
             text-align: right;
-            display: flex;}
+            display: flex;
+            justify-content: flex-end;
+          }
         }
         &.prev { text-align: left;}
         svg { margin: 0px 10px; }
