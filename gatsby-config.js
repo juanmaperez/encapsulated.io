@@ -1,10 +1,10 @@
 module.exports = {
-  // pathPrefix: `/encapsulated.io`,
+  // pathPrefix: `/finejavascript.com`,
   siteMetadata: {
-    title: `encapsulated`,
-    description: `Little pills about javascript, react, angular, gatsbyjs, nodejs by Juanma Perez, Front end developer`,
+    title: `finejavascript`,
+    description: `Little pills about javascript, react, angular, gatsbyjs, nodejs by Juanma Perez, Software engineer`,
     author: `Juanma Perez`,
-    siteUrl: `https://encapsulated.io`,
+    siteUrl: `https://finejavascript.com`,
   },
   plugins: [
     `gatsby-plugin-sitemap`,
@@ -62,8 +62,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `encapsulated`,
-        short_name: `encapsulated`,
+        name: `finejavascript`,
+        short_name: `finejavascript`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#ffffff`,

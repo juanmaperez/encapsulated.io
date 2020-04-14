@@ -76,7 +76,7 @@ const Header = ({ siteTitle }) => (
         <div className="logo">
           <Link className="title-link"
               to={"/"}>
-          <Image className="logo" title="encapsulated logotype" imageUrl={logo}/> 
+          <Image className="logo" title="finejavascript logotype" imageUrl={logo}/> 
           </Link>
    
         </div>

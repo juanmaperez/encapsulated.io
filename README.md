@@ -1,5 +1,5 @@
-# 💊 Encapsulated</h3> 
-![alt text](https://encapsulated.io/static/logo_pill-9042e18128ac9c15c1bdbf8bc5a69755.png)
+# 💊 FineJavascript</h3> 
+![finejavascript](https://finejavascript.com/static/logo_pill-9042e18128ac9c15c1bdbf8bc5a69755.png)
 # Juanma Perez Personal website and blog
  
 
@@ -13,7 +13,7 @@ This site has been created with the default starter project from gatsby on https
     Navigate into your new site’s directory and start it up.
 
     ```sh
-    cd encapsulated/
+    cd finejavascript/
     npm install
     gatsby develop
     ```
@@ -29,7 +29,7 @@ This site has been created with the default starter project from gatsby on https
     
 3.  **Deployment to production**
 
-    The website is hosted in github pages and associated to the domain [encapsulated.io](https://encapsulated.io)
+    The website is hosted in github pages and associated to the domain [finejavascript.com](https://finejavascript.io)
 
     All the content where the website is deployed in the gh-pages branch into the public folder 
     
