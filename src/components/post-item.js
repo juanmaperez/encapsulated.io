@@ -34,11 +34,8 @@ width: ${props => props && props.view === 'list' ? '35%' : '33%' };
     transition: all 200ms linear;
     overflow: hidden;
     box-shadow: 0 0 0 1px rgba(var(--primaryColorRGB), 0.05), 0 2px 4px rgba(var(--primaryColorRGB), 0.08);      
-    &:hover {
-      0px 3px 5px 5px rgba(var(--primaryColorRGB),0.1), 0 2px 4px rgba(var(--primaryColorRGB),0.08);
-      transform: translateY(-5px);
-      }
-    }
+ 
+    
     .image-container {
       cursor: pointer;
       flex: 1;
@@ -48,9 +45,9 @@ width: ${props => props && props.view === 'list' ? '35%' : '33%' };
       max-height: 320px;
       @media(max-width: 520px){ height: 260px}
       .image {
+        min-height: 320px;
         transition: all 600ms linear;
         position: relative;
-        height: 100%;
         width: 100%;
         background: url(${props => props.image});
         background-size: cover;
