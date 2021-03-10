@@ -32,8 +32,6 @@ const PostsBlockView = styled.div`
       }
       span {
         font-size: 80px;
-        font-weight: bolder;
-        letter-spacing: 1px;
         color: var(--primaryColor);
       }
       &:hover {

@@ -13,41 +13,30 @@ const BlogPostView = styled.div`
   position: relative;
   overflow: hidden;
 
-  .post-header {
-    width: 100%;
-    background: url(${props => props.image });
-    height: ${props => props.height}px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin-bottom: 60px;
-    background-position: center center;
-    background-attachment: fixed;
-    @media(max-width:490px){
-      background-attachment: scroll;
-    }
-  }
-
   .post-container {
     box-sizing: border-box;
-    width: 40%;
+    width: 50%;
     margin: 0px auto;
-    @media(max-width:1590px){ width: 40% }
+    padding: 100px 0 40px;
+    @media(max-width:1590px){ width: 50% }
     @media(max-width:1100px){ width:55% }
     @media(max-width:878px){ width:75% }
     @media(max-width:510px){
       width:95%;
-      padding:25px 10px;
+      padding: 100px 10px 40px;
     }
     .step-buttons {
-      margin: 20px 0px;
+      margin: 60px 0px;
       display: flex;
+      font-size: 14px;
       flex-direction: row;
       justify-content: flex-start;
       div {
         flex: 1;
         display: flex;
         &:hover { text-decoration: underline}
-        &.next { text-align: right;
+        &.next { 
+          text-align: right;
           div {
             text-align: right;
             display: flex;
@@ -60,29 +49,29 @@ const BlogPostView = styled.div`
     }
 
     .post-date {
-      font-size: 18px;
+      font-size: 13px;
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
-      color: var(--secondaryColor);
+      color: #999;
       .post-icon {
         position: relative;
         top: -3px;
         margin-right: 10px;
         display: inline-block;
-        width: 10px;
-        height: 20px;
+        width: 8px;
+        height: 17px;
         background: url(${props=> props.icon});
         border-radius: 50%/25%;
         background-size: 130%;
         background-position:center 1px;
         background-repeat: no-repeat;
-        box-shadow: 0px 1px 1px 1px rgba(var(--primaryColorRGB),0.2), 0 2px 4px rgba(var(--primaryColorRGB),0.08); 
         overflow: hidden;    
         background-color: transparent; 
       }
     }
     .back { 
+      font-size: 14px;
       opacity: .5;
       box-sizing: border-box;
       cursor: pointer;
@@ -92,41 +81,39 @@ const BlogPostView = styled.div`
       margin-bottom: 10px;
     }
     .post-title {
-      margin: 30px 0px 60px;
-      font-size: 54px;
-      color: var(--secondaryColor);
-      -webkit-text-stroke: 1px var(--secondaryColor);
+      font-family: 'Montserrat', sans-serif;
+      margin: 30px 0px 30px;
+      font-size: 30px;
+      font-weight:800;
+      color: var(--primaryColor);
       @media(max-width:768px){
-        font-size: 48px;
+        font-size: 28px;
         margin: 10px 0px 30px;
       }
       @media(max-width:510px){
-        font-size: 42px;
+        font-size: 28px;
         margin: 0px 0px 30px;
       }
     }
 
     .post-content {
-      margin-top: 10px;
       line-height: 1.5;
-      font-size: 19px;
-      letter-spacing: 1px;
+      font-size: 16px;
       pre {
-        margin-bottom: 45px;
         max-width: 100%;
-        font-size: 16px;
+        font-size: 14px;
         line-height:1.2;
         display:block;
         padding: 5px;
       }
       p {
-        margin-bottom: 30px;      
+        margin-bottom: 20px;      
         color: var(--primaryColor);
       }
       h2 {
-        color: var(--secondaryColor);
+        color: var(--tertiaryColor);
         margin: 10px 0px 10px;
-        font-size: 28px;
+        font-size: 20px;
       }
       h3 {
         margin: 10px 0px;
@@ -137,14 +124,16 @@ const BlogPostView = styled.div`
         text-decoration: none;
       }
       ul {
-        margin: 40px 0px 30px;
+        margin:30px 0px 30px;
         padding-left: 0px;
+        list-style: circle !important;
+        padding-left: 20px;
+
         li {
           margin-bottom: 10px;
         }
         li:before {
-          content: '💊';
-          list-style: none;
+          list-style: disc !important;
           padding-right: 15px;
           font-size: 14px;
         }
@@ -182,10 +171,7 @@ class BlogPostTemplate extends Component {
     return(
       <Layout>
         <SEO title={frontmatter.title} description={ frontmatter.excerpt } keywords={ frontmatter.tags } />
-        <BlogPostView height={height} image={ frontmatter.thumbnail.childImageSharp.fluid.src } icon={ frontmatter.icon.childImageSharp.fluid.src }>
-          <div className="post-header">
-          </div>
-          
+        <BlogPostView height={height} image={ frontmatter.thumbnail.childImageSharp.fluid.src } icon={ frontmatter.icon.childImageSharp.fluid.src }>       
           <div className="post-container">
             <Link className="back" to={ backPath }>
                 Back to the list

@@ -21,14 +21,12 @@ const ContactBlockView = styled.div`
         margin: 50px 0px 0px;
         line-height: 0.9;
         color: var(--primaryColor);
-        -webkit-text-stroke: 0.001em var(--primaryColor);
       }
       .contact-subtitle {
         margin-top: 50px;
         font-size: 8vw;
         margin: 0px;
         color: var(--tertiaryColor);
-        -webkit-text-stroke: 0.001em var(--tertiaryColor);
       }
     }
     .content {
@@ -42,7 +40,6 @@ const ContactBlockView = styled.div`
         .contact-resume {
           line-height: 1.4;
           font-size: 22px;
-          letter-spacing: 1px;
           h3 {
             font-size:34px;
             margin-bottom: 20px;
@@ -75,7 +72,6 @@ const ContactBlockView = styled.div`
         box-sizing: border-box;
         line-height: 1.4;
         font-size: 22px;
-        letter-spacing: 1px;
         ul {
           padding: 30px 0px;
           li {
@@ -137,7 +133,6 @@ const ContactBlockView = styled.div`
     bottom: 20px;
     left: 20px;
     border-radius: 4px;
-    font-weight: bolder;
     background: var(--secondaryColor);
     color: var(--bgColor);
     box-shadow: 0px 1px 1px 1px rgba(var(--secondaryColor),0.2), 0 2px 4px rgba(var(--secondaryColor),0.08); 

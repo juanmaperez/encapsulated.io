@@ -19,25 +19,18 @@ const PresentationView = styled.div`
       display: block;
       font-size: 16vw;
       text-align: center;
-      -webkit-text-stroke: 5px var(--primaryColor);
-      @media(max-width: 768px){ -webkit-text-stroke: 3px var(--primaryColor)}
-      @media(max-width: 480px){ -webkit-text-stroke: 1px var(--primaryColor)}
+
     }
     .developer {
       color: var(--primaryColor);
       font-size: 16vw;
       display: block;
-      font-weight: bolder;
       text-align: center;
-      -webkit-text-stroke: 5px var(--primaryColor);
-      @media(max-width: 768px){ -webkit-text-stroke: 3px var(--primaryColor)}
-      @media(max-width: 480px){ -webkit-text-stroke: 1px var(--primaryColor)}
     }
     .year {
       color: var(--secondaryColor);
       font-size: 1.5vw;
       display: block;
-      font-weight: bolder;
       text-align: center;
       font-style: italic;
       margin-top: 50px;

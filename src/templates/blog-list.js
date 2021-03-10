@@ -5,8 +5,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostItem from './../components/post-item'
 import Image from './../components/image'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faList, faGripHorizontal } from '@fortawesome/free-solid-svg-icons'
 import juanma from './../images/juanma_perez.jpg'
 
 
@@ -15,6 +13,9 @@ const BlogView = styled.div`
   margin: 150px auto 80px;
   width: 100%;
   min-height: 10px;
+  @media(max-width: 768px){
+    margin: 50px auto 80px;
+  }
   @media(max-width: 510px){
     margin: 100px auto 80px;
   }
@@ -31,8 +32,8 @@ const BlogView = styled.div`
 
       img {
         display:block;
-        max-width: 120px;
-        max-height: 120px;
+        max-width: 90px;
+        max-height: 90px;
         border-radius: 50%;
         width: 100%;
         overflow: hidden;
@@ -47,18 +48,22 @@ const BlogView = styled.div`
 
       .list-title {
         text-align: left;
-        font-size: 30px;
+        font-size: 24px;
         margin: 0px 0px 0px;
-        color: var(--secondaryColor);
-        -webkit-text-stroke: 0.2px var(--secondaryColor);
-       
+        color: var(--tertiaryColor);       
       }
       p {
-        font-size: 18px;
-        color: var(--secondaryColor);
-        opacity: .6;
-        font-style: italic;
-
+        font-size: 11px;
+        line-height:1.2;
+        &.title {
+          font-size: 15px;
+          color: var(--tertiaryColor);
+          font-weight: 600;
+          a {
+          color: var(--tertiaryColor);
+          text-decoration:underline;
+        }
+        }
       }
       @media(max-width: 510px) {
         .list-title {
@@ -151,44 +156,9 @@ const BlogView = styled.div`
 
 class BlogPage extends Component {
   
-  state = {
-    view: 'list'
-  }
-
-  constructor(props){
-    super(props)
-    this.store = typeof localStorage === 'undefined' ? null : localStorage;  
-  }
-
-  componentDidMount(){
-    if (this.store) {
-      const view = this.store.getItem('view') || 'list'
-      this.setState({ view });
-    }
-  }
-
-  setView = (view) => {
-    this.setState({ view })
-    this.storeView(view)
-  }
-
-  toggleToGrid = () => {    
-    this.setView('grid')
-  }
-
-  toggleToList = () => {    
-    this.setView('list')
-  }
-
-  storeView = (view) => {
-    if (this.store) {
-      this.store.setItem('view', view);
-    }
-  }
-
+  
   render() {
     const { edges: posts } = this.props.data.allMarkdownRemark;
-    const { view } = this.state;
     const { currentPage, numPages } = this.props.pageContext 
     const isFirst = currentPage === 1;
     const isLast = currentPage ===  numPages;
@@ -207,19 +177,15 @@ class BlogPage extends Component {
               <Image imageUrl={juanma} title="juanma perez" />
             </div>
             <div className="info">
-              <h2 className="list-title">Personal blog</h2>
-              <p>by Juanma Pérez</p>
+              <p className="title">Personal blog by <a href="https://twitter.com/juanmaperezvar" target="blank">Juanma Perez</a></p>
+              <p>What I learned about javascript</p>
             </div>
           </div>
-          <div className="buttons">
-              <button className={ view === 'list' ? 'active' : ''} onClick={ this.toggleToList }><FontAwesomeIcon icon={faList}/></button>
-              <button className={ view === 'grid' ? 'active' : ''}onClick={ this.toggleToGrid }><FontAwesomeIcon icon={faGripHorizontal}/></button>
-          </div>
-          <div className={`post-list ${view}`}>
+          <div className={`post-list list`}>
             {posts.map(({node: post})=>{
               const { frontmatter } = post;
               return (
-                <PostItem listPath={this.props.location.pathname} key={frontmatter.path} frontmatter={frontmatter} view={view}/>
+                <PostItem listPath={this.props.location.pathname} key={frontmatter.path} frontmatter={frontmatter} />
               )
             })}
           </div>

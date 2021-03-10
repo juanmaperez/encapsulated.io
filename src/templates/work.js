@@ -24,7 +24,6 @@ const WorkView = styled.div`
       text-align: center;
       font-size: 160px;
       color: var(--tertiaryColor);
-      -webkit-text-stroke: 3px var(--tertiaryColor);
       margin-bottom: 0px;
       font-weight: normal;
       @media(max-width: 768px){ font-size: 90px}

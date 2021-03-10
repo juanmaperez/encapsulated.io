@@ -24,9 +24,7 @@ These programs are interpreters, also known as compilers. Compilers work reading
 For example:
 
 ```js
-  
-  function hello() { var a = "Hello world" }
-  
+function hello() { var a = "Hello world" }
 ```
 
 This program starts reading F-U-N-C-T-I-O-N and when it finishes it determines that you have declared a function, and after this continues and identifies a variable inside of it.
@@ -44,35 +42,32 @@ The execution context is a wrapper to help manage the code that is running. Ther
 The execution context is composed of two phases: creation and execution and we will need a variable and a function if we want to explain how both of them work:
 
 ```javascript
+var a = "Hello world"; 
 
-  var a = "Hello world"; 
-  function b (){ 
-    console.log("Called ¡b!") 
-  } 
-  
-  b(); 
-  console.log(a) 
-  
-  // Called b! 
-  // Hello World
+function b (){ 
+  console.log("Called ¡b!") 
+} 
 
+b(); 
+console.log(a)   
+   
+// Called b! 
+// Hello World
 ```
 
 When we execute this code It will show what we expected but if we would put the call to the function and the variable log at the top of the javascript file, it showed that the variable a wasn’t defined with a value instead of return an error as usual in other programming languages:
 
 ```javascript
+b(); 
+console.log(a) 
 
-  b(); 
-  console.log(a) 
-  
-  var a = "Hello world"; 
-  function b (){ 
-    console.log("Called ¡b!") 
-  } 
-  
-  // Called b! 
-  // undefined
+var a = "Hello world"; 
+function b (){ 
+  console.log("Called ¡b!") 
+} 
 
+// Called b! 
+// undefined
 ```
 
 Some people think that this happens because the javascript engine moves all the functions and variables, created along the all entire code, to the top of the file. But how it really works is through the Creation phase where hoisting is created:
@@ -95,28 +90,19 @@ In javascript, we have two different ways to define a variable. It could be when
 In the first case, we can create a variable like this:
 
 ```javascript
+var a = "Hello World";
 
-  var a = "Hello World";
-  console.log(a)
-  
-  // Hello World
-
+console.log(a) // Hello World
 ```
 
 and we will see that the browser shows that the browser returns the value Hello World. But if we try to create another variable b without a value:
 
 ```javascript
+var b;
+console.log(b) // undefined
 
-  var b;
-  console.log(b)
-
-  // undefined
-
-  var b;
-  console.log(b)
-  
-  // undefined
-
+var b;
+console.log(b) // undefined
 ```
 
 In this case, the variable has been created and the console log shows the variable as undefined but this is confusing. Because this variable has a value assigned automatically by the javascript engine with the special keyword undefined. For this reason, we don’t get an error when we refer to the variable b.
@@ -124,11 +110,8 @@ In this case, the variable has been created and the console log shows the variab
 However, if we would have tried to log a variable that we have never declared before like this:
 
 ```javascript
-
-  console.log(c)
-
-  // Uncaught ReferenceError : c is not define
-
+console.log(c) 
+// Uncaught ReferenceError : c is not define
 ```
 
 It will give you an error because when that initial execution context creation, in that creation phase, when Javascript engine went trough memory space, it didn’t find a var c so it doesn’t have c in memory at all.

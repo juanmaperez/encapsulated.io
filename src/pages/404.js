@@ -16,7 +16,7 @@ const NotFoundView = styled.div`
   h1 {
     display: inline;
     font-size: 250px;
-    font-family: 'Questrial', Helvetica;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
     img {
       width: 300px;
       transform: translateY(20px);

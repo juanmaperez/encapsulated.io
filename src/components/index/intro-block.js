@@ -22,8 +22,6 @@ const IntroView = styled.div`
     line-height: 1.2;
     padding: 20px 80px;
     box-sizing: border-box;
-    font-weight: bolder;
-    -webkit-text-stroke: 1px var(--primaryColor);
     p {
       margin-bottom: 100px;
       opacity: 0;
@@ -34,7 +32,6 @@ const IntroView = styled.div`
  
       strong, a {
         color: var(--tertiaryColor);
-        -webkit-text-stroke: 0.0002em var(--tertiaryColor);
         &:hover {text-decoration: underline}
       }
     }
@@ -65,15 +62,14 @@ const IntroView = styled.div`
     min-height: ${props => props.height/1.2}px;
     .intro-text {
       padding:10px;
-      -webkit-text-stroke: 0px var(--primaryColor);
       font-size: 9vw;
       p {
         margin-bottom: 10px;
         strong {
           color: var(--secondaryColor);
-          -webkit-text-stroke: 0px var(--secondaryColor);
         }
       }
+    }
   }
 `
 

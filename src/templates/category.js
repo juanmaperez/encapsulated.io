@@ -4,8 +4,6 @@ import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostItem from './../components/post-item'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faList, faGripHorizontal } from '@fortawesome/free-solid-svg-icons'
 
 const CategoryView = styled.div`
   margin: 150px auto 80px;
@@ -19,14 +17,12 @@ const CategoryView = styled.div`
       text-align: center;
       font-size: 50px;
       color: var(--primaryColor);
-      -webkit-text-stroke: 1.5px var(--primaryColor);
     }
     .category-title {
       text-align: center;
       margin-top: -10px;
-      font-size: 85px;
-      color: transparent;
-      -webkit-text-stroke: 0.0002em var(--primaryColor);
+      font-size: 24px;
+      color: var(--tertiaryColor);
     }
     @media(max-width:1590px){ width: 40% }
     @media(max-width:1100px){ width:55% }
@@ -88,41 +84,6 @@ const CategoryView = styled.div`
 `
 class CategoryTemplate extends Component {
 
-  state = {
-    view: 'list'
-  }
-
-  constructor(props){
-    super(props)
-    this.store = typeof localStorage === 'undefined' ? null : localStorage;  
-  }
-
-  componentDidMount(){
-    if (this.store) {
-      const view = this.store.getItem('view') || 'list'
-      this.setState({ view });
-    }
-  }
-
-  setView = (view) => {
-    this.setState({ view })
-    this.storeView(view)
-  }
-
-  toggleToGrid = () => {    
-    this.setView('grid')
-  }
-
-  toggleToList = () => {    
-    this.setView('list')
-  }
-
-  storeView = (view) => {
-    if (this.store) {
-      this.store.setItem('view', view);
-    }
-  }
-
   render() {
     const { pageContext, data } = this.props;
     const { category } = pageContext;
@@ -134,14 +95,9 @@ class CategoryTemplate extends Component {
         <SEO title={`${ category } pills`} description={`Little of knowledge about ${category}`} keywords={[ category, 'javascript', 'code' ]}/>
         <CategoryView>
           <div className="category-header">
-            <p>Little pills about</p>
-            <h2 className="category-title">{category}</h2>
+            <h2 className="category-title">All about {category}</h2>
           </div>
-          <div className="buttons">
-              <button className={ view === 'list' ? 'active' : ''} onClick={ this.toggleToList }><FontAwesomeIcon icon={faList}/></button>
-              <button className={ view === 'grid' ? 'active' : ''}onClick={ this.toggleToGrid }><FontAwesomeIcon icon={faGripHorizontal}/></button>
-          </div>
-          <div className={`post-list ${view}`}>
+          <div className={`post-list list`}>
             {posts.map(({node: post})=>{
               const { frontmatter } = post;
               return (

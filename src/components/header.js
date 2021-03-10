@@ -2,10 +2,6 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from 'styled-components';
- 
-import Image from './image';
-
-import logo from './../images/logo_pill.png';
 import ThemeSwitch from "./theme-switcher";
 
 const HeaderView = styled.header`
@@ -47,21 +43,16 @@ const HeaderView = styled.header`
         font-weight: 800;
         color: var(--primaryColor);
         display: inline-block;
-        font-family: 'Questrial', sans-serif;
+        font-family: 'Montserrat', sans-serif;
         mix-blend-mode: difference;
         
   
         .title-link {
           color: var(--primaryColor);
-          letter-spacing: 1.4px;
-          -webkit-text-stroke: 0.3px var(--primaryColor);
           text-decoration: none;
           mix-blend-mode: difference;
         }
 
-        @media(max-width: 510px){
-          display:none;
-        }
       }
     }
 
@@ -73,13 +64,6 @@ const Header = ({ siteTitle }) => (
   <HeaderView>
     <div className="header-wrapper">
       <div>
-        <div className="logo">
-          <Link className="title-link"
-              to={"/"}>
-          <Image className="logo" title="finejavascript logotype" imageUrl={logo}/> 
-          </Link>
-   
-        </div>
         <h1 className="title">
           <Link className="title-link"
             to={"/"}>
