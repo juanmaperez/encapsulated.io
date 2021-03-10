@@ -88,7 +88,6 @@ class CategoryTemplate extends Component {
     const { pageContext, data } = this.props;
     const { category } = pageContext;
     const { edges: posts } = data.allMarkdownRemark;
-    const { view } = this.state;
 
     return (
       <Layout>
@@ -101,7 +100,7 @@ class CategoryTemplate extends Component {
             {posts.map(({node: post})=>{
               const { frontmatter } = post;
               return (
-                <PostItem listPath={ this.props.location.pathname } key={frontmatter.path} frontmatter={frontmatter} view={view}/>
+                <PostItem listPath={ this.props.location.pathname } key={frontmatter.path} frontmatter={frontmatter}/>
               )
             })}
           </div>
