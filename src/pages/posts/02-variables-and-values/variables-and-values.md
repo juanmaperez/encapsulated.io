@@ -2,7 +2,6 @@
 path: '/variables-and-values-javascript'
 date: '2019-06-26T12:34:00+00:00'
 title: "Variables and values in Javascript"
-thumbnail: ./js_engine.png
 type: post
 icon: ./../../../images/icons/javascript.png
 category: 'javascript'

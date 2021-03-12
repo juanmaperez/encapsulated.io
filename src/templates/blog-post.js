@@ -171,7 +171,7 @@ class BlogPostTemplate extends Component {
     return(
       <Layout>
         <SEO title={frontmatter.title} description={ frontmatter.excerpt } keywords={ frontmatter.tags } />
-        <BlogPostView height={height} image={ frontmatter.thumbnail.childImageSharp.fluid.src } icon={ frontmatter.icon.childImageSharp.fluid.src }>       
+        <BlogPostView height={height} icon={ frontmatter.icon.childImageSharp.fluid.src }>       
           <div className="post-container">
             <Link className="back" to={ backPath }>
                 Back to the list

@@ -78,12 +78,11 @@ const PostItem = (props) => {
 
 
   return (
-  <PostItemView image={ frontmatter.thumbnail.childImageSharp.fluid.src } icon={ frontmatter.icon.childImageSharp.fluid.src }>
+  <PostItemView icon={ frontmatter.icon.childImageSharp.fluid.src }>
     <Controller>
       <Scene classToggle={'fade-in'} triggerHook={0.85}>
         <div className="post-wrapper" >
           <div className="post-container">
-       
             <h2 className="post-title">
               <Link to={frontmatter.path} state={{prevPath: listPath }}> {frontmatter.title} </Link>
             </h2>
