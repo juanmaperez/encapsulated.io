@@ -1,6 +1,6 @@
 ---
 path: '/values-and-coercion'
-date: '2019-06-26T12:34:00+00:00'
+date: '2021-04-03T12:34:00+00:00'
 title: "Values and coercion"
 type: post
 icon: ./../../../images/icons/javascript.png
