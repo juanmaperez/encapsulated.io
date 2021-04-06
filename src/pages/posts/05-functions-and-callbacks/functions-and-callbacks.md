@@ -1,7 +1,7 @@
 ---
 path: '/high-order-functions-callbacks-inversion-control'
 date: '2021-04-03T12:34:00+00:00'
-title: "Hight order functions, callbacks,`` and inversion of control"
+title: "High order functions, callbacks, and inversion of control"
 type: post
 icon: ./../../../images/icons/javascript.png
 category: 'javascript'
