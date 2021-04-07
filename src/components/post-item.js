@@ -51,13 +51,13 @@ width: 50%;
     font-weight: 800;
     line-height: 1.2;
     font-size: 26px;
-    color: var(--primaryColor);
+    color: var(--tertiaryColor);
     font-family: 'Montserrat', sans-serif;
     @media(max-width:510px){ font-size: 26px }
 
     a {
       text-decoration: none;
-      color: var(--primaryColor) !important;
+      color: var(--tertiaryColor) !important;
     }
   }
   .post-excerpt {

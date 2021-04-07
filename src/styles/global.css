@@ -40,9 +40,9 @@ body {
     --bgColorRGB: 251,243,242;
     --primaryColor: #032539;
     --primaryColorRGB:3,37,57;
-    --secondaryColor: #999;  
+    --secondaryColor: rgb(107, 102, 102);  
     --secondaryColorRGB:28,118,143; 
-    --tertiaryColor: #6DA6CC;
+    --tertiaryColor: #2a77aa;
     --tertiaryColorRGB:250,153,28;
     color: var(--primaryColor);
     background: var(--bgColor);
@@ -54,9 +54,9 @@ body {
     --bgColorRGB: 3,37,57;
     --primaryColor: #fbf3f2;
     --primaryColorRGB:251,243,242;
-    --secondaryColor: #6DA6CC;
+    --secondaryColor: #7fbce4;
     --secondaryColorRGB:250,153,28;
-    --tertiaryColor: #6DA6CC;   
+    --tertiaryColor: #70baeb;   
     --tertiaryColorRGB:28,118,143;
   }
 

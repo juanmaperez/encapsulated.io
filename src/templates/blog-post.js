@@ -86,7 +86,7 @@ const BlogPostView = styled.div`
       margin: 30px 0px 30px;
       font-size: 30px;
       font-weight:800;
-      color: var(--primaryColor);
+      color: var(--tertiaryColor);
       @media(max-width:768px){
         font-size: 28px;
         margin: 10px 0px 30px;
