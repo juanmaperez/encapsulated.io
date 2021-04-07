@@ -11,9 +11,9 @@ excerpt: "How many times have you heard the fact that doubles equals check the v
 
 It's been a few times that I have heard someone saying that I should use triple equals when comparing values because in that way I will be comparing not just the value but also the type of that value.
 
-An example of that case it would be something like comparing a number, maybe 2, with an string like "2". Depending how we compare this two values we can get different results.
+An example of that case would be something like comparing a number, maybe 2, with a string like "2". Depending on how we compare these two values we can get different results.
 
-This is called equality between two values where two equals is loosy equality and the three equals is called strict equality
+This is called equality between two values where two equals are loose equality comparison and the three equals are called strict equality
 
 ```javascript
   console.log(2 == "2") // true
@@ -21,21 +21,21 @@ This is called equality between two values where two equals is loosy equality an
   console.log(2 === "2") // false 
 ```
 
-We have assumed that the difference between both results it's basically that it's because the three equals is checking the type and the value and the two equals one is only checking the value. 
+We have assumed that the difference between both results it's basically that it's because the three equals are checking the type and the value and the two equals one is only checking the value. 
 
-The thing it's both of them are checking the types, but the triple equal comparaison is returning false at the very first moment those types don't match.
+The thing it's both of them are checking the types, but the triple equal comparison is returning false at the very first moment those types don't match.
 
-In the other hand the double equal will try a completely different approach, and that approach is called coercion.
+On the other hand, the double equal will try a completely different approach, and that approach is called coercion.
 
 ## Coercion in our code.
 
-Coercion is basically type coversion, as it's called in EcmaScript spec. There are different abstract operations which are in charge of this type coversion when it's needed. ToPrimitive(), ToString(), ToNumber() or ToBoolean() will help us to achieve that type conversion.  
+Coercion is basically typing coversion, as it's called in EcmaScript spec. There are different abstract operations that are in charge of this type of conversion when it's needed. ToPrimitive(), ToString(), ToNumber() or ToBoolean() will help us to achieve that type conversion.  
 
-but, when coercion takes place? We have always heard that coercion is something that we should avoid, because it can make us commit terrible mistakes but at the same time we should say that this is a very powerful feature in Javascript.
+but, when coercion takes place? We have always heard that coercion is something that we should avoid because it can make us commit terrible mistakes but at the same time, we should say that this is a very powerful feature in Javascript.
 
 ### Number to String
 
-We bare in mind that thought telling us that coercion is evil, but we use coercion all the time in one of the features more loved by everyone like the template interpolation.
+We bear in mind that thought telling us that coercion is evil, but we use coercion all the time in one of the features more loved by everyone like the template interpolation.
 
 ```javascript
   console.log(2 == "2") // coercion and evil
@@ -45,7 +45,7 @@ We bare in mind that thought telling us that coercion is evil, but we use coerci
   const introduction = `My name is Jack and I'm ${age} years old` // coercion but great
 ```
 
-Actually, what we are doing is a type conversion of the value for the variable age from a number to a string, and inserting that value within two strings that will create another string which, later, will be assigned to the introduction variable.
+Actually, what we are doing is a type conversion of the value for the variable age from a number to a string, and inserting that value within two strings will create another string which, later, will be assigned to the introduction variable.
 
 ```javascript
   const age = 18
@@ -56,7 +56,7 @@ Actually, what we are doing is a type conversion of the value for the variable a
   console.log( part1 + age + part2)
 ```
 
-We can say that this is the way implicit to do coercion and the one that sometimes we don't even know we are doing. There are other ways to do it more explicit like using the method String().
+We can say that this is the way implicit to do coercion and the one that sometimes we don't even know we are doing. There are other ways to do it more explicitly like using the method String().
 
 ```javascript
   const age = 18
@@ -68,9 +68,9 @@ This was an example of coercion from number to string but how this could happen 
 
 ### String to Number 
 
-All of us have dealt at some point with some elements in web development like forms that return string and we are expeting to deal with that as a number in our functionality but it's not, causing an unexpected behavior in our application.
+All of us have dealt at some point with some elements in web development like forms that return a string and we are expecting to deal with that as a number in our functionality but it's not, causing unexpected behavior in our application.
 
-Let's think about a function called addTwo, which is gonna receive a parameter called num but, depending of the type of that paramenter is gonna return different values. 
+Let's think about a function called addTwo, which is gonna receive a parameter called num but, depending on the type of that parameter is gonna return different values. 
 
 ```javascript
   const addTwo = (num) => {
@@ -94,9 +94,9 @@ How we could be explicit about coercing a string into a number, well the same we
   console.log(addTwo(Number("2"))) // 4
 ```
 
-Even we could pass that string into a number in an implicit way that it's not telling what it's doing as the Number() function but it's doing the type conversion behind the scenes, like adding the add operator in front of the paramenter.
+Even we could pass that string into a number in an implicit way that it's not telling what it's doing as the Number() function but it's doing the type conversion behind the scenes, like adding the add operator in front of the parameter.
 
-In that case, the + will do a coercion to our parameter passing it into a number when it's needed and when it's able to do it. 
+In that case, the + will do coercion to our parameter passing it into a number when it's needed and when it's able to do it. 
 
 ```javascript
   const str = "4"
@@ -110,7 +110,7 @@ In that case, the + will do a coercion to our parameter passing it into a number
 
 ### String to Boolean
 
-And what about booleans. I'm pretty sure that at some point you have used a if statement to check if you are receiving a empty string without comparing with a empty string the variable itself.
+And what about booleans. I'm pretty sure that at some point you have used an if statement to check if you are receiving an empty string, without comparing with a proper empty string the variable itself.
 
 ```javascript
  const myString = ""
@@ -126,9 +126,9 @@ And what about booleans. I'm pretty sure that at some point you have used a if s
   }
 ```
 
-Well, in that case what we are doing is coercing myString to a boolean since the if statement what it's expecting is an operation that evaluates on true or false like it's doing (string === "")
+Well, in that case, what we are doing is coercing myString to a boolean since the if statement what it's expecting is an operation that evaluates on true or false like it's doing (string === "")
 
-There are other ways to make an implicit coercion with number or strings and one of them could be the double exclamation mark in front of our value
+There are other ways to make implicit coercion with number or strings and one of them could be the double exclamation mark in front of our value
 
 ```javascript
   const myString = ""
@@ -154,5 +154,5 @@ or as we saw also there is an explicit way to do it, with the function Boolean()
 
 There are different corner cases for coercion when values interact with each other and some of them can be really unexpected but they are happening even when we don't know about it.
 
-The thing it's coercion could bring confusion to our codebase, and I'm not saying that you should use coercion within you app, but at least understand how it works would help a lot to understand what's going on when it happens implicity in your code.
+The thing's coercion could bring confusion to our codebase, and I'm not saying that you should use coercion within your app, but at least understand how it works would help a lot to understand what's going on when it happens implicitly in your code.
 
