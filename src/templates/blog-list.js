@@ -174,7 +174,7 @@ class BlogPage extends Component {
         <BlogView>
           <div className="list-header">
             <div className="image-wrapper">
-              <Image imageUrl={juanma} title="juanma perez" />
+              <Image width="90" height="90" imageUrl={juanma} title="juanma perez" />
             </div>
             <div className="info">
               <p className="title">Personal blog by <a href="https://twitter.com/juanmaperezvar" target="blank">Juanma Perez</a></p>

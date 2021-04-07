@@ -2,8 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 
 
-const Image = ({title, imageUrl}) => (
-    <img alt={ title } src={ imageUrl } />
+const Image = ({title, imageUrl, ...rest}) => (
+    <img {...rest} alt={ title } src={ imageUrl } />
 )
 
 
