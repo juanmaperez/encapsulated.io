@@ -53,7 +53,8 @@ const BlogPostView = styled.div`
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
-      color: #999;
+      color: var(--primaryColor);
+      margin-bottom: 1px;
       .post-icon {
         position: relative;
         top: -3px;

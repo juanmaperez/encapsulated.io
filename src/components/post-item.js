@@ -41,7 +41,7 @@ width: 50%;
     display: flex;
     margin: 10px 0px 0px;
     font-size: 12px;
-    color:  #999;
+    color: var(--primaryColor);
   } 
   .post-title {
     align-items: center;
@@ -87,8 +87,8 @@ const PostItem = (props) => {
               <Link to={frontmatter.path} state={{prevPath: listPath }}> {frontmatter.title} </Link>
             </h2>
             <div className="post-date">
-              <Link to={`/category/${frontmatter.category}`}><div className="post-icon"></div></Link>
-              <span>{frontmatter.date}</span>
+              <Link to={`/category/${frontmatter.category}`}><img width="10" src={frontmatter.icon.childImageSharp.fluid.src} alt={frontmatter.category}/></Link>
+              &nbsp;<span>{frontmatter.date}</span>
             </div>
             <div className="post-excerpt">
               {frontmatter.excerpt}
