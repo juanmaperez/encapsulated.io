@@ -9,7 +9,7 @@ tags: ['javascript', "functions", "closure", "high order functions", "javascript
 excerpt: "Closure is one of the most powerful features in Javascript, and used in the right way can bring endless possibilities into your implementations."
 ---
 
-High order functions are one of the patterns more used in Javascript and one of the reasons is because of a feature that allows us to persist the local memory of a function beyond its invocation, and its name is closure.
+[High order functions](/high-order-functions-callbacks-inversion-control) are one of the patterns more used in Javascript and one of the reasons is because of a feature that allows us to persist the local memory of a function beyond its invocation, and its name is closure.
 
 Closures will provide us a super powerful tool that will allow us to create complex patterns like currying, once time invokation functions, memoization, even the module pattern which is based on closure as well.
 
@@ -38,7 +38,9 @@ As a note, we need to clarify that once multiply is returned from createMultipli
 
 ## Nested function scope
 
-As we know, when returning a function from another function what we are trying to achieve is persist the outer's function scope (__lexical environment__) which is accessible from the function definition returned, and that's because __where a function is created determines what data it has access to when it's called__.
+As we know, when returning a function from another function what we are trying to achieve is persist the outer's function scope (__lexical environment__) which is accessible from the function definition returned, and that's because where a function is created determines what data it has access to when it's called.
+
+> Where a function is created determines what data it has access to when it's called
 
 This also applies to functions declared directly in the global memory, and in the next example when we try to execute the expression __counter++__ from inside the increment function, if it doesn't find the variable in its own local memory, it goes straight to look for it in the global memory.  
 
@@ -54,7 +56,7 @@ This also applies to functions declared directly in the global memory, and in th
 
   console.log(counter) // 2
 ```
-The exact same behavior can be achieved inside of a function, but in that case, since increment was declared into the outer function, when it doesn't find counter in its own local memory, tries to find it in the outer local memory which is still there because we have not finished executing that function.
+Inside of a function since increment was declared into the outer function, when it doesn't find counter in its own local memory, tries to find it in the outer's local memory which is still there because we have not finished executing that function.
 
 ```javascript 
   function outer() {

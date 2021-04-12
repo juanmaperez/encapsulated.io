@@ -102,6 +102,18 @@ const BlogPostView = styled.div`
       margin-top: 30px;
       line-height: 1.6;
       font-size: 17px;
+      blockquote {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding:10px 20px;
+        margin: 30px 0 30px 0px;
+        border-left: 5px solid var(--primaryColor);
+        font-style: italic;
+        font-size: 24px;
+        line-height: 1.4;
+        * { margin: 0px !important;}
+      }
       pre {
         max-width: 100%;
         font-size: 14px;
