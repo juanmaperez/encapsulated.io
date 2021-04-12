@@ -5,7 +5,7 @@ title: "How javascript engine works"
 type: post
 icon: ./../../../images/icons/javascript.png
 category: 'javascript'
-tags: ['javascript', "basic javascript", "javascript engine", "hoisting"]
+tags: ['javascript', "basic javascript", "javascript engine", "hoisting", "execution context"]
 excerpt: "If we want to understand how javascript works beyond your code, you need to know three different concepts or ideas that you will see repeated throughout the rest of your life as a programmer."
 ---
 
