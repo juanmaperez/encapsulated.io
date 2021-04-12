@@ -14,6 +14,7 @@ const BlogPostView = styled.div`
   overflow: hidden;
 
   .post-container {
+    max-width: 670px;
     box-sizing: border-box;
     width: 50%;
     margin: 0px auto;
@@ -83,23 +84,24 @@ const BlogPostView = styled.div`
     }
     .post-title {
       font-family: 'Montserrat', sans-serif;
-      margin: 30px 0px 30px;
-      font-size: 30px;
+      margin: 30px 0px 10px;
+      font-size: 32px;
       font-weight:800;
       color: var(--tertiaryColor);
       @media(max-width:768px){
         font-size: 28px;
-        margin: 10px 0px 30px;
+        margin: 10px 0px 10px;
       }
       @media(max-width:510px){
         font-size: 28px;
-        margin: 0px 0px 30px;
+        margin: 0px 0px 10px;
       }
     }
 
     .post-content {
-      line-height: 1.5;
-      font-size: 16px;
+      margin-top: 30px;
+      line-height: 1.6;
+      font-size: 17px;
       pre {
         max-width: 100%;
         font-size: 14px;

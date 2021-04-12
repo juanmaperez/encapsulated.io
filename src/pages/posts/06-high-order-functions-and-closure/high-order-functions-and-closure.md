@@ -9,15 +9,15 @@ tags: ['javascript', "functions", "closure", "high order functions", "javascript
 excerpt: "Closure is one of the most powerful features in Javascript, and used in the right way can bring endless possibilities into your implementations."
 ---
 
-Invoking a function we create a new execution context which is blown away when this function invocation ends, and with it all the memory we set up into that function. However, there is a feature that allows us to persist the local memory of that function beyond its invocation, which can be achieved through this feature called closure.
+High order functions are one of the patterns more used in Javascript and one of the reasons is because of a feature that allows us to persist the local memory of a function beyond its invocation, and its name is closure.
 
 Closures will provide us a super powerful tool that will allow us to create complex patterns like currying, once time invokation functions, memoization, even the module pattern which is based on closure as well.
 
 ## Returning functions
 
-Functions never remember anything from previous runnings, the local memory created inside them is fresh every time. Everything is deleted but the returned value. Nevertheless, there is a way to cache that local memory created inside of that function and pass it attached to the value returned from that function. And that's where high order functions get in play since __the value returned must be a function.__
+Functions never remember anything from previous runnings, the local memory created inside them is fresh every time. Everything is deleted but the returned value. 
 
-Returning a function from the invocation of another function is the key of this feature.
+Nevertheless, there is a way to cache that local memory created inside of that function and make it persist attached to the value returned from that function, and that value __must be another function.__
 
 ```javascript 
   function createMultiplier(multiplier){
@@ -32,7 +32,7 @@ Returning a function from the invocation of another function is the key of this 
   const value2 = multiplyBy2(4)   // 8
 ```
 
-Above, we are persisting the value multiplier passed in the first call of createMultiplier because it will always be within the scope of multiply function, wich will be returned and assigned to the variable multiplyBy2. Now we can execute as many times as we want multiplyBy2 and the multiplier which is gonna reference into its function definition will be always 2.
+Above we are able to persist multiplier, which is within the scope of the multiply function by returning multiply without being executed, that way we attach to it all the lexical environment from where it was created.
 
 As a note, we need to clarify that once multiply is returned from createMultiplier, it has nothing to do with the function where it was created. Once its definition was returned we don't care anymore about createMultiplier but the definition of multiply stored in the variable multiplyBy2.
 
@@ -54,7 +54,7 @@ This also applies to functions declared directly in the global memory, and in th
 
   console.log(counter) // 2
 ```
-The exact same behavior can be achieved inside of a function, but in this case, since increment was declared into the outer function, when it doesn't find counter in its own local memory, tries to find it in the outer local memory which is still there because we have not finished executing that function.
+The exact same behavior can be achieved inside of a function, but in that case, since increment was declared into the outer function, when it doesn't find counter in its own local memory, tries to find it in the outer local memory which is still there because we have not finished executing that function.
 
 ```javascript 
   function outer() {
@@ -72,7 +72,7 @@ The exact same behavior can be achieved inside of a function, but in this case, 
   console.log(outer()) // 2
 ```
 
-The only problem with the previous implementation is that the value of the counter doesn't persist further than its own invocation, and that's because we are executing increment inside of the function instead of returning its definition.
+The only problem with the previous implementation is that the value of the counter doesn't persist further than outers invocation, and that's because we are executing increment inside of the function instead of returning its definition.
 
 ## Retain function memory
 
@@ -97,9 +97,7 @@ Let's say that instead of the previous implementation, what we want to do is per
 
 In that case, what we are doing is creating an outer function, and declare inside of it our increment function, but instead of invoking increment from inside that function, what we will be doing is returning increment out and storing that function definition into a new variable called count.
 
-Subsequently from global, we will invoke count, which contains the definition of increment created inside of outer. Following the same logic than before, the count function should look for the counter in its own local memory and when it doesn't find it, it should look into the global memory, but it's not otherwise it would not find it and it would throw an error.
-
-Instead, since the count function is a reference to the function definition of increment returned from outer, and that function has attached the scope where it was declared, it will be able to access to counter from it and modify its value.   
+From now on, when we invoke count, which contains the definition of increment created inside of outer, It's going to try to find counter in its own local memory and when it doesn't find it, instead of looking for it in the global memory, It will search in the __backpack__ with the information that has taken with it.  
 
 ## Closure behind the scenes
 
