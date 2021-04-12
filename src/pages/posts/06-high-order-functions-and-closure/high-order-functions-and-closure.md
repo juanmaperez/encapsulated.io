@@ -1,7 +1,7 @@
 ---
-path: '/high-order-functions-closure'
+path: '/closure-high-order-functions'
 date: '2021-04-10T12:34:00+00:00'
-title: "High order functions and closure"
+title: "Closure and high order functions"
 type: post
 icon: ./../../../images/icons/javascript.png
 category: 'javascript'
@@ -9,17 +9,13 @@ tags: ['javascript', "functions", "closure", "high order functions", "javascript
 excerpt: "Closure is one of the most powerful features in Javascript, and used in the right way can bring endless possibilities into your implementations."
 ---
 
-Every single time we are invoking a function we are creating a new execution context which is blown away when this function invocation ends, and with it all the memory we set up into that function.
-
-However, there is a feature that allows us to persist the state or the local memory of that function beyond its invocation, which can be achieved through high order functions, and it's called closure.
+Invoking a function we create a new execution context which is blown away when this function invocation ends, and with it all the memory we set up into that function. However, there is a feature that allows us to persist the local memory of that function beyond its invocation, which can be achieved through this feature called closure.
 
 Closures will provide us a super powerful tool that will allow us to create complex patterns like currying, once time invokation functions, memoization, even the module pattern which is based on closure as well.
 
 ## Returning functions
 
-Functions never remember anything from previous running, the local memory created inside them is fresh every time. Everything is deleted but the returned value.
-
-Nevertheless, there is a way to cache that local memory created inside of that function and pass it attached to the value returned from that function. And that's where high order functions get in play since __the value returned must be a function.__
+Functions never remember anything from previous runnings, the local memory created inside them is fresh every time. Everything is deleted but the returned value. Nevertheless, there is a way to cache that local memory created inside of that function and pass it attached to the value returned from that function. And that's where high order functions get in play since __the value returned must be a function.__
 
 Returning a function from the invocation of another function is the key of this feature.
 
@@ -35,19 +31,16 @@ Returning a function from the invocation of another function is the key of this 
   const value1 = multiplyBy2(10)  // 20
   const value2 = multiplyBy2(4)   // 8
 ```
-In this case, we are persisting the value multiplier passed in the first call of createMultiplier attached to the function returned that we are assigning to the variable multiplyBy2.
 
-Now we can execute as many times as we want multiplyBy2 that the multiplier, which value is 2, will be always available to calculate the double of the argument passed to it.
+Above, we are persisting the value multiplier passed in the first call of createMultiplier because it will always be within the scope of multiply function, wich will be returned and assigned to the variable multiplyBy2. Now we can execute as many times as we want multiplyBy2 and the multiplier which is gonna reference into its function definition will be always 2.
 
 As a note, we need to clarify that once multiply is returned from createMultiplier, it has nothing to do with the function where it was created. Once its definition was returned we don't care anymore about createMultiplier but the definition of multiply stored in the variable multiplyBy2.
 
 ## Nested function scope
 
-As we know, when returning a function from another function what we are trying to achieve is persist the outer's function scope (__lexical environment__) which is accessible from the function definition returned.
+As we know, when returning a function from another function what we are trying to achieve is persist the outer's function scope (__lexical environment__) which is accessible from the function definition returned, and that's because __where a function is created determines what data it has access to when it's called__.
 
-Where a function is created determines what data it has access to when it's called.
-
-Also we can tell that a function has access to the lexical environment where it was created, In that way, when we try to increment counter from inside the increment function, when it doesn't find the variable in its own local memory, it goes straight to look for it in the global memory and when it finds counter increments its value.  
+This also applies to functions declared directly in the global memory, and in the next example when we try to execute the expression __counter++__ from inside the increment function, if it doesn't find the variable in its own local memory, it goes straight to look for it in the global memory.  
 
 ```javascript 
   let counter = 0;
@@ -61,7 +54,7 @@ Also we can tell that a function has access to the lexical environment where it 
 
   console.log(counter) // 2
 ```
-The exact same behavior can be achieved inside of a function, but in this case, since increment was declared into outer, when it doesn't find counter in its own local memory, tries to find it in the outer local memory which is still there because we have not finished executing that function.
+The exact same behavior can be achieved inside of a function, but in this case, since increment was declared into the outer function, when it doesn't find counter in its own local memory, tries to find it in the outer local memory which is still there because we have not finished executing that function.
 
 ```javascript 
   function outer() {
